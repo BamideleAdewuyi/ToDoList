@@ -5,6 +5,7 @@ class Projects {
     }
 }
 
+// ToDo list items
 class ToDo {
     constructor(title, description, dueDate, priority) {
         this.title = title;

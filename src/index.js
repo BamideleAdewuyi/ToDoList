@@ -1,5 +1,7 @@
-// Set up overall projects that all items will be added to
-function Projects() {
-    // Empty array where projects are saved by default
-    const allProjects = []
+// Set up projects arrays that items will be added to
+class Projects {
+    constructor() {
+        this.allProjects = [];
+    }
 }
+

@@ -44,10 +44,24 @@ function IsIn(object, array) {
     return array.includes(object);
 }
 
+function removeItem(array, item) {
+    const index = array.indexOf(item);
+    if (index > -1) {
+        array.splice(index, 1);
+    }
+    return array;
+}
+
+function MoveToDo(ToDo, Project) {
+    if (IsIn(ToDo, Project)) {
+        Project.addToDo(ToDo);
+        return true;
+    }
+}
 
 const projectManager = new Projects();
 const testProject = projectManager.createProject("cuisine");
-const testToAdd = projectManager.createProject("testToAdd");
+// const testToAdd = projectManager.createProject("testToAdd");
 const testItem = CreateToDo("Cook", "Cooking", "Today", 1, projectManager);
-
-console.log(IsIn(9, [9,1,2]))
+const newTest = CreateToDo("FixUp", "LookSharp", "Today", 2, projectManager);
+console.log(projectManager)

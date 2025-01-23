@@ -1,11 +1,9 @@
-// Set up projects arrays that items will be added to
 class Projects {
     constructor() {
         this.allProjects = [];
     }
 }
 
-// ToDo list items
 class ToDo {
     constructor(title, description, dueDate, priority) {
         this.title = title;
@@ -13,4 +11,13 @@ class ToDo {
         this.dueDate = dueDate;
         this.priority = priority;
     }
-}
+};
+
+function CreateToDo(title, description, dueDate, priority) {
+    return new ToDo(title, description, dueDate, priority);
+};
+
+function AddToProjects(ToDo, Projects, project) {
+    Projects.project.append(ToDo);
+    return;
+};

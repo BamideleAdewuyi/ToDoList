@@ -52,11 +52,9 @@ function removeItem(array, item) {
     return array;
 }
 
-function MoveToDo(ToDo, Project) {
-    if (IsIn(ToDo, Project)) {
-        Project.addToDo(ToDo);
-        return true;
-    }
+function MoveToDo(ToDo, oldProject, newProject) {
+    removeItem(oldProject, ToDo);
+    newProject.addToDo(ToDo);
 }
 
 const projectManager = new Projects();
@@ -64,4 +62,4 @@ const testProject = projectManager.createProject("cuisine");
 // const testToAdd = projectManager.createProject("testToAdd");
 const testItem = CreateToDo("Cook", "Cooking", "Today", 1, projectManager);
 const newTest = CreateToDo("FixUp", "LookSharp", "Today", 2, projectManager);
-console.log(projectManager)
+console.log(projectManager);

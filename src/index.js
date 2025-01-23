@@ -2,6 +2,9 @@ class Projects {
     constructor() {
         this.allProjects = [];
     }
+    addToProject(ToDo, array) {
+        array.push(ToDo)
+    }
 }
 
 class ToDo {
@@ -17,7 +20,9 @@ function CreateToDo(title, description, dueDate, priority) {
     return new ToDo(title, description, dueDate, priority);
 };
 
-function AddToProjects(ToDo, Projects, project) {
-    Projects.project.append(ToDo);
-    return;
-};
+const Project = new Projects;
+const testItem = CreateToDo("Cook", "Cooking", "Today", 1);
+
+Project.addToProject(testItem, Project.allProjects);
+
+console.log(Project)

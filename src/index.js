@@ -28,3 +28,7 @@ class ToDo {
         this.priority = priority;
     }
 }
+
+function createToDo(title, description, dueDate, priority) {
+    return new ToDo(title, description, dueDate, priority);
+}

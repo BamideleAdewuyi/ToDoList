@@ -1,6 +1,7 @@
 class Projects {
     constructor() {
         this.projects = [];
+        const defaultProject = this.createProject("Default");
     }
 
     createProject(projectName) {

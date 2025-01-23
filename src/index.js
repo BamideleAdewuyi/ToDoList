@@ -1,11 +1,11 @@
 class Projects {
     constructor() {
-        this.allProjects = [];
+        this.projects = [];
     }
 
     createProject(projectName) {
         const project = new Project(projectName);
-        this.allProjects.push(project);
+        this.projects.push(project);
         return project;
     }
 }
@@ -29,6 +29,19 @@ class ToDo {
     }
 }
 
-function createToDo(title, description, dueDate, priority) {
+function CreateToDo(title, description, dueDate, priority) {
     return new ToDo(title, description, dueDate, priority);
 }
+
+function AddToProject(Project, ToDo) {
+    Project.addToDo(ToDo);
+}
+
+
+const projectManager = new Projects();
+const testProject = projectManager.createProject("cuisine");
+const testToAdd = projectManager.createProject("testToAdd");
+const testItem = CreateToDo("Cook", "Cooking", "Today", 1);
+const newTestItem = CreateToDo("Clean", "Cleaning", "Yesterday", 2);
+
+AddToProject(testToAdd, newTestItem)

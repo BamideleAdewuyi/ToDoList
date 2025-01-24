@@ -54,7 +54,7 @@ function removeItem(array, item) {
 
 function MoveToDo(toDo, oldProject, newProject) {
     removeItem(oldProject.toDos, toDo);
-    newProject.addToDo(toDo);
+    AddToProject(newProject, toDo)
 }
 
 const projectManager = new Projects();

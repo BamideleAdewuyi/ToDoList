@@ -107,6 +107,8 @@ class ScreenController {
     renderProjects() {
         this.projectManager.projects.forEach((project) => {
             const projectDiv = document.createElement("div");
+            projectDiv.classList.add("project");
+            projectDiv.textContent = project.name
             this.containerDiv.appendChild(projectDiv);
         })
     }

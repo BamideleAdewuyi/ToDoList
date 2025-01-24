@@ -58,9 +58,14 @@ function MoveToDo(toDo, oldProject, newProject) {
     AddToProject(newProject, toDo)
 }
 
+function GetAllProjects(projectManger) {
+    return projectManager.projects;
+}
+
 const projectManager = new Projects();
 const cuisineProject = projectManager.createProject("cuisine");
 const testItem = CreateToDo("Cook", "Cooking", "Today", 1, projectManager);
 const newTest = CreateToDo("FixUp", "LookSharp", "Today", 2, projectManager);
 console.log(projectManager);
 MoveToDo(testItem, projectManager.defaultProject, cuisineProject)
+console.log(GetAllProjects(projectManager))

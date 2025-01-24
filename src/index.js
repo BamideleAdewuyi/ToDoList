@@ -101,5 +101,17 @@ function DeleteToDo(project, toDo) {
 class ScreenController {
     constructor() {
         this.projectManager = new Projects;
+        this.containerDiv = document.querySelector(".container");
+    }
+
+    renderProjects() {
+        this.projectManager.projects.forEach((project) => {
+            const projectDiv = document.createElement("div");
+            this.containerDiv.appendChild(projectDiv);
+        })
     }
 }
+
+const screen = new ScreenController()
+
+screen.renderProjects()

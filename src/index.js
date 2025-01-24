@@ -73,6 +73,11 @@ function GetToDo(project, toDo) {
     return result;
 }
 
+function DeleteToDo(project, toDo) {
+    removeItem(project.toDos, toDo);
+    return;
+}
+
 const projectManager = new Projects();
 const cuisineProject = projectManager.createProject("cuisine");
 const testItem = CreateToDo("Cook", "Cooking", "Today", 1, projectManager);
@@ -86,3 +91,7 @@ console.log(GetAllToDos(cuisineProject));
 // console.log(GetAllToDos(projectManager.defaultProject));
 
 console.log(GetToDo(cuisineProject, "Make Souffle"))
+console.log(cuisineProject)
+DeleteToDo(cuisineProject, dessert);
+
+console.log(cuisineProject)

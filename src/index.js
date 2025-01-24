@@ -58,13 +58,15 @@ function MoveToDo(toDo, oldProject, newProject) {
     AddToProject(newProject, toDo)
 }
 
-function GetAllProjects(projectManger) {
+function GetAllProjects(projectManager) {
     return projectManager.projects;
 }
 
 function GetAllToDos(project) {
     return project.toDos;
 }
+
+
 
 const projectManager = new Projects();
 const cuisineProject = projectManager.createProject("cuisine");

@@ -1,3 +1,4 @@
+// Non-screen section
 class Projects {
     constructor() {
         this.projects = [];
@@ -78,20 +79,27 @@ function DeleteToDo(project, toDo) {
     return;
 }
 
-const projectManager = new Projects();
-const cuisineProject = projectManager.createProject("cuisine");
-const testItem = CreateToDo("Cook", "Cooking", "Today", 1, projectManager);
-const newTest = CreateToDo("FixUp", "LookSharp", "Today", 2, projectManager);
-// console.log(projectManager);
-MoveToDo(testItem, projectManager.defaultProject, cuisineProject)
-// console.log(GetAllProjects(projectManager))
-const dessert = CreateToDo("Make Souffle", "RISE", "Tomorrow", 1, projectManager);
-MoveToDo(dessert, projectManager.defaultProject, cuisineProject);
-console.log(GetAllToDos(cuisineProject));
-// console.log(GetAllToDos(projectManager.defaultProject));
+// const projectManager = new Projects();
+// const cuisineProject = projectManager.createProject("cuisine");
+// const testItem = CreateToDo("Cook", "Cooking", "Today", 1, projectManager);
+// const newTest = CreateToDo("FixUp", "LookSharp", "Today", 2, projectManager);
+// // console.log(projectManager);
+// MoveToDo(testItem, projectManager.defaultProject, cuisineProject)
+// // console.log(GetAllProjects(projectManager))
+// const dessert = CreateToDo("Make Souffle", "RISE", "Tomorrow", 1, projectManager);
+// MoveToDo(dessert, projectManager.defaultProject, cuisineProject);
+// console.log(GetAllToDos(cuisineProject));
+// // console.log(GetAllToDos(projectManager.defaultProject));
 
-console.log(GetToDo(cuisineProject, "Make Souffle"))
-console.log(cuisineProject)
-DeleteToDo(cuisineProject, dessert);
+// console.log(GetToDo(cuisineProject, "Make Souffle"))
+// console.log(cuisineProject)
+// DeleteToDo(cuisineProject, dessert);
 
-console.log(cuisineProject)
+// console.log(cuisineProject)
+
+// On screen section
+class ScreenController {
+    constructor() {
+        this.projectManager = new Projects;
+    }
+}

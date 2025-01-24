@@ -66,7 +66,12 @@ function GetAllToDos(project) {
     return project.toDos;
 }
 
-
+function GetToDo(project, toDo) {
+    const result = project.toDos.filter(obj => {
+        return obj.title === toDo;
+    })
+    return result;
+}
 
 const projectManager = new Projects();
 const cuisineProject = projectManager.createProject("cuisine");
@@ -78,4 +83,6 @@ MoveToDo(testItem, projectManager.defaultProject, cuisineProject)
 const dessert = CreateToDo("Make Souffle", "RISE", "Tomorrow", 1, projectManager);
 MoveToDo(dessert, projectManager.defaultProject, cuisineProject);
 console.log(GetAllToDos(cuisineProject));
-console.log(GetAllToDos(projectManager.defaultProject));
+// console.log(GetAllToDos(projectManager.defaultProject));
+
+console.log(GetToDo(cuisineProject, "Make Souffle"))

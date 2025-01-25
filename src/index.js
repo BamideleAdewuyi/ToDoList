@@ -112,8 +112,20 @@ class ScreenController {
             this.containerDiv.appendChild(projectDiv);
         })
     }
+
+    renderToDos(project) {
+        project.toDos.forEach((toDo) => {
+            const toDoPreviewDiv = document.createElement("div");
+            toDoPreviewDiv.classList.add("toDoPreview");
+            toDoPreviewDiv.textContent = `${toDo.title} ${toDo.dueDate}`;
+            this.containerDiv.appendChild(toDoPreviewDiv)
+            console.log(toDo)
+        })
+    }
 }
 
 const screen = new ScreenController()
-
-screen.renderProjects()
+CreateToDo("Cook", "Cooking time", "Today", 1, screen.projectManager)
+CreateToDo("Lonely", "At the Top", "Yesterday", 2, screen.projectManager)
+screen.renderProjects();
+screen.renderToDos(screen.projectManager.defaultProject);

@@ -119,7 +119,6 @@ class ScreenController {
             toDoPreviewDiv.classList.add("toDoPreview");
             toDoPreviewDiv.textContent = `${toDo.title} ${toDo.dueDate}`;
             this.containerDiv.appendChild(toDoPreviewDiv)
-            console.log(toDo)
         })
     }
 }

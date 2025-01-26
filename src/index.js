@@ -121,6 +121,10 @@ class ScreenController {
             this.containerDiv.appendChild(toDoPreviewDiv)
         })
     }
+
+    renderToDo(toDo) {
+        
+    }
 }
 
 const screen = new ScreenController()

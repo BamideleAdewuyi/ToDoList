@@ -105,6 +105,7 @@ class ScreenController {
     }
 
     renderProjects() {
+        this.containerDiv.textContent = "";
         this.projectManager.projects.forEach((project) => {
             const projectDiv = document.createElement("div");
             projectDiv.classList.add("project");
@@ -114,6 +115,7 @@ class ScreenController {
     }
 
     renderToDos(project) {
+        this.containerDiv.textContent = "";
         project.toDos.forEach((toDo) => {
             const toDoPreviewDiv = document.createElement("div");
             toDoPreviewDiv.classList.add("toDoPreview");
@@ -123,6 +125,7 @@ class ScreenController {
     }
 
     renderToDo(toDo) {
+        this.containerDiv.textContent = "";
         const toDoDiv = document.createElement("div");
         toDoDiv.classList.add("toDo");
         toDoDiv.textContent = `${toDo.title} ${toDo.description} ${toDo.dueDate} ${toDo.priority}`;

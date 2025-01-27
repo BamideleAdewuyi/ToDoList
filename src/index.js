@@ -101,35 +101,35 @@ function DeleteToDo(project, toDo) {
 class ScreenController {
     constructor() {
         this.projectManager = new Projects;
-        this.containerDiv = document.querySelector(".container");
+        this.tasksDiv = document.querySelector(".tasks");
     }
 
     renderProjects() {
-        this.containerDiv.textContent = "";
+        this.tasksDiv.textContent = "";
         this.projectManager.projects.forEach((project) => {
             const projectDiv = document.createElement("div");
             projectDiv.classList.add("project");
             projectDiv.textContent = project.name
-            this.containerDiv.appendChild(projectDiv);
+            this.tasksDiv.appendChild(projectDiv);
         })
     }
 
     renderToDos(project) {
-        this.containerDiv.textContent = "";
+        this.tasksDiv.textContent = "";
         project.toDos.forEach((toDo) => {
             const toDoPreviewDiv = document.createElement("div");
             toDoPreviewDiv.classList.add("toDoPreview");
             toDoPreviewDiv.textContent = `${toDo.title} ${toDo.dueDate}`;
-            this.containerDiv.appendChild(toDoPreviewDiv)
+            this.tasksDiv.appendChild(toDoPreviewDiv)
         })
     }
 
     renderToDo(toDo) {
-        this.containerDiv.textContent = "";
+        this.tasksDiv.textContent = "";
         const toDoDiv = document.createElement("div");
         toDoDiv.classList.add("toDo");
         toDoDiv.textContent = `${toDo.title} ${toDo.description} ${toDo.dueDate} ${toDo.priority}`;
-        this.containerDiv.appendChild(toDoDiv);
+        this.tasksDiv.appendChild(toDoDiv);
     }
 }
 

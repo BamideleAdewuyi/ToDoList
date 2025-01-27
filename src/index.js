@@ -1,3 +1,5 @@
+import "./style.css";
+
 // Non-screen section
 class Projects {
     constructor() {

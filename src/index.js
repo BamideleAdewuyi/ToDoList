@@ -106,6 +106,23 @@ class ScreenController {
         this.tasksDiv = document.querySelector(".tasks");
     }
 
+    openToDoForm() {
+        const toDoForm = document.createElement("dialog");
+        toDoForm.innerHTML = `<form action="#" class="newToDoForm">
+                <label for="title">Title</label>
+                <input type="text" placeholder="Enter title" name="title" id="title" required>
+                <label for="description">Description</label>
+                <input type="text" placeholder="Enter description" name="description" id="description" required>
+                <label for="date">Date</label>
+                <input type="date" name="date" id="date" required>
+                <label for="priority">Priority</label>
+                <input type="number" placeholder="Enter priority" name="priority" id="priority" required>
+                <button class="submit" id="submitButton">Submit</button>
+                <button type="button" class="closeButton" autofocus>Close</button>
+            </form>`
+        return toDoForm;
+    }
+
     renderProjects() {
         this.tasksDiv.textContent = "";
         this.projectManager.projects.forEach((project) => {

@@ -135,13 +135,19 @@ class ScreenController {
     }
 }
 
-const screen = new ScreenController()
-const cookToDo = CreateToDo("Cook", "Cooking time", "Today", 1, screen.projectManager)
-const lonesomeToDo = CreateToDo("Lonely", "At the Top", "Yesterday", 2, screen.projectManager)
-screen.renderProjects();
-screen.renderToDos(screen.projectManager.defaultProject);
-const natureProject = screen.projectManager.createProject("NATURE");
-screen.renderProjects()
-MoveToDo(cookToDo, screen.projectManager.defaultProject, natureProject);
-screen.renderToDos(natureProject)
-screen.renderToDo(cookToDo)
+// const screen = new ScreenController()
+// const cookToDo = CreateToDo("Cook", "Cooking time", "Today", 1, screen.projectManager)
+// const lonesomeToDo = CreateToDo("Lonely", "At the Top", "Yesterday", 2, screen.projectManager)
+// screen.renderProjects();
+// screen.renderToDos(screen.projectManager.defaultProject);
+// const natureProject = screen.projectManager.createProject("NATURE");
+// screen.renderProjects()
+// MoveToDo(cookToDo, screen.projectManager.defaultProject, natureProject);
+// screen.renderToDos(natureProject)
+// screen.renderToDo(cookToDo)
+
+class Session {
+    constructor() {
+        this.addTaskButton = document.querySelector(".addTask");
+    }
+}

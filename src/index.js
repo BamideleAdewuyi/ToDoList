@@ -107,8 +107,8 @@ class ScreenController {
     }
 
     openToDoForm() {
-        const toDoForm = document.createElement("dialog");
-        toDoForm.innerHTML = `<form action="#" class="newToDoForm">
+        const dialog = document.createElement("dialog");
+        dialog.innerHTML = `<form action="#" class="newToDoForm">
                 <label for="title">Title</label>
                 <input type="text" placeholder="Enter title" name="title" id="title" required>
                 <label for="description">Description</label>
@@ -120,7 +120,7 @@ class ScreenController {
                 <button class="submit" id="submitButton">Submit</button>
                 <button type="button" class="closeButton" autofocus>Close</button>
             </form>`
-        return toDoForm;
+        return dialog;
     }
 
     renderProjects() {

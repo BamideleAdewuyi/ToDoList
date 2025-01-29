@@ -64,18 +64,20 @@ class ToDo {
         this.complete = false;
         this.project = "Default";
     }
+
+    tickOff() {
+        this.complete = true;
+        return;
+    }
 }
 
 const projectManager = new ProjectManager();
 const testProject = projectManager.createProject("testProject");
 projectManager.addProject(testProject)
-const testToDo = testProject.createToDo("testToDo", "Testing", "Tomorrow", "High");
-projectManager.defaultProject.addToDo(testToDo)
-projectManager.defaultProject.deleteToDo(testToDo)
-testProject.addToDo(testToDo)
-console.log("BEFORE MOVE:")
-console.log(projectManager.projects)
-projectManager.moveToDo(testToDo, testProject, projectManager.defaultProject)
-console.log("AFTER MOVE:")
-console.log(projectManager.projects)
-
+const testProject2 = projectManager.createProject("testProject2");
+projectManager.addProject(testProject2);
+const testToDo = testProject.createToDo("TestToDo", "Testing", "Today", "High");
+testProject.addToDo(testToDo);
+projectManager.moveToDo(testToDo, testProject, testProject2);
+testToDo.tickOff()
+console.log(projectManager)

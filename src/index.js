@@ -25,6 +25,16 @@ class Project {
     }
 }
 
+class ToDo {
+    constructor(title, description, dueDate, priority) {
+        this.title = title;
+        this.description = description;
+        this.dueDate = dueDate;
+        this.priority = priority;
+        this.project = "Default";
+    }
+}
+
 const projectManager = new ProjectManager();
 
 console.log(projectManager.projects)

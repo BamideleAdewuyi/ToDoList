@@ -42,6 +42,7 @@ class ToDo {
         this.description = description;
         this.dueDate = dueDate;
         this.priority = priority;
+        this.complete = false;
         this.project = "Default";
     }
 }

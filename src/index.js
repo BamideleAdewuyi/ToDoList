@@ -16,6 +16,12 @@ class ProjectManager {
         this.projects[project.title] = project.toDos;
         return;
     }
+
+    moveToDo(toDo, oldProject, newProject) {
+        oldProject.deleteToDo(toDo);
+        newProject.addToDo(toDo);
+        return;
+    }
 }
 
 class Project {
@@ -67,4 +73,9 @@ const testToDo = testProject.createToDo("testToDo", "Testing", "Tomorrow", "High
 projectManager.defaultProject.addToDo(testToDo)
 projectManager.defaultProject.deleteToDo(testToDo)
 testProject.addToDo(testToDo)
+console.log("BEFORE MOVE:")
 console.log(projectManager.projects)
+projectManager.moveToDo(testToDo, testProject, projectManager.defaultProject)
+console.log("AFTER MOVE:")
+console.log(projectManager.projects)
+

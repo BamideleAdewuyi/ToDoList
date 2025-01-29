@@ -3,7 +3,7 @@ import "./style.css";
 class ProjectManager {
     constructor() {
         this.projects = {};
-        this.defaultProject = new Project("Default");
+        this.defaultProject = this.createProject("Default");
         this.addProject(this.defaultProject);
     }
 
@@ -23,6 +23,11 @@ class Project {
         this.title = title;
         this.toDos = [];
     }
+
+    addToDo(toDo) {
+        this.toDos.push(toDo);
+        return;
+    }
 }
 
 class ToDo {
@@ -36,5 +41,6 @@ class ToDo {
 }
 
 const projectManager = new ProjectManager();
-
+const testProject = projectManager.createProject("testProject");
+projectManager.addProject(testProject)
 console.log(projectManager.projects)

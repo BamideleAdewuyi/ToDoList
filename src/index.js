@@ -13,7 +13,7 @@ class ProjectManager {
     }
 
     addProject(project) {
-        this.projects[project.title] = [];
+        this.projects[project.title] = project.toDos;
         return;
     }
 }
@@ -24,8 +24,14 @@ class Project {
         this.toDos = [];
     }
 
+    createToDo(title, description, dueDate, priority) {
+        const newToDo = new ToDo(title, description, dueDate, priority)
+        return newToDo;
+    }
+
     addToDo(toDo) {
         this.toDos.push(toDo);
+        toDo.project = this.title;
         return;
     }
 }
@@ -43,4 +49,6 @@ class ToDo {
 const projectManager = new ProjectManager();
 const testProject = projectManager.createProject("testProject");
 projectManager.addProject(testProject)
+const testToDo = testProject.createToDo("testToDo", "Testing", "Tomorrow", "High");
+testProject.addToDo(testToDo)
 console.log(projectManager.projects)

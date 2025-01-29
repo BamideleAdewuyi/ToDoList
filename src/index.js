@@ -34,6 +34,19 @@ class Project {
         toDo.project = this.title;
         return;
     }
+
+    removeItemOnce(arr, value) {
+        const index = arr.indexOf(value);
+        if (index > -1) {
+            arr.splice(index, 1);
+        }
+        return arr;
+    }
+
+    deleteToDo(toDo) {
+        this.toDos = this.removeItemOnce(this.toDos, toDo);
+        return this.toDos;
+    }
 }
 
 class ToDo {
@@ -51,5 +64,7 @@ const projectManager = new ProjectManager();
 const testProject = projectManager.createProject("testProject");
 projectManager.addProject(testProject)
 const testToDo = testProject.createToDo("testToDo", "Testing", "Tomorrow", "High");
+projectManager.defaultProject.addToDo(testToDo)
+projectManager.defaultProject.deleteToDo(testToDo)
 testProject.addToDo(testToDo)
 console.log(projectManager.projects)

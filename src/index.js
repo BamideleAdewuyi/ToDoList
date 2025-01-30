@@ -84,18 +84,42 @@ class ToDo {
 
 class ScreenController {
     constructor() {
-        this.projectManger = new ProjectManager();
+        this.projectManager = new ProjectManager();
         this.addToDoButton = document.querySelector(".addToDo")
-        this.openToDoForm(this.addToDoButton);
+        this.newToDoForm = document.querySelector(".newToDoForm");
+        this.openToDoForm();
+        this.submitToDoForm();
     }
 
-    openToDoForm(button) {
-        const addToDoButton = button;
+    openToDoForm() {
+        const addToDoButton = this.addToDoButton;
         addToDoButton.addEventListener("click", () => {
             const newToDoDialog = document.querySelector(".newToDoDialog");
             newToDoDialog.showModal();
         })
         return;
+    };
+
+    closeToDoForm() {
+        
+    }
+
+    submitToDoForm() {
+        const newToDoForm = this.newToDoForm;
+        newToDoForm.addEventListener("submit", (e) => {
+            e.preventDefault();
+            const title = document.getElementById("title").value;
+            const description = document.getElementById("description").value;
+            const dueDate = document.getElementById("dueDate").value;
+            const priority = document.getElementById("priority").value;
+            const newToDo = this.projectManager.defaultProject.createToDo(title, description, dueDate, priority);
+            this.projectManager.defaultProject.addToDo(newToDo);
+            document.getElementById("title").value = "";
+            document.getElementById("description").value = "";
+            document.getElementById("dueDate").value = "";
+            document.getElementById("priority").value = "";
+        })
+        console.log(this.projectManager);
     }
 }
 

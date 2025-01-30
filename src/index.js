@@ -81,6 +81,7 @@ class ScreenController {
         this.addProjectButton = document.querySelector(".createProject");
         this.closeNewProjectFormButton = document.querySelector(".closeProjectForm")
         this.newProjectDialog = document.querySelector(".newProjectDialog");
+        this.createProjectForm = document.querySelector(".createProjectForm");
         this.openToDoForm();
         this.submitToDoForm();
         this.closeToDoForm();
@@ -104,7 +105,14 @@ class ScreenController {
     }
 
     submitProjectForm() {
-        
+        this.createProjectForm.addEventListener("submit", (e) => {
+            e.preventDefault()
+            const newProjectTitle = document.getElementById("projectTitle").value;
+            const newProject = this.projectManager.createProject(newProjectTitle);
+            this.projectManager.addProject(newProject);
+            console.log(this.projectManager);
+            this.newProjectDialog.close();
+        })
         return;
     }
 

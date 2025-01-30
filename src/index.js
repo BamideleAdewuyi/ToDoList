@@ -85,8 +85,10 @@ class ToDo {
 class ScreenController {
     constructor() {
         this.projectManager = new ProjectManager();
-        this.addToDoButton = document.querySelector(".addToDo")
+        this.addToDoButton = document.querySelector(".addToDo");
+        this.newToDoDialog = document.querySelector(".newToDoDialog");
         this.newToDoForm = document.querySelector(".newToDoForm");
+        this.closeToDoButton = document.querySelector(".closeToDoFormButton");
         this.openToDoForm();
         this.submitToDoForm();
     }
@@ -94,8 +96,7 @@ class ScreenController {
     openToDoForm() {
         const addToDoButton = this.addToDoButton;
         addToDoButton.addEventListener("click", () => {
-            const newToDoDialog = document.querySelector(".newToDoDialog");
-            newToDoDialog.showModal();
+            this.newToDoDialog.showModal();
         })
         return;
     };

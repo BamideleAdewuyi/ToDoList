@@ -125,8 +125,9 @@ class ScreenController {
             const title = document.getElementById("title").value;
             const description = document.getElementById("description").value;
             const dueDate = document.getElementById("dueDate").value;
+            const project = document.getElementById("project").value;
             const priority = document.querySelector('input[name="priority"]:checked').value;
-            const newToDo = this.projectManager.defaultProject.createToDo(title, description, dueDate, priority);
+            const newToDo = this.projectManager.defaultProject.createToDo(title, description, dueDate, priority, project);
             this.projectManager.defaultProject.addToDo(newToDo);
             this.resetToDoForm()
             this.newToDoDialog.close();

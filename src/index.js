@@ -101,7 +101,9 @@ class ScreenController {
     };
 
     closeToDoForm() {
-        
+        const newToDoDialog = document.querySelector(".newToDoDialog");
+        newToDoDialog.close();
+        return;
     }
 
     submitToDoForm() {
@@ -118,6 +120,7 @@ class ScreenController {
             document.getElementById("description").value = "";
             document.getElementById("dueDate").value = "";
             document.getElementById("priority").value = "";
+            this.closeToDoForm();
         })
         console.log(this.projectManager);
     }

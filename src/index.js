@@ -108,6 +108,16 @@ class ScreenController {
         return;
     }
 
+    resetToDoForm() {
+        document.getElementById("title").value = "";
+        document.getElementById("description").value = "";
+        document.getElementById("dueDate").value = "";
+        const priorityRadios = document.querySelectorAll('input[name="priority"]')
+        priorityRadios.forEach(radio => {
+            radio.checked = false;
+        })
+    }
+
     submitToDoForm() {
         const newToDoForm = this.newToDoForm;
         newToDoForm.addEventListener("submit", (e) => {
@@ -118,10 +128,7 @@ class ScreenController {
             const priority = document.querySelector('input[name="priority"]:checked').value;
             const newToDo = this.projectManager.defaultProject.createToDo(title, description, dueDate, priority);
             this.projectManager.defaultProject.addToDo(newToDo);
-            document.getElementById("title").value = "";
-            document.getElementById("description").value = "";
-            document.getElementById("dueDate").value = "";
-            document.querySelector('input[name="priority"]').value = "";
+            this.resetToDoForm()
             this.newToDoDialog.close();
             console.log(this.projectManager);
         })

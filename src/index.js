@@ -102,6 +102,11 @@ class ScreenController {
         return;
     }
 
+    submitProjectForm() {
+        
+        return;
+    }
+
     openToDoForm() {
         this.addToDoButton.addEventListener("click", () => {
             this.newToDoDialog.showModal();
@@ -128,8 +133,7 @@ class ScreenController {
     }
 
     submitToDoForm() {
-        const newToDoForm = this.newToDoForm;
-        newToDoForm.addEventListener("submit", (e) => {
+        this.newToDoForm.addEventListener("submit", (e) => {
             e.preventDefault();
             const title = document.getElementById("title").value;
             const description = document.getElementById("description").value;

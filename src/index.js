@@ -94,8 +94,7 @@ class ScreenController {
     }
 
     openToDoForm() {
-        const addToDoButton = this.addToDoButton;
-        addToDoButton.addEventListener("click", () => {
+        this.addToDoButton.addEventListener("click", () => {
             this.newToDoDialog.showModal();
         })
         return;

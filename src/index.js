@@ -71,17 +71,6 @@ class ToDo {
     }
 }
 
-// const projectManager = new ProjectManager();
-// const testProject = projectManager.createProject("testProject");
-// projectManager.addProject(testProject)
-// const testProject2 = projectManager.createProject("testProject2");
-// projectManager.addProject(testProject2);
-// const testToDo = testProject.createToDo("TestToDo", "Testing", "Today", "High");
-// testProject.addToDo(testToDo);
-// projectManager.moveToDo(testToDo, testProject, testProject2);
-// testToDo.tickOff()
-// console.log(projectManager)
-
 class ScreenController {
     constructor() {
         this.projectManager = new ProjectManager();
@@ -129,11 +118,11 @@ class ScreenController {
             const priority = document.querySelector('input[name="priority"]:checked').value;
             const newToDo = this.projectManager.defaultProject.createToDo(title, description, dueDate, priority, project);
             this.projectManager.defaultProject.addToDo(newToDo);
-            this.resetToDoForm()
+            this.resetToDoForm();
             this.newToDoDialog.close();
             console.log(this.projectManager);
         })
     }
 }
 
-const screenController = new ScreenController()
+const screenController = new ScreenController();

@@ -102,8 +102,7 @@ class ScreenController {
     };
 
     closeToDoForm() {
-        const newToDoDialog = document.querySelector(".newToDoDialog");
-        newToDoDialog.close();
+        this.newToDoDialog.close();
         return;
     }
 

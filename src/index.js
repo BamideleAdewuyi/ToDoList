@@ -91,6 +91,7 @@ class ScreenController {
         this.closeToDoButton = document.querySelector(".closeToDoFormButton");
         this.openToDoForm();
         this.submitToDoForm();
+        this.closeToDoForm();
     }
 
     openToDoForm() {
@@ -101,7 +102,9 @@ class ScreenController {
     };
 
     closeToDoForm() {
-        this.newToDoDialog.close();
+        this.closeToDoButton.addEventListener("click", () => {
+            this.newToDoDialog.close();
+        })
         return;
     }
 
@@ -119,7 +122,7 @@ class ScreenController {
             document.getElementById("description").value = "";
             document.getElementById("dueDate").value = "";
             document.getElementById("priority").value = "";
-            this.closeToDoForm();
+            this.newToDoDialog.close();
         })
         console.log(this.projectManager);
     }

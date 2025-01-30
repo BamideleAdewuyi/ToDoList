@@ -77,7 +77,7 @@ class ScreenController {
         this.addToDoButton = document.querySelector(".addToDo");
         this.newToDoDialog = document.querySelector(".newToDoDialog");
         this.newToDoForm = document.querySelector(".newToDoForm");
-        this.closeToDoButton = document.querySelector(".closeToDoFormButton");
+        this.closeToDoFormButton = document.querySelector(".closeToDoFormButton");
         this.addProjectButton = document.querySelector(".createProject")
         this.newProjectDialog = document.querySelector(".newProjectDialog");
         this.openToDoForm();
@@ -101,7 +101,7 @@ class ScreenController {
     };
 
     closeToDoForm() {
-        this.closeToDoButton.addEventListener("click", () => {
+        this.closeToDoFormButton.addEventListener("click", () => {
             this.newToDoDialog.close();
         })
         return;

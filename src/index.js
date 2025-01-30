@@ -78,9 +78,19 @@ class ScreenController {
         this.newToDoDialog = document.querySelector(".newToDoDialog");
         this.newToDoForm = document.querySelector(".newToDoForm");
         this.closeToDoButton = document.querySelector(".closeToDoFormButton");
+        this.addProjectButton = document.querySelector(".createProject")
+        this.newProjectDialog = document.querySelector(".newProjectDialog");
         this.openToDoForm();
         this.submitToDoForm();
         this.closeToDoForm();
+        this.openProjectForm();
+    }
+
+    openProjectForm() {
+        this.addProjectButton.addEventListener("click", () => {
+            this.newProjectDialog.showModal();
+        })
+        return;
     }
 
     openToDoForm() {
@@ -105,6 +115,7 @@ class ScreenController {
         priorityRadios.forEach(radio => {
             radio.checked = false;
         })
+        return;
     }
 
     submitToDoForm() {
@@ -122,6 +133,7 @@ class ScreenController {
             this.newToDoDialog.close();
             console.log(this.projectManager);
         })
+        return;
     }
 }
 

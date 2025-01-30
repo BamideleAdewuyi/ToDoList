@@ -19,7 +19,28 @@
                 <h1 class="heading">Much To Do</h1>
             </div>
             <div class="taskArea">
-                
+                <dialog class="newToDoDialog">
+                    <form action="#" class="newToDoForm">
+                        <h3>New ToDo</h3>
+                        <label for="title">Title</label>
+                        <input type="text" placeholder="Title" name="title" id="title" required>
+                        <label for="description">Description</label>
+                        <input type="text" placeholder="Description" name="description" id="description" required>
+                        <label for="dueDate">Due Date</label>
+                        <input type="date" name="dueDate" id="dueDate" required>
+                        <div class="selectPriority">
+                            <p>Select priority</p>
+                            <label for="low">Low</label>
+                            <input type="radio" id="low" name="priority" value="low"/>
+                            <label for="medium">Medium</label>
+                            <input type="radio" id="medium" name="priority" value="medium"/>
+                            <label for="high">High</label>
+                            <input type="radio" id="high" name="priority" value="high"/>
+                        </div>
+                        <button class="submit" id="startGameButton">Start Game</button>
+                        <button type="button" class="closeButton" autofocus>Close</button>
+                    </form>
+                </dialog>
             </div>
         </div>
     </div>

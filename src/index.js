@@ -86,6 +86,7 @@ class ScreenController {
         this.closeToDoForm();
         this.openProjectForm();
         this.closeProjectForm();
+        this.submitProjectForm();
     }
 
     openProjectForm() {

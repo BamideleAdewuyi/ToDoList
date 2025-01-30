@@ -71,19 +71,32 @@ class ToDo {
     }
 }
 
-const projectManager = new ProjectManager();
-const testProject = projectManager.createProject("testProject");
-projectManager.addProject(testProject)
-const testProject2 = projectManager.createProject("testProject2");
-projectManager.addProject(testProject2);
-const testToDo = testProject.createToDo("TestToDo", "Testing", "Today", "High");
-testProject.addToDo(testToDo);
-projectManager.moveToDo(testToDo, testProject, testProject2);
-testToDo.tickOff()
-console.log(projectManager)
+// const projectManager = new ProjectManager();
+// const testProject = projectManager.createProject("testProject");
+// projectManager.addProject(testProject)
+// const testProject2 = projectManager.createProject("testProject2");
+// projectManager.addProject(testProject2);
+// const testToDo = testProject.createToDo("TestToDo", "Testing", "Today", "High");
+// testProject.addToDo(testToDo);
+// projectManager.moveToDo(testToDo, testProject, testProject2);
+// testToDo.tickOff()
+// console.log(projectManager)
 
 class ScreenController {
     constructor() {
-        
+        this.projectManger = new ProjectManager();
+        this.addToDoButton = document.querySelector(".addToDo")
+        this.openToDoForm(this.addToDoButton);
+    }
+
+    openToDoForm(button) {
+        const addToDoButton = button;
+        addToDoButton.addEventListener("click", () => {
+            const newToDoDialog = document.querySelector(".newToDoDialog");
+            newToDoDialog.showModal();
+        })
+        return;
     }
 }
+
+const screenController = new ScreenController()

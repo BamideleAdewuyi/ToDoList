@@ -104,6 +104,11 @@ class ScreenController {
         return;
     }
 
+    resetProjectForm() {
+        document.getElementById("projectTitle").value = "";
+        return;
+    }
+
     submitProjectForm() {
         this.createProjectForm.addEventListener("submit", (e) => {
             e.preventDefault()
@@ -111,6 +116,7 @@ class ScreenController {
             const newProject = this.projectManager.createProject(newProjectTitle);
             this.projectManager.addProject(newProject);
             console.log(this.projectManager);
+            this.resetProjectForm();
             this.newProjectDialog.close();
         })
         return;
@@ -157,6 +163,8 @@ class ScreenController {
         })
         return;
     }
+
+
 }
 
 const screenController = new ScreenController();

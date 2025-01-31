@@ -79,7 +79,7 @@ class ScreenController {
         this.newToDoForm = document.querySelector(".newToDoForm");
         this.closeToDoFormButton = document.querySelector(".closeToDoFormButton");
         this.addProjectButton = document.querySelector(".createProject");
-        this.closeNewProjectFormButton = document.querySelector(".closeProjectForm")
+        this.closeNewProjectFormButton = document.querySelector(".closeProjectForm");
         this.newProjectDialog = document.querySelector(".newProjectDialog");
         this.createProjectForm = document.querySelector(".createProjectForm");
         this.openToDoForm();
@@ -93,26 +93,26 @@ class ScreenController {
     openProjectForm() {
         this.addProjectButton.addEventListener("click", () => {
             this.newProjectDialog.showModal();
-        })
+        });
         return;
     }
 
     closeProjectForm() {
         this.closeNewProjectFormButton.addEventListener("click", () => {
             this.newProjectDialog.close();
-        })
+        });
         return;
     }
 
     resetProjectForm() {
-        document.getElementById("projectTitle").value = "";
+        document.getElementById("newProjectTitle").value = "";
         return;
     }
 
     submitProjectForm() {
         this.createProjectForm.addEventListener("submit", (e) => {
             e.preventDefault()
-            const newProjectTitle = document.getElementById("projectTitle").value;
+            const newProjectTitle = document.getElementById("newProjectTitle").value;
             const newProject = this.projectManager.createProject(newProjectTitle);
             this.projectManager.addProject(newProject);
             console.log(this.projectManager);

@@ -164,6 +164,11 @@ class ScreenController {
         return;
     }
 
+    renderProjects() {
+        
+        return;
+    }
+
 
 }
 

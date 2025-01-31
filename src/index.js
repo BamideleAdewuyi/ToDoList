@@ -13,7 +13,7 @@ class ProjectManager {
     }
 
     addProject(project) {
-        this.projects[project.title] = project.toDos;
+        this.projects[project.title] = project;
         return;
     }
 
@@ -155,7 +155,7 @@ class ScreenController {
             const title = document.getElementById("title").value;
             const description = document.getElementById("description").value;
             const dueDate = document.getElementById("dueDate").value;
-            const project = document.getElementById("project").value;
+            const project = document.querySelector("#project").value;
             const priority = document.querySelector('input[name="priority"]:checked').value;
             const newToDo = this.projectManager.defaultProject.createToDo(title, description, dueDate, priority, project);
             this.projectManager.defaultProject.addToDo(newToDo);
@@ -173,6 +173,7 @@ class ScreenController {
         for (const [key, value] of Object.entries(projects)) {
             const newProject = document.createElement("option");
             newProject.value = key;
+            newProject.id = key;
             newProject.innerHTML = key;
             select.appendChild(newProject);
         }

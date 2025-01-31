@@ -88,6 +88,7 @@ class ScreenController {
         this.openProjectForm();
         this.closeProjectForm();
         this.submitProjectForm();
+        this.refreshProjects();
     }
 
     openProjectForm() {
@@ -118,6 +119,7 @@ class ScreenController {
             console.log(this.projectManager);
             this.resetProjectForm();
             this.newProjectDialog.close();
+            this.refreshProjects();
         })
         return;
     }
@@ -164,8 +166,16 @@ class ScreenController {
         return;
     }
 
-    renderProjects() {
-        
+    refreshProjects() {
+        const select = document.getElementById("project");
+        select.innerHTML = "";
+        const projects = this.projectManager.projects;
+        for (const [key, value] of Object.entries(projects)) {
+            const newProject = document.createElement("option");
+            newProject.value = key;
+            newProject.innerHTML = key;
+            select.appendChild(newProject);
+        }
         return;
     }
 

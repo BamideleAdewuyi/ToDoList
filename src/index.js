@@ -95,6 +95,7 @@ class ScreenController {
         this.closeProjectForm();
         this.submitProjectForm();
         this.refreshProjectSelection();
+        this.addProjectsToSidebar();
     }
 
     openProjectForm() {
@@ -126,6 +127,7 @@ class ScreenController {
             this.resetProjectForm();
             this.newProjectDialog.close();
             this.refreshProjectSelection();
+            this.addProjectsToSidebar();
         })
         return;
     }

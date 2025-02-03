@@ -187,7 +187,7 @@ class ScreenController {
     }
 
     addProjectsToSidebar() {
-        const projectList = document.getElementById("projectList");
+        const projectList = document.querySelector(".projectList");
         projectList.innerHTML = "";
         const projects = this.projectManager.projects;
         for (const project of projects) {

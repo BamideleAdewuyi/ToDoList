@@ -94,7 +94,7 @@ class ScreenController {
         this.openProjectForm();
         this.closeProjectForm();
         this.submitProjectForm();
-        this.refreshProjects();
+        this.refreshProjectSelection();
     }
 
     openProjectForm() {
@@ -125,7 +125,7 @@ class ScreenController {
             console.log(this.projectManager);
             this.resetProjectForm();
             this.newProjectDialog.close();
-            this.refreshProjects();
+            this.refreshProjectSelection();
         })
         return;
     }
@@ -171,7 +171,7 @@ class ScreenController {
         return;
     }
 
-    refreshProjects() {
+    refreshProjectSelection() {
         const select = document.getElementById("project");
         select.innerHTML = "";
         const projects = this.projectManager.projects;

@@ -161,14 +161,9 @@ class ScreenController {
             const title = document.getElementById("title").value;
             const description = document.getElementById("description").value;
             const dueDate = document.getElementById("dueDate").value;
-            // const project = document.querySelector("#project").value;
             const project = this.projectManager.findProject(document.getElementById("project").value)
             const priority = document.querySelector('input[name="priority"]:checked').value;
-            // const testProject = this.projectManager.createProject("FENEERIO")
-            // this.projectManager.addProject(testProject)
-            console.log(project)
             this.projectManager.createToDo(title, description, dueDate, priority, project);
-            // this.projectManager.addToDo(newToDo, project);
             this.resetToDoForm();
             this.newToDoDialog.close();
             console.log(this.projectManager);
@@ -183,48 +178,13 @@ class ScreenController {
         for (const project of projects) {
             const newProject = document.createElement("option");
             newProject.value = project.title;
-            // newProject.id = project.title;
             newProject.innerHTML = project.title;
             select.appendChild(newProject);
         }
         return;
-        // for (const [key, value] of Object.entries(projects)) {
-        //     const newProject = document.createElement("option");
-        //     newProject.value = key;
-        //     newProject.id = key;
-        //     newProject.innerHTML = key;
-        //     select.appendChild(newProject);
-        // }
-
-
-
-        // const select = document.getElementById("project");
-        // select.innerHTML = ""; // Clear existing options
-        // const projects = this.projectManager.projects; // Get all projects
-        // for (const project of projects) {
-        //     const newProject = document.createElement("option");
-        //     newProject.value = project.title; // Set the value to the project title
-        //     newProject.id = project.title; // Assign an ID to the option
-        //     newProject.innerHTML = project.title; // Set the inner text (displayed text) to the project title
-        //     select.appendChild(newProject); // Add the option to the select element
-        // }
-        // return;
-        // return;
     }
 
 
 }
 
 const screenController = new ScreenController();
-
-// const projectManager = new ProjectManager();
-// const fennerio = projectManager.createProject("Fennerio")
-// projectManager.addProject(fennerio)
-// const fennerioToDo = projectManager.createToDo("FENNERIO", "PEGGY", "TODAY", "HIGH", fennerio)
-// console.log(projectManager)
-// console.log(projectManager.projects.find((project => project.title === "Fennerio")))
-// const theOneIWant = projectManager.findProject("Fennerio")
-// console.log(theOneIWant)
-
-
-console.log(screenController.projectManager.findProject(document.querySelector("#project").value))

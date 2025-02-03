@@ -184,6 +184,20 @@ class ScreenController {
         return;
     }
 
+    addProjectsToSidebar() {
+        const projectList = document.getElementById("projectList");
+        projectList.innerHTML = "";
+        const projects = this.projectManager.projects;
+        for (const project of projects) {
+            const newProject = document.createElement("li");
+            newProject.id = project.title;
+            newProject.innerHTML = project.title;
+            newProject.classList.add("sidebarProject");
+            projectList.appendChild(newProject);
+        }
+        return;
+    }
+    
 
 }
 

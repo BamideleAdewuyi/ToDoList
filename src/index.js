@@ -2,7 +2,7 @@ import "./style.css";
 
 class ProjectManager {
     constructor() {
-        this.projects = {};
+        this.projects = [];
         this.defaultProject = this.createProject("Default");
         this.addProject(this.defaultProject);
     }
@@ -12,8 +12,13 @@ class ProjectManager {
         return newProject;
     }
 
+    findProject(projectTitle) {
+        const project = this.projects.find((obj) => obj.title === projectTitle);
+        return project;
+    }
+
     addProject(project) {
-        this.projects[project.title] = project;
+        this.projects.push(project)
         return;
     }
 
@@ -22,22 +27,16 @@ class ProjectManager {
         newProject.addToDo(toDo);
         return;
     }
-}
 
-class Project {
-    constructor(title) {
-        this.title = title;
-        this.toDos = [];
-    }
-
-    createToDo(title, description, dueDate, priority) {
-        const newToDo = new ToDo(title, description, dueDate, priority)
+    createToDo(title, description, dueDate, priority, project) {
+        const newToDo = new ToDo(title, description, dueDate, priority, project)
+        this.addToDo(newToDo, project)
         return newToDo;
     }
 
-    addToDo(toDo) {
-        this.toDos.push(toDo);
-        toDo.project = this.title;
+    addToDo(toDo, toThisproject) {
+        toThisproject.toDos.push(toDo);
+        toDo.project = toThisproject.title;
         return;
     }
 
@@ -48,10 +47,17 @@ class Project {
         }
         return arr;
     }
+    
+    deleteToDo(toDo, fromThisProject) {
+        fromThisProject.toDos = fromThisProject.removeItemOnce(fromThisProject.toDos, toDo);
+        return fromThisProject.toDos;
+    }
+}
 
-    deleteToDo(toDo) {
-        this.toDos = this.removeItemOnce(this.toDos, toDo);
-        return this.toDos;
+class Project {
+    constructor(title) {
+        this.title = title;
+        this.toDos = [];
     }
 }
 
@@ -155,10 +161,14 @@ class ScreenController {
             const title = document.getElementById("title").value;
             const description = document.getElementById("description").value;
             const dueDate = document.getElementById("dueDate").value;
-            const project = document.querySelector("#project").value;
+            // const project = document.querySelector("#project").value;
+            const project = this.projectManager.findProject(document.getElementById("project").value)
             const priority = document.querySelector('input[name="priority"]:checked').value;
-            const newToDo = this.projectManager.defaultProject.createToDo(title, description, dueDate, priority, project);
-            this.projectManager.defaultProject.addToDo(newToDo);
+            // const testProject = this.projectManager.createProject("FENEERIO")
+            // this.projectManager.addProject(testProject)
+            console.log(project)
+            this.projectManager.createToDo(title, description, dueDate, priority, project);
+            // this.projectManager.addToDo(newToDo, project);
             this.resetToDoForm();
             this.newToDoDialog.close();
             console.log(this.projectManager);
@@ -170,17 +180,51 @@ class ScreenController {
         const select = document.getElementById("project");
         select.innerHTML = "";
         const projects = this.projectManager.projects;
-        for (const [key, value] of Object.entries(projects)) {
+        for (const project of projects) {
             const newProject = document.createElement("option");
-            newProject.value = key;
-            newProject.id = key;
-            newProject.innerHTML = key;
+            newProject.value = project.title;
+            // newProject.id = project.title;
+            newProject.innerHTML = project.title;
             select.appendChild(newProject);
         }
         return;
+        // for (const [key, value] of Object.entries(projects)) {
+        //     const newProject = document.createElement("option");
+        //     newProject.value = key;
+        //     newProject.id = key;
+        //     newProject.innerHTML = key;
+        //     select.appendChild(newProject);
+        // }
+
+
+
+        // const select = document.getElementById("project");
+        // select.innerHTML = ""; // Clear existing options
+        // const projects = this.projectManager.projects; // Get all projects
+        // for (const project of projects) {
+        //     const newProject = document.createElement("option");
+        //     newProject.value = project.title; // Set the value to the project title
+        //     newProject.id = project.title; // Assign an ID to the option
+        //     newProject.innerHTML = project.title; // Set the inner text (displayed text) to the project title
+        //     select.appendChild(newProject); // Add the option to the select element
+        // }
+        // return;
+        // return;
     }
 
 
 }
 
 const screenController = new ScreenController();
+
+// const projectManager = new ProjectManager();
+// const fennerio = projectManager.createProject("Fennerio")
+// projectManager.addProject(fennerio)
+// const fennerioToDo = projectManager.createToDo("FENNERIO", "PEGGY", "TODAY", "HIGH", fennerio)
+// console.log(projectManager)
+// console.log(projectManager.projects.find((project => project.title === "Fennerio")))
+// const theOneIWant = projectManager.findProject("Fennerio")
+// console.log(theOneIWant)
+
+
+console.log(screenController.projectManager.findProject(document.querySelector("#project").value))

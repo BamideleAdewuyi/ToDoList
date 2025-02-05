@@ -97,7 +97,6 @@ class ScreenController {
         this.submitProjectForm();
         this.refreshProjectSelection();
         this.addProjectsToSidebar();
-        this.displayProject();
     }
 
     openProjectForm() {
@@ -198,12 +197,29 @@ class ScreenController {
             newProject.innerHTML = project.title;
             newProject.classList.add("sidebarProject");
             projectList.appendChild(newProject);
+            this.displayProject(newProject);
         }
         return;
     }
 
-    displayProject() {
-        
+    displayProject(newProject) {
+        newProject.addEventListener("click", () => {
+            const taskArea = document.querySelector(".taskArea");
+            const toDos = this.projectManager.findProject(newProject.id).toDos;
+            taskArea.innerHTML = "";
+            console.log(newProject);
+            console.log(toDos)
+            for (const toDo of toDos) {
+                const toDoPreview = document.createElement("div");
+                console.log(toDo)
+                toDoPreview.id = toDo.title;
+                toDoPreview.classList.add("toDoPreview");
+                toDoPreview.innerHTML = `<p class="toDoPreviewTitle">Title: ${toDo.title}</p>
+                                        <p class="toDoPreviewDueDate"> Due Date: ${toDo.dueDate}</p>`;
+                taskArea.appendChild(toDoPreview);
+            }
+            
+        })
     }
     
 

@@ -207,6 +207,7 @@ class ScreenController {
             const taskArea = document.querySelector(".taskArea");
             const toDos = this.projectManager.findProject(newProject.id).toDos;
             taskArea.innerHTML = "";
+            taskArea.innerHTML = `<h4 class="toDoPreviewHeading">${newProject.id}</h4>`;
             console.log(newProject);
             console.log(toDos)
             for (const toDo of toDos) {
@@ -214,6 +215,7 @@ class ScreenController {
                 console.log(toDo)
                 toDoPreview.id = toDo.title;
                 toDoPreview.classList.add("toDoPreview");
+                toDoPreview.classList.add(`${toDo.priority}`);
                 toDoPreview.innerHTML = `<p class="toDoPreviewTitle">Title: ${toDo.title}</p>
                                         <p class="toDoPreviewDueDate"> Due Date: ${toDo.dueDate}</p>`;
                 taskArea.appendChild(toDoPreview);

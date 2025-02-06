@@ -230,8 +230,16 @@ class ScreenController {
     }
 
     // Expand todos
-    expandToDo(toDoPreview) {
-        
+    expandToDo(projectTitle, toDoPreview) {
+        toDoPreview.addEventListener("click", () => {
+            const toDo = this.projectManager.findToDo(this.projectManager.findProject(projectTitle), toDoPreview.id);
+            const toDoElement = document.createElement("dialog");
+            const taskArea = document.querySelector(".taskArea");
+            toDoElement.classList.add("fullToDo");
+            toDoElement.textContent = `TESTING ONETWO`;
+            toDoElement.showModal();
+            taskArea.appendChild(toDoElement);
+        })
     }
 
     // Delete Todo

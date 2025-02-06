@@ -17,6 +17,11 @@ class ProjectManager {
         return project;
     }
 
+    findToDo(project, toDoTitle) {
+        
+        return;
+    }
+
     addProject(project) {
         this.projects.push(project)
         return;
@@ -223,6 +228,15 @@ class ScreenController {
             
         })
     }
+
+    // Expand todos
+    expandToDo(toDo) {
+
+    }
+
+    // Delete Todo
+    // move todo
+    //delete project
     
 
 }

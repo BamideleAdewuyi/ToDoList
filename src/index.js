@@ -18,8 +18,8 @@ class ProjectManager {
     }
 
     findToDo(project, toDoTitle) {
-        
-        return;
+        const toDo = project.toDos.find((obj) => obj.title === toDoTitle);
+        return toDo;
     }
 
     addProject(project) {
@@ -230,8 +230,8 @@ class ScreenController {
     }
 
     // Expand todos
-    expandToDo(toDo) {
-
+    expandToDo(toDoPreview) {
+        
     }
 
     // Delete Todo
@@ -242,3 +242,12 @@ class ScreenController {
 }
 
 const screenController = new ScreenController();
+
+const projectManager = new ProjectManager();
+const testProject = projectManager.createProject("TestPro");
+projectManager.addProject(testProject);
+const testToDo = projectManager.createToDo("TESTER", "TESTER", "TODAY", "HIGH", projectManager.findProject("TestPro"));
+const anotherTestToDo = projectManager.createToDo("MMMM", "HMMM", "YESTERYEAR", "LOW", projectManager.findProject("TestPro"))
+
+const result = projectManager.findToDo(projectManager.findProject("TestPro"), "TESTER");
+console.log(result)

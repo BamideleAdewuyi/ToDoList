@@ -213,17 +213,19 @@ class ScreenController {
             const toDos = this.projectManager.findProject(newProject.id).toDos;
             taskArea.innerHTML = "";
             taskArea.innerHTML = `<h4 class="toDoPreviewHeading">${newProject.id}</h4>`;
-            console.log(newProject);
-            console.log(toDos)
+            // console.log(newProject);
+            // console.log(toDos)
             for (const toDo of toDos) {
                 const toDoPreview = document.createElement("div");
-                console.log(toDo)
+                // console.log(toDo)
                 toDoPreview.id = toDo.title;
                 toDoPreview.classList.add("toDoPreview");
                 toDoPreview.classList.add(`${toDo.priority}`);
                 toDoPreview.innerHTML = `<p class="toDoPreviewTitle">Title: ${toDo.title}</p>
                                         <p class="toDoPreviewDueDate"> Due Date: ${toDo.dueDate}</p>`;
                 taskArea.appendChild(toDoPreview);
+                console.log("Project ID: "+ newProject.id);
+                this.expandToDo(newProject.id, toDoPreview);
             }
             
         })
@@ -233,11 +235,11 @@ class ScreenController {
     expandToDo(projectTitle, toDoPreview) {
         toDoPreview.addEventListener("click", () => {
             const toDo = this.projectManager.findToDo(this.projectManager.findProject(projectTitle), toDoPreview.id);
-            const toDoElement = document.createElement("dialog");
+            const toDoElement = document.createElement("div");
             const taskArea = document.querySelector(".taskArea");
             toDoElement.classList.add("fullToDo");
             toDoElement.textContent = `TESTING ONETWO`;
-            toDoElement.showModal();
+            // toDoElement.showModal();
             taskArea.appendChild(toDoElement);
         })
     }

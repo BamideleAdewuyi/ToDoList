@@ -248,6 +248,7 @@ class ScreenController {
             toDoPriority.textContent = toDo.priority;
             const deleteButton = document.createElement("button");
             deleteButton.textContent = "Delete";
+            this.deleteParent(deleteButton, toDoElement);
             toDoElement.append(toDoTitle, toDoDescription, toDoDueDate, toDoPriority, deleteButton);
             taskArea.innerHTML = "";
             taskArea.appendChild(toDoElement);
@@ -255,7 +256,9 @@ class ScreenController {
     }
 
     deleteParent(button, element) {
-        
+        button.addEventListener("click", () => {
+            element.remove();
+        })
     }
 
     // Delete Todo

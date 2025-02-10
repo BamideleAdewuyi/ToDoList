@@ -246,10 +246,9 @@ class ScreenController {
             toDoDueDate.textContent = toDo.dueDate;
             const toDoPriority = document.createElement("p");
             toDoPriority.textContent = toDo.priority;
-            toDoElement.append(toDoTitle, toDoDescription, toDoDueDate, toDoPriority);
-            // toDoElement.append(toDoTitle);
-            // toDoElement.textContent = `TESTING ONETWO`;
-            // toDoElement.showModal();
+            const deleteButton = document.createElement("button");
+            deleteButton.textContent = "Delete";
+            toDoElement.append(toDoTitle, toDoDescription, toDoDueDate, toDoPriority, deleteButton);
             taskArea.innerHTML = "";
             taskArea.appendChild(toDoElement);
         })

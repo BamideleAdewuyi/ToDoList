@@ -239,12 +239,18 @@ class ScreenController {
             const taskArea = document.querySelector(".taskArea");
             toDoElement.classList.add("fullToDo");
             const toDoTitle = document.createElement("h3");
-            const toDoDescription = document.createElement("h4");
+            toDoTitle.textContent = toDo.title;
+            const toDoDescription = document.createElement("p");
+            toDoDescription.textContent = toDo.description;
             const toDoDueDate = document.createElement("p");
+            toDoDueDate.textContent = toDo.dueDate;
             const toDoPriority = document.createElement("p");
-            
-            toDoElement.textContent = `TESTING ONETWO`;
+            toDoPriority.textContent = toDo.priority;
+            toDoElement.append(toDoTitle, toDoDescription, toDoDueDate, toDoPriority);
+            // toDoElement.append(toDoTitle);
+            // toDoElement.textContent = `TESTING ONETWO`;
             // toDoElement.showModal();
+            taskArea.innerHTML = "";
             taskArea.appendChild(toDoElement);
         })
     }

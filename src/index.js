@@ -238,6 +238,11 @@ class ScreenController {
             const toDoElement = document.createElement("div");
             const taskArea = document.querySelector(".taskArea");
             toDoElement.classList.add("fullToDo");
+            const toDoTitle = document.createElement("h3");
+            const toDoDescription = document.createElement("h4");
+            const toDoDueDate = document.createElement("p");
+            const toDoPriority = document.createElement("p");
+            
             toDoElement.textContent = `TESTING ONETWO`;
             // toDoElement.showModal();
             taskArea.appendChild(toDoElement);
@@ -253,11 +258,11 @@ class ScreenController {
 
 const screenController = new ScreenController();
 
-const projectManager = new ProjectManager();
-const testProject = projectManager.createProject("TestPro");
-projectManager.addProject(testProject);
-const testToDo = projectManager.createToDo("TESTER", "TESTER", "TODAY", "HIGH", projectManager.findProject("TestPro"));
-const anotherTestToDo = projectManager.createToDo("MMMM", "HMMM", "YESTERYEAR", "LOW", projectManager.findProject("TestPro"))
+// const projectManager = new ProjectManager();
+// const testProject = projectManager.createProject("TestPro");
+// projectManager.addProject(testProject);
+// const testToDo = projectManager.createToDo("TESTER", "TESTER", "TODAY", "HIGH", projectManager.findProject("TestPro"));
+// const anotherTestToDo = projectManager.createToDo("MMMM", "HMMM", "YESTERYEAR", "LOW", projectManager.findProject("TestPro"))
 
-const result = projectManager.findToDo(projectManager.findProject("TestPro"), "TESTER");
-console.log(result)
+// const result = projectManager.findToDo(projectManager.findProject("TestPro"), "TESTER");
+// console.log(result)

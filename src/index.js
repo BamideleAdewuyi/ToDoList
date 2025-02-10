@@ -234,7 +234,8 @@ class ScreenController {
     // Expand todos
     expandToDo(projectTitle, toDoPreview) {
         toDoPreview.addEventListener("click", () => {
-            const toDo = this.projectManager.findToDo(this.projectManager.findProject(projectTitle), toDoPreview.id);
+            const project = this.projectManager.findProject(projectTitle);
+            const toDo = this.projectManager.findToDo(project, toDoPreview.id);
             const toDoElement = document.createElement("div");
             const taskArea = document.querySelector(".taskArea");
             toDoElement.classList.add("fullToDo");

@@ -54,7 +54,7 @@ class ProjectManager {
     }
     
     deleteToDo(toDo, fromThisProject) {
-        fromThisProject.toDos = fromThisProject.removeItemOnce(fromThisProject.toDos, toDo);
+        fromThisProject.toDos = this.removeItemOnce(fromThisProject.toDos, toDo);
         return fromThisProject.toDos;
     }
 }
@@ -249,20 +249,20 @@ class ScreenController {
             toDoPriority.textContent = toDo.priority;
             const deleteButton = document.createElement("button");
             deleteButton.textContent = "Delete";
-            this.deleteParentAndToDo(deleteButton, toDoElement);
+            this.deleteParentAndToDo(deleteButton, toDoElement, toDo, project);
             toDoElement.append(toDoTitle, toDoDescription, toDoDueDate, toDoPriority, deleteButton);
             taskArea.innerHTML = "";
             taskArea.appendChild(toDoElement);
         })
     }
 
-    deleteParentAndToDo(button, element) {
+    deleteParentAndToDo(button, element, toDo, project) {
         button.addEventListener("click", () => {
             element.remove();
+            this.projectManager.deleteToDo(toDo, project);
         })
     }
 
-    // Delete Todo
     // move todo
     //delete project
     
@@ -279,3 +279,6 @@ const screenController = new ScreenController();
 
 // const result = projectManager.findToDo(projectManager.findProject("TestPro"), "TESTER");
 // console.log(result)
+// console.log(testProject)
+// projectManager.deleteToDo(testToDo, testProject)
+// console.log(testProject)

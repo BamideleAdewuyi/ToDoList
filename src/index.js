@@ -254,6 +254,10 @@ class ScreenController {
         })
     }
 
+    deleteParent(button, element) {
+        
+    }
+
     // Delete Todo
     // move todo
     //delete project

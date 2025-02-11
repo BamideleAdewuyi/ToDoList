@@ -202,33 +202,35 @@ class ScreenController {
             newProject.innerHTML = project.title;
             newProject.classList.add("sidebarProject");
             projectList.appendChild(newProject);
-            this.displayProject(newProject);
+            // this.displayProject(newProject);
+            newProject.addEventListener("click", () => {
+                this.displayProject(newProject);
+            })
         }
         return;
     }
 
-    displayProject(newProject) {
-        newProject.addEventListener("click", () => {
-            const taskArea = document.querySelector(".taskArea");
-            const toDos = this.projectManager.findProject(newProject.id).toDos;
-            taskArea.innerHTML = "";
-            taskArea.innerHTML = `<h4 class="toDoPreviewHeading">${newProject.id}</h4>`;
-            // console.log(newProject);
-            // console.log(toDos)
-            for (const toDo of toDos) {
-                const toDoPreview = document.createElement("div");
-                // console.log(toDo)
-                toDoPreview.id = toDo.title;
-                toDoPreview.classList.add("toDoPreview");
-                toDoPreview.classList.add(`${toDo.priority}`);
-                toDoPreview.innerHTML = `<p class="toDoPreviewTitle">Title: ${toDo.title}</p>
-                                        <p class="toDoPreviewDueDate"> Due Date: ${toDo.dueDate}</p>`;
-                taskArea.appendChild(toDoPreview);
-                console.log("Project ID: "+ newProject.id);
-                this.expandToDo(newProject.id, toDoPreview);
-            }
+    displayProject(project) {
+        const taskArea = document.querySelector(".taskArea");
+        const toDos = this.projectManager.findProject(project.id).toDos;
+        taskArea.innerHTML = "";
+        taskArea.innerHTML = `<h4 class="toDoPreviewHeading">${project.id}</h4>`;
+        // console.log(newProject);
+        // console.log(toDos)
+        for (const toDo of toDos) {
+            const toDoPreview = document.createElement("div");
+            // console.log(toDo)
+            toDoPreview.id = toDo.title;
+            toDoPreview.classList.add("toDoPreview");
+            toDoPreview.classList.add(`${toDo.priority}`);
+            toDoPreview.innerHTML = `<p class="toDoPreviewTitle">Title: ${toDo.title}</p>
+                                    <p class="toDoPreviewDueDate"> Due Date: ${toDo.dueDate}</p>`;
+            taskArea.appendChild(toDoPreview);
+            console.log("Project ID: "+ project.id);
+            this.expandToDo(project.id, toDoPreview);
+        }
             
-        })
+        
     }
 
     // Expand todos

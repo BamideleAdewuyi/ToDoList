@@ -227,7 +227,10 @@ class ScreenController {
                                     <p class="toDoPreviewDueDate"> Due Date: ${toDo.dueDate}</p>`;
             taskArea.appendChild(toDoPreview);
             console.log("Project ID: "+ project.id);
-            this.expandToDo(project.id, toDoPreview);
+            // this.expandToDo(project.id, toDoPreview);
+            toDoPreview.addEventListener("click", () => {
+                this.expandToDo(project.id, toDoPreview);
+            });
         }
             
         
@@ -235,27 +238,25 @@ class ScreenController {
 
     // Expand todos
     expandToDo(projectTitle, toDoPreview) {
-        toDoPreview.addEventListener("click", () => {
-            const project = this.projectManager.findProject(projectTitle);
-            const toDo = this.projectManager.findToDo(project, toDoPreview.id);
-            const toDoElement = document.createElement("div");
-            const taskArea = document.querySelector(".taskArea");
-            toDoElement.classList.add("fullToDo");
-            const toDoTitle = document.createElement("h3");
-            toDoTitle.textContent = toDo.title;
-            const toDoDescription = document.createElement("p");
-            toDoDescription.textContent = toDo.description;
-            const toDoDueDate = document.createElement("p");
-            toDoDueDate.textContent = toDo.dueDate;
-            const toDoPriority = document.createElement("p");
-            toDoPriority.textContent = toDo.priority;
-            const deleteButton = document.createElement("button");
-            deleteButton.textContent = "Delete";
-            this.deleteParentAndToDo(deleteButton, toDoElement, toDo, project);
-            toDoElement.append(toDoTitle, toDoDescription, toDoDueDate, toDoPriority, deleteButton);
-            taskArea.innerHTML = "";
-            taskArea.appendChild(toDoElement);
-        })
+        const project = this.projectManager.findProject(projectTitle);
+        const toDo = this.projectManager.findToDo(project, toDoPreview.id);
+        const toDoElement = document.createElement("div");
+        const taskArea = document.querySelector(".taskArea");
+        toDoElement.classList.add("fullToDo");
+        const toDoTitle = document.createElement("h3");
+        toDoTitle.textContent = toDo.title;
+        const toDoDescription = document.createElement("p");
+        toDoDescription.textContent = toDo.description;
+        const toDoDueDate = document.createElement("p");
+        toDoDueDate.textContent = toDo.dueDate;
+        const toDoPriority = document.createElement("p");
+        toDoPriority.textContent = toDo.priority;
+        const deleteButton = document.createElement("button");
+        deleteButton.textContent = "Delete";
+        this.deleteParentAndToDo(deleteButton, toDoElement, toDo, project);
+        toDoElement.append(toDoTitle, toDoDescription, toDoDueDate, toDoPriority, deleteButton);
+        taskArea.innerHTML = "";
+        taskArea.appendChild(toDoElement);
     }
 
     deleteParentAndToDo(button, element, toDo, project) {

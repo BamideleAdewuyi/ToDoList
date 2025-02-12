@@ -174,9 +174,7 @@ class ScreenController {
             this.projectManager.createToDo(title, description, dueDate, priority, project);
             this.resetToDoForm();
             this.newToDoDialog.close();
-            // console.log(this.projectManager);
             this.displayProject(project.title);
-            // console.log("submitToDoForm project.title: " + project.title)
         })
         return;
     }
@@ -204,7 +202,6 @@ class ScreenController {
             newProject.innerHTML = project.title;
             newProject.classList.add("sidebarProject");
             projectList.appendChild(newProject);
-            // this.displayProject(newProject);
             newProject.addEventListener("click", () => {
                 this.displayProject(newProject.id);
             })
@@ -217,12 +214,9 @@ class ScreenController {
         const toDos = this.projectManager.findProject(project).toDos;
         taskArea.innerHTML = "";
         taskArea.innerHTML = `<h4 class="toDoPreviewHeading">${project}</h4>`;
-        console.log("displayProject project.id: " + project);
-        console.log("displayProject toDos:" + toDos)
-        // console.log(toDos)
+
         for (const toDo of toDos) {
             const toDoPreview = document.createElement("div");
-            // console.log(toDo)
             toDoPreview.id = toDo.title;
             toDoPreview.classList.add("toDoPreview");
             toDoPreview.classList.add(`${toDo.priority}`);
@@ -230,7 +224,6 @@ class ScreenController {
                                     <p class="toDoPreviewDueDate"> Due Date: ${toDo.dueDate}</p>`;
             taskArea.appendChild(toDoPreview);
             console.log("Project ID: "+ project);
-            // this.expandToDo(project.id, toDoPreview);
             toDoPreview.addEventListener("click", () => {
                 this.expandToDo(project, toDoPreview);
             });

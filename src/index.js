@@ -243,14 +243,18 @@ class ScreenController {
         toDoTitle.textContent = toDo.title;
         const toDoDescription = document.createElement("p");
         toDoDescription.textContent = toDo.description;
+        const toDoProject = document.createElement("p");
+        toDoProject.textContent = toDo.project;
         const toDoDueDate = document.createElement("p");
         toDoDueDate.textContent = toDo.dueDate;
         const toDoPriority = document.createElement("p");
         toDoPriority.textContent = toDo.priority;
         const deleteButton = document.createElement("button");
         deleteButton.textContent = "Delete";
+        const editButton = document.createElement("button");
+        editButton.textContent = "Edit";
         this.deleteParentAndToDo(deleteButton, toDoElement, toDo, project);
-        toDoElement.append(toDoTitle, toDoDescription, toDoDueDate, toDoPriority, deleteButton);
+        toDoElement.append(toDoTitle, toDoDescription, toDoProject, toDoDueDate, toDoPriority, deleteButton, editButton);
         taskArea.innerHTML = "";
         taskArea.appendChild(toDoElement);
     }

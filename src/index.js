@@ -183,7 +183,13 @@ class ScreenController {
 
     openToDoForm(toDoForm) {
         toDoForm.showModal();
+        return;
     };
+
+    closeToDoForm(toDoForm) {
+        toDoForm.close();
+        return;
+    }
 
     addToDoEvent() {
         const toDoForm = this.createToDoForm();

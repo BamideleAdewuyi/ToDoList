@@ -181,8 +181,9 @@ class ScreenController {
     };
 
     openToDoForm() {
-
-    }
+        toDoForm = document.querySelector(".toDoFormDialog");
+        toDoForm.showModal();
+    };
 
     // openToDoForm() {
     //     this.addToDoButton.addEventListener("click", () => {

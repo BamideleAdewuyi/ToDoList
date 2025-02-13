@@ -189,6 +189,10 @@ class ScreenController {
     closeToDoForm(toDoForm) {
         toDoForm.close();
         return;
+    };
+
+    closeToDoEvent() {
+        
     }
 
     addToDoEvent() {

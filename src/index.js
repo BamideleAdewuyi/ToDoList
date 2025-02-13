@@ -179,6 +179,10 @@ class ScreenController {
         return;
     };
 
+    openToDoForm() {
+        
+    }
+
     // openToDoForm() {
     //     this.addToDoButton.addEventListener("click", () => {
     //         this.newToDoDialog.showModal();

@@ -33,8 +33,12 @@ class ProjectManager {
         return;
     }
 
-    editToDo(toDo) {
-        
+    editToDo(toDo, title, description, dueDate, priority, project) {
+        toDo.title = title;
+        toDo.description = description;
+        toDo.dueDate = dueDate;
+        toDo.priority = priority;
+        toDo.project = project;
         return;
     }
 
@@ -281,12 +285,9 @@ const screenController = new ScreenController();
 
 // const projectManager = new ProjectManager();
 // const testProject = projectManager.createProject("TestPro");
+// const otherTestProject= projectManager.createProject("OTHERCHANGETEST")
 // projectManager.addProject(testProject);
+// projectManager.addProject(otherTestProject)
 // const testToDo = projectManager.createToDo("TESTER", "TESTER", "TODAY", "HIGH", projectManager.findProject("TestPro"));
-// const anotherTestToDo = projectManager.createToDo("MMMM", "HMMM", "YESTERYEAR", "LOW", projectManager.findProject("TestPro"))
-
-// const result = projectManager.findToDo(projectManager.findProject("TestPro"), "TESTER");
-// console.log(result)
 // console.log(testProject)
-// projectManager.deleteToDo(testToDo, testProject)
-// console.log(testProject)
+// projectManager.editToDo(testToDo, "CHANGED", "CHANGED", "CHANGED", "CHANGED", otherTestProject)

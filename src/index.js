@@ -151,6 +151,7 @@ class ScreenController {
     createToDoForm() {
         const mainArea = document.querySelector(".mainArea");
         const toDoForm = document.createElement("dialog");
+        toDoForm.classList.add("toDoFormDialog")
         toDoForm.innerHTML = `<form action="#" class="newToDoForm">
                         <h3>New ToDo</h3>
                         <label for="title">Title</label>
@@ -180,7 +181,7 @@ class ScreenController {
     };
 
     openToDoForm() {
-        
+
     }
 
     // openToDoForm() {

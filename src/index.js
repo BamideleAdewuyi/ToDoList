@@ -108,6 +108,7 @@ class ScreenController {
         // this.closeToDoForm();
         // this.createToDoForm();
         this.addToDoEvent();
+        this.closeToDoEvent()
         this.openProjectForm();
         this.closeProjectForm();
         this.submitProjectForm();
@@ -192,8 +193,11 @@ class ScreenController {
     };
 
     closeToDoEvent() {
-        
-    }
+        const toDoForm = this.createToDoForm();
+        this.closeToDoFormButton.addEventListener("click", () => {
+            this.closeToDoForm(toDoForm);
+        })
+    };
 
     addToDoEvent() {
         const toDoForm = this.createToDoForm();

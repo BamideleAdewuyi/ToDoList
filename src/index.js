@@ -103,9 +103,9 @@ class ScreenController {
         this.newProjectDialog = document.querySelector(".newProjectDialog");
         this.createProjectForm = document.querySelector(".createProjectForm");
         this.projectButton = document.querySelector(".sidebarProject");
-        this.openToDoForm();
-        this.submitToDoForm();
-        this.closeToDoForm();
+        // this.openToDoForm();
+        // this.submitToDoForm();
+        // this.closeToDoForm();
         this.openProjectForm();
         this.closeProjectForm();
         this.submitProjectForm();
@@ -148,22 +148,49 @@ class ScreenController {
     }
 
     createToDoForm() {
-        
-    }
-
-    openToDoForm() {
-        this.addToDoButton.addEventListener("click", () => {
-            this.newToDoDialog.showModal();
-        })
+        const mainArea = document.querySelector(".mainArea");
+        const toDoForm = document.createElement("dialog");
+        toDoForm.innerHTML = `<form action="#" class="newToDoForm">
+                        <h3>New ToDo</h3>
+                        <label for="title">Title</label>
+                        <input type="text" placeholder="Title" name="title" id="title" required>
+                        <label for="description">Description</label>
+                        <input type="text" placeholder="Description" name="description" id="description" required>
+                        <label for="dueDate">Due Date</label>
+                        <input type="date" name="dueDate" id="dueDate" required>
+                        <div class="selectPriority">
+                            <p>Select priority</p>
+                            <label for="low">Low</label>
+                            <input type="radio" id="low" name="priority" value="low" required/>
+                            <label for="medium">Medium</label>
+                            <input type="radio" id="medium" name="priority" value="medium"/>
+                            <label for="high">High</label>
+                            <input type="radio" id="high" name="priority" value="high"/>
+                        </div>
+                        <label for="project">Select project</label>
+                        <select name="project" id="project">
+                            
+                        </select>
+                        <button class="submit" id="createToDo">Add ToDo</button>
+                        <button type="button" class="closeToDoFormButton" autofocus>Close</button>
+                    </form>`
+        mainArea.append(toDoForm);
         return;
     };
 
-    closeToDoForm() {
-        this.closeToDoFormButton.addEventListener("click", () => {
-            this.newToDoDialog.close();
-        })
-        return;
-    }
+    // openToDoForm() {
+    //     this.addToDoButton.addEventListener("click", () => {
+    //         this.newToDoDialog.showModal();
+    //     })
+    //     return;
+    // };
+
+    // closeToDoForm() {
+    //     this.closeToDoFormButton.addEventListener("click", () => {
+    //         this.newToDoDialog.close();
+    //     })
+    //     return;
+    // }
 
     resetToDoForm() {
         document.getElementById("title").value = "";

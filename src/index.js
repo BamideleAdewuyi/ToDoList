@@ -182,6 +182,19 @@ class ScreenController {
         return toDoForm;
     };
 
+    refreshProjectSelection() {
+        const select = document.getElementById("project");
+        select.innerHTML = "";
+        const projects = this.projectManager.projects;
+        for (const project of projects) {
+            const newProject = document.createElement("option");
+            newProject.value = project.title;
+            newProject.innerHTML = project.title;
+            select.appendChild(newProject);
+        }
+        return;
+    }
+    
     openToDoForm(toDoForm) {
         toDoForm.showModal();
         return;
@@ -244,18 +257,7 @@ class ScreenController {
         return;
     }
 
-    refreshProjectSelection() {
-        const select = document.getElementById("project");
-        select.innerHTML = "";
-        const projects = this.projectManager.projects;
-        for (const project of projects) {
-            const newProject = document.createElement("option");
-            newProject.value = project.title;
-            newProject.innerHTML = project.title;
-            select.appendChild(newProject);
-        }
-        return;
-    }
+
 
     addProjectsToSidebar() {
         const projectList = document.querySelector(".projectList");

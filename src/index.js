@@ -111,7 +111,7 @@ class ScreenController {
         this.openProjectForm();
         this.closeProjectForm();
         this.submitProjectForm();
-        this.refreshProjectSelection();
+        // this.refreshProjectSelection();
         this.addProjectsToSidebar();
     }
 
@@ -243,7 +243,7 @@ class ScreenController {
         return;
     }
 
-    refreshProjectSelection() {
+    refreshProjectSelection(toDoForm) {
         const select = document.getElementById("project");
         select.innerHTML = "";
         const projects = this.projectManager.projects;

@@ -177,6 +177,7 @@ class ScreenController {
                         <button class="submit" id="createToDo">Add ToDo</button>
                         <button type="button" id="closeToDoFormButton" autofocus>Close</button>
                     </form>`
+        
         mainArea.append(toDoForm);
         return toDoForm;
     };
@@ -243,7 +244,7 @@ class ScreenController {
         return;
     }
 
-    refreshProjectSelection(toDoForm) {
+    refreshProjectSelection() {
         const select = document.getElementById("project");
         select.innerHTML = "";
         const projects = this.projectManager.projects;

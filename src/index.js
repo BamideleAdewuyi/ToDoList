@@ -110,7 +110,7 @@ class ScreenController {
         this.addToDoEvents();
         this.openProjectForm();
         this.closeProjectForm();
-        this.submitProjectForm();
+        // this.submitProjectForm();
         // this.refreshProjectSelection();
         this.addProjectsToSidebar();
     }
@@ -177,7 +177,8 @@ class ScreenController {
                         <button class="submit" id="createToDo">Add ToDo</button>
                         <button type="button" id="closeToDoFormButton" autofocus>Close</button>
                     </form>`
-        this.refreshProjectSelection();
+                    
+        // this.refreshProjectSelection()
         mainArea.append(toDoForm);
         return toDoForm;
     };
@@ -208,6 +209,7 @@ class ScreenController {
     addToDoEvents() {
         const toDoForm = this.createToDoForm();
         this.addToDoButton.addEventListener("click", () => {
+            this.refreshProjectSelection()
             this.openToDoForm(toDoForm);
         })
         const closeToDoButton = document.querySelector("#closeToDoFormButton")

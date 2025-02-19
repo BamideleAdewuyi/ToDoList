@@ -178,7 +178,6 @@ class ScreenController {
                         <button type="button" id="closeToDoFormButton" autofocus>Close</button>
                     </form>`
                     
-        // this.refreshProjectSelection()
         mainArea.append(toDoForm);
         return toDoForm;
     };

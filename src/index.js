@@ -218,20 +218,6 @@ class ScreenController {
         })
     };
 
-    // openToDoForm() {
-    //     this.addToDoButton.addEventListener("click", () => {
-    //         this.newToDoDialog.showModal();
-    //     })
-    //     return;
-    // };
-
-    // closeToDoForm() {
-    //     this.closeToDoFormButton.addEventListener("click", () => {
-    //         this.newToDoDialog.close();
-    //     })
-    //     return;
-    // }
-
     resetToDoForm() {
         document.getElementById("title").value = "";
         document.getElementById("description").value = "";

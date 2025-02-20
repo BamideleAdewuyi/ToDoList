@@ -95,9 +95,9 @@ class ScreenController {
     constructor() {
         this.projectManager = new ProjectManager();
         this.addToDoButton = document.querySelector(".addToDo");
-        this.newToDoDialog = document.querySelector(".newToDoDialog");
-        this.newToDoForm = document.querySelector(".newToDoForm");
-        this.closeToDoFormButton = document.querySelector(".closeToDoFormButton");
+        // this.newToDoDialog = document.querySelector(".newToDoDialog");
+        // this.newToDoForm = document.querySelector(".newToDoForm");
+        // this.closeToDoFormButton = document.querySelector(".closeToDoFormButton");
         this.addProjectButton = document.querySelector(".createProject");
         this.closeNewProjectFormButton = document.querySelector(".closeProjectForm");
         this.newProjectDialog = document.querySelector(".newProjectDialog");
@@ -228,7 +228,7 @@ class ScreenController {
         return;
     }
 
-    submitToDoForm() {
+    submitToDoForm(toDoForm) {
         this.newToDoForm.addEventListener("submit", (e) => {
             e.preventDefault();
             const title = document.getElementById("title").value;
@@ -243,6 +243,22 @@ class ScreenController {
         })
         return;
     }
+
+    // submitToDoForm() {
+    //     this.newToDoForm.addEventListener("submit", (e) => {
+    //         e.preventDefault();
+    //         const title = document.getElementById("title").value;
+    //         const description = document.getElementById("description").value;
+    //         const dueDate = document.getElementById("dueDate").value;
+    //         const project = this.projectManager.findProject(document.getElementById("project").value)
+    //         const priority = document.querySelector('input[name="priority"]:checked').value;
+    //         this.projectManager.createToDo(title, description, dueDate, priority, project);
+    //         this.resetToDoForm();
+    //         this.newToDoDialog.close();
+    //         this.displayProject(project.title);
+    //     })
+    //     return;
+    // }
 
 
 

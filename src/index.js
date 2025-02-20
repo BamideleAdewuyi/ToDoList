@@ -213,7 +213,7 @@ class ScreenController {
         })
         const closeToDoButton = document.querySelector("#closeToDoFormButton")
         closeToDoButton.addEventListener("click", () => {
-            toDoForm.close();
+            this.closeToDoForm(toDoForm)
         })
         const submitToDoButton = document.querySelector("#createToDo");
         submitToDoButton.addEventListener("click", () => {

@@ -229,7 +229,7 @@ class ScreenController {
     }
 
     submitToDoForm(toDoForm) {
-        this.newToDoForm.addEventListener("submit", (e) => {
+        toDoForm.addEventListener("submit", (e) => {
             e.preventDefault();
             const title = document.getElementById("title").value;
             const description = document.getElementById("description").value;
@@ -238,7 +238,8 @@ class ScreenController {
             const priority = document.querySelector('input[name="priority"]:checked').value;
             this.projectManager.createToDo(title, description, dueDate, priority, project);
             this.resetToDoForm();
-            this.newToDoDialog.close();
+            // this.newToDoDialog.close();
+            this.closeToDoForm(toDoForm);
             this.displayProject(project.title);
         })
         return;

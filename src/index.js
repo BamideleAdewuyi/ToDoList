@@ -115,40 +115,6 @@ class ScreenController {
         this.addProjectsToSidebar();
     }
 
-    openProjectForm() {
-        this.addProjectButton.addEventListener("click", () => {
-            this.newProjectDialog.showModal();
-        });
-        return;
-    }
-
-    closeProjectForm() {
-        this.closeNewProjectFormButton.addEventListener("click", () => {
-            this.newProjectDialog.close();
-        });
-        return;
-    }
-
-    resetProjectForm() {
-        document.getElementById("newProjectTitle").value = "";
-        return;
-    }
-
-    submitProjectForm() {
-        this.createProjectForm.addEventListener("submit", (e) => {
-            e.preventDefault()
-            const newProjectTitle = document.getElementById("newProjectTitle").value;
-            const newProject = this.projectManager.createProject(newProjectTitle);
-            this.projectManager.addProject(newProject);
-            console.log(this.projectManager);
-            this.resetProjectForm();
-            this.newProjectDialog.close();
-            this.refreshProjectSelection();
-            this.addProjectsToSidebar();
-        })
-        return;
-    }
-
     createToDoForm() {
         const mainArea = document.querySelector(".mainArea");
         const toDoForm = document.createElement("dialog");
@@ -181,19 +147,6 @@ class ScreenController {
         mainArea.append(toDoForm);
         return toDoForm;
     };
-
-    refreshProjectSelection() {
-        const select = document.getElementById("project");
-        select.innerHTML = "";
-        const projects = this.projectManager.projects;
-        for (const project of projects) {
-            const newProject = document.createElement("option");
-            newProject.value = project.title;
-            newProject.innerHTML = project.title;
-            select.appendChild(newProject);
-        }
-        return;
-    }
     
     openToDoForm(toDoForm) {
         toDoForm.showModal();
@@ -249,6 +202,56 @@ class ScreenController {
         })
         return;
     }
+
+    openProjectForm() {
+        this.addProjectButton.addEventListener("click", () => {
+            this.newProjectDialog.showModal();
+        });
+        return;
+    }
+
+    closeProjectForm() {
+        this.closeNewProjectFormButton.addEventListener("click", () => {
+            this.newProjectDialog.close();
+        });
+        return;
+    }
+
+    resetProjectForm() {
+        document.getElementById("newProjectTitle").value = "";
+        return;
+    }
+
+    submitProjectForm() {
+        this.createProjectForm.addEventListener("submit", (e) => {
+            e.preventDefault()
+            const newProjectTitle = document.getElementById("newProjectTitle").value;
+            const newProject = this.projectManager.createProject(newProjectTitle);
+            this.projectManager.addProject(newProject);
+            console.log(this.projectManager);
+            this.resetProjectForm();
+            this.newProjectDialog.close();
+            this.refreshProjectSelection();
+            this.addProjectsToSidebar();
+        })
+        return;
+    }
+
+
+    refreshProjectSelection() {
+        const select = document.getElementById("project");
+        select.innerHTML = "";
+        const projects = this.projectManager.projects;
+        for (const project of projects) {
+            const newProject = document.createElement("option");
+            newProject.value = project.title;
+            newProject.innerHTML = project.title;
+            select.appendChild(newProject);
+        }
+        return;
+    }
+    
+    
 
     addProjectsToSidebar() {
         const projectList = document.querySelector(".projectList");

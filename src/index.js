@@ -95,18 +95,11 @@ class ScreenController {
     constructor() {
         this.projectManager = new ProjectManager();
         this.addToDoButton = document.querySelector(".addToDo");
-        // this.newToDoDialog = document.querySelector(".newToDoDialog");
-        // this.newToDoForm = document.querySelector(".newToDoForm");
-        // this.closeToDoFormButton = document.querySelector(".closeToDoFormButton");
         this.addProjectButton = document.querySelector(".createProject");
         this.closeNewProjectFormButton = document.querySelector(".closeProjectForm");
         this.newProjectDialog = document.querySelector(".newProjectDialog");
         this.createProjectForm = document.querySelector(".createProjectForm");
         this.projectButton = document.querySelector(".sidebarProject");
-        // this.openToDoForm();
-        // this.submitToDoForm();
-        // this.closeToDoForm();
-        // this.createToDoForm();
         this.addToDoEvents();
         this.openProjectForm();
         this.closeProjectForm();
@@ -147,7 +140,7 @@ class ScreenController {
         mainArea.append(toDoForm);
         return toDoForm;
     };
-    
+
     openToDoForm(toDoForm) {
         toDoForm.showModal();
         return;

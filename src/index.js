@@ -189,7 +189,6 @@ class ScreenController {
             const priority = document.querySelector('input[name="priority"]:checked').value;
             this.projectManager.createToDo(title, description, dueDate, priority, project);
             this.resetToDoForm();
-            // this.newToDoDialog.close();
             this.closeToDoForm(toDoForm);
             this.displayProject(project.title);
         })

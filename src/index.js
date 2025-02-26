@@ -198,6 +198,16 @@ class ScreenController {
     createProjectForm() {
         const mainArea = document.querySelector(".mainArea");
         const newProjectForm = document.createElement(".dialog");
+        newProjectForm.classList.add("projectFormDialog");
+        newProjectForm.innerHTML = `
+                                <form action="#" class="createProjectForm">
+                                <label for="newProjectTitle">ProjectTitle</label>
+                                <input type="text" placeholder="Enter project title" name="newProjectTitle" id="newProjectTitle" required>
+                                <button type="submit">Create Project</button>
+                                <button type="button" class="closeProjectForm">Close</button>
+                                </form>`
+        mainArea.append(newProjectForm);
+        return newProjectForm;
     }
 
     // openProjectForm() {

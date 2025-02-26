@@ -195,6 +195,10 @@ class ScreenController {
         return;
     }
 
+    createProjectForm() {
+        
+    }
+
     // openProjectForm() {
     //     this.addProjectButton.addEventListener("click", () => {
     //         this.newProjectDialog.showModal();

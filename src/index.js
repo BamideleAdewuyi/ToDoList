@@ -196,7 +196,8 @@ class ScreenController {
     }
 
     createProjectForm() {
-        
+        const mainArea = document.querySelector(".mainArea");
+        const newProjectForm = document.createElement(".dialog");
     }
 
     // openProjectForm() {

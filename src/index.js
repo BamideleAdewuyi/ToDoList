@@ -165,18 +165,11 @@ class ScreenController {
         const submitToDoButton = document.querySelector("#createToDo");
         submitToDoButton.addEventListener("click", () => {
             this.submitToDoForm(toDoForm);
-            console.log(this.projectManager)
+            // console.log(this.projectManager)
         })
     };
 
     resetToDoForm() {
-        // document.getElementById("title").value = "";
-        // document.getElementById("description").value = "";
-        // document.getElementById("dueDate").value = "";
-        // const priorityRadios = document.querySelectorAll('input[name="priority"]')
-        // priorityRadios.forEach(radio => {
-        //     radio.checked = false;
-        // })
         const toDoForm = document.querySelector(".newToDoForm")
         toDoForm.reset()
         return;
@@ -194,6 +187,7 @@ class ScreenController {
             this.resetToDoForm();
             this.closeToDoForm(toDoForm);
             this.displayProject(project.title);
+            console.log("SUBMITTED:", priority)
         })
         return;
     }
@@ -253,7 +247,7 @@ class ScreenController {
         const submitProjectButton = document.getElementById("submitProjectButton");
         submitProjectButton.addEventListener("click", () => {
             this.submitProjectForm(projectForm)
-            console.log(this.projectManager)
+            // console.log(this.projectManager)
         })
     }
 
@@ -335,7 +329,7 @@ class ScreenController {
             toDoPreview.innerHTML = `<p class="toDoPreviewTitle">Title: ${toDo.title}</p>
                                     <p class="toDoPreviewDueDate"> Due Date: ${toDo.dueDate}</p>`;
             taskArea.appendChild(toDoPreview);
-            console.log("Project ID: "+ project);
+            // console.log("Project ID: "+ project);
             toDoPreview.addEventListener("click", () => {
                 this.expandToDo(project, toDoPreview);
             });

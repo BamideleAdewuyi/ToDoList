@@ -214,6 +214,11 @@ class ScreenController {
         projectForm.showModal();
         return;
     }
+
+    closeProjectForm(projectForm) {
+        projectForm.close();
+        return;
+    }
     
 
     // openProjectForm() {

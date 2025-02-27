@@ -9,6 +9,7 @@ class ProjectManager {
 
     createProject(title) {
         const newProject = new Project(title);
+        this.addProject(newProject);
         return newProject;
     }
 

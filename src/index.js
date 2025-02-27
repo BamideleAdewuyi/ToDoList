@@ -222,8 +222,9 @@ class ScreenController {
         return;
     }
     
-    resetProjectForm(projectForm) {
-        projectForm.reset();
+    resetProjectForm() {
+        // projectForm.reset();
+        document.getElementById("newProjectTitle").value = "";
         return;
     }
 
@@ -251,7 +252,7 @@ class ScreenController {
         })
         const submitProjectButton = document.getElementById("submitProjectButton");
         submitProjectButton.addEventListener("click", () => {
-            this.submitProjectForm(projectForm);
+            this.submitProjectForm();
         })
     }
 

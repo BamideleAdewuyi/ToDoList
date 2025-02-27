@@ -223,7 +223,6 @@ class ScreenController {
     }
     
     resetProjectForm() {
-        // projectForm.reset();
         document.getElementById("newProjectTitle").value = "";
         return;
     }
@@ -231,7 +230,7 @@ class ScreenController {
     submitProjectForm(projectForm) {
         projectForm.addEventListener("submit", (e) => {
             e.preventDefault();
-            const title = document.getElementById("newProjectTitle");
+            const title = document.getElementById("newProjectTitle").value;
             this.projectManager.createProject(title);
             this.resetProjectForm(projectForm);
             this.closeProjectForm(projectForm);
@@ -252,7 +251,8 @@ class ScreenController {
         })
         const submitProjectButton = document.getElementById("submitProjectButton");
         submitProjectButton.addEventListener("click", () => {
-            this.submitProjectForm();
+            this.submitProjectForm(projectForm)
+            console.log(this.projectManager)
         })
     }
 

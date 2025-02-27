@@ -240,7 +240,10 @@ class ScreenController {
     }
 
     addProjectEvents() {
-        
+        const projectForm = this.createProjectForm();
+        this.addProjectButton.addEventListener("click", () => {
+            this.openProjectForm(projectForm);
+        })
     }
 
     // openProjectForm() {

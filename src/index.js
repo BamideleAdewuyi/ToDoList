@@ -220,6 +220,10 @@ class ScreenController {
         return;
     }
     
+    resetProjectForm(projectForm) {
+        projectForm.reset();
+        return;
+    }
 
     // openProjectForm() {
     //     this.addProjectButton.addEventListener("click", () => {

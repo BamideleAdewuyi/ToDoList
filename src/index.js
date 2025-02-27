@@ -102,6 +102,7 @@ class ScreenController {
         // this.createProjectForm = document.querySelector(".createProjectForm");
         // this.projectButton = document.querySelector(".sidebarProject");
         this.addToDoEvents();
+        this.addProjectEvents();
         // this.openProjectForm();
         // this.closeProjectForm();
         // this.submitProjectForm();

@@ -205,7 +205,7 @@ class ScreenController {
                                 <form action="#" class="createProjectForm">
                                 <label for="newProjectTitle">ProjectTitle</label>
                                 <input type="text" placeholder="Enter project title" name="newProjectTitle" id="newProjectTitle" required>
-                                <button type="submit">Create Project</button>
+                                <button type="submit" id="submitProjectButton">Create Project</button>
                                 <button type="button" class="closeProjectForm">Close</button>
                                 </form>`
         mainArea.append(newProjectForm);

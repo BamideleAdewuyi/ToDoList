@@ -226,7 +226,11 @@ class ScreenController {
     }
 
     submitProjectForm(projectForm) {
-        
+        projectForm.addEventListener("submit", (e) => {
+            e.preventDefault();
+            const title = document.getElementById("newProjectTitle");
+            this.projectManager.createProject(title);
+        }) 
         return;
     }
 

@@ -231,7 +231,11 @@ class ScreenController {
             e.preventDefault();
             const title = document.getElementById("newProjectTitle");
             this.projectManager.createProject(title);
-        }) 
+            this.resetProjectForm(projectForm);
+            this.closeProjectForm(projectForm);
+            this.refreshProjectSelection();
+            this.addProjectsToSidebar();
+        })
         return;
     }
 

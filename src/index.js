@@ -199,7 +199,7 @@ class ScreenController {
 
     createProjectForm() {
         const mainArea = document.querySelector(".mainArea");
-        const newProjectForm = document.createElement(".dialog");
+        const newProjectForm = document.createElement("dialog");
         newProjectForm.classList.add("projectFormDialog");
         newProjectForm.innerHTML = `
                                 <form action="#" class="createProjectForm">

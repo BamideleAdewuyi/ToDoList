@@ -231,7 +231,7 @@ class ScreenController {
             e.preventDefault();
             const title = document.getElementById("newProjectTitle").value;
             this.projectManager.createProject(title);
-            this.resetProjectForm(projectForm);
+            this.resetProjectForm();
             this.closeProjectForm(projectForm);
             this.refreshProjectSelection();
             this.addProjectsToSidebar();

@@ -249,6 +249,10 @@ class ScreenController {
         closeProjectForm.addEventListener("click", () => {
             this.closeProjectForm(projectForm);
         })
+        const submitProjectButton = document.getElementById("submitProjectButton");
+        submitProjectButton.addEventListener("click", () => {
+            this.submitProjectForm(projectForm);
+        })
     }
 
     // openProjectForm() {

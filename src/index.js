@@ -4,7 +4,6 @@ class ProjectManager {
     constructor() {
         this.projects = [];
         this.defaultProject = this.createProject("Default");
-        this.addProject(this.defaultProject);
     }
 
     createProject(title) {

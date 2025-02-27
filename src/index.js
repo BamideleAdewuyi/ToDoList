@@ -170,13 +170,15 @@ class ScreenController {
     };
 
     resetToDoForm() {
-        document.getElementById("title").value = "";
-        document.getElementById("description").value = "";
-        document.getElementById("dueDate").value = "";
-        const priorityRadios = document.querySelectorAll('input[name="priority"]')
-        priorityRadios.forEach(radio => {
-            radio.checked = false;
-        })
+        // document.getElementById("title").value = "";
+        // document.getElementById("description").value = "";
+        // document.getElementById("dueDate").value = "";
+        // const priorityRadios = document.querySelectorAll('input[name="priority"]')
+        // priorityRadios.forEach(radio => {
+        //     radio.checked = false;
+        // })
+        const toDoForm = document.querySelector(".newToDoForm")
+        toDoForm.reset()
         return;
     }
 

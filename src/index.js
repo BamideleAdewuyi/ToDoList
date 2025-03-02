@@ -93,6 +93,7 @@ class ToDo {
 
 class ScreenController {
     constructor() {
+        this.projectManager = new ProjectManager();
     }
 }
 

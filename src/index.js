@@ -100,6 +100,11 @@ class ScreenController {
         const projectDialog = document.createElement("dialog");
         return projectDialog;
     }
+
+    createProjectForm() {
+        
+        return;
+    }
 }
 
 const screenController = new ScreenController();

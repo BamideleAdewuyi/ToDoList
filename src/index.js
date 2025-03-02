@@ -101,7 +101,7 @@ class ScreenController {
         return projectDialog;
     }
 
-    createProjectForm() {
+    createProjectForm(dialog) {
         
         return;
     }

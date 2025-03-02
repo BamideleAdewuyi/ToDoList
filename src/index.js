@@ -104,6 +104,8 @@ class ScreenController {
     createProjectForm(dialog) {
         const projectForm = document.createElement("form");
         const titleLabel = document.createElement("label");
+        const projectTitle = document.createElement("input");
+        titleLabel.textContent = "title";
         return;
     }
 }

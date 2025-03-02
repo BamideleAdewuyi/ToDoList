@@ -96,8 +96,8 @@ class ScreenController {
         this.projectManager = new ProjectManager();
     }
 
-    createProjectForm() {
-        const projectForm = document.createElement("dialog");
+    createProjectDialog() {
+        const projectDialog = document.createElement("dialog");
 
         return;
     }

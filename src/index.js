@@ -97,6 +97,7 @@ class ScreenController {
     }
 
     createProjectForm() {
+        const projectForm = document.createElement("dialog");
         return;
     }
 }

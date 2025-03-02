@@ -98,8 +98,7 @@ class ScreenController {
 
     createProjectDialog() {
         const projectDialog = document.createElement("dialog");
-
-        return;
+        return projectDialog;
     }
 }
 

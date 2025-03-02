@@ -98,7 +98,7 @@ class ScreenController {
 
     createProjectForm() {
         const projectForm = document.createElement("dialog");
-        const formHeading = document.createElement("h3");
+
         return;
     }
 }

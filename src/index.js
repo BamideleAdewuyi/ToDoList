@@ -95,6 +95,10 @@ class ScreenController {
     constructor() {
         this.projectManager = new ProjectManager();
     }
+
+    createProjectForm() {
+        return;
+    }
 }
 
 const screenController = new ScreenController();

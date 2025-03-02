@@ -103,7 +103,7 @@ class ScreenController {
 
     createProjectForm(dialog) {
         const projectForm = document.createElement("form");
-        
+        const titleLabel = document.createElement("label");
         return;
     }
 }

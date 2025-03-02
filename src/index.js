@@ -106,6 +106,7 @@ class ScreenController {
         const titleLabel = document.createElement("label");
         const projectTitle = document.createElement("input");
         titleLabel.textContent = "title";
+        projectTitle.setAttribute("id", "title")
         return;
     }
 }

@@ -102,6 +102,7 @@ class ScreenController {
     }
 
     createProjectForm(dialog) {
+        const projectForm = document.createElement("form");
         
         return;
     }

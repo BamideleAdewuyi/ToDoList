@@ -9,4 +9,9 @@ class ProjectController{
         const project = new Project(title);
         return project;
     }
+
+    getProject(title) {
+        const project = this.projects.find((obj) => pbj.title === title);
+        return project;
+    }
 }

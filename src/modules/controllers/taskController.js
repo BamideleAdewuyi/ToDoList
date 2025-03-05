@@ -21,7 +21,11 @@ class TaskController{
         return task;
     }
 
-    deleteTask(task, project) {
+    removeItem(arr, item) {
         
+    }
+
+    deleteTask(task, project) {
+
     }
 }

@@ -33,6 +33,15 @@ class TaskController{
         this.tasks = this.removeItem(this.tasks, taskTitle);
         return;
     }
+
+    editTask(task, title, description, dueDate, priority, project) {
+        task.title = title;
+        task.description = description;
+        task.dueDate = dueDate;
+        task.priority = priority;
+        task.project = project;
+        return;
+    }
 };
 
 export default TaskController;

@@ -29,7 +29,8 @@ class TaskController{
         return arr;
     }
 
-    deleteTask(task, project) {
-
+    deleteTask(taskTitle, projectTitle) {
+        this.tasks = this.removeItem(this.tasks, taskTitle);
+        return;
     }
 }

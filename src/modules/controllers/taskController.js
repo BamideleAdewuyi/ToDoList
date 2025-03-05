@@ -20,4 +20,8 @@ class TaskController{
         const task = arr.find((obj) => obj.title === title);
         return task;
     }
+
+    deleteTask(task, project) {
+        
+    }
 }

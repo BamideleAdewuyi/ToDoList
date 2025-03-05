@@ -33,4 +33,6 @@ class TaskController{
         this.tasks = this.removeItem(this.tasks, taskTitle);
         return;
     }
-}
+};
+
+export default TaskController;

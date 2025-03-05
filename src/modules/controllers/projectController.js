@@ -5,7 +5,7 @@ class ProjectController{
         this.projects = [];
     }
 
-    addProject(title) {
+    createProject(title) {
         const project = new Project(title);
         return project;
     }

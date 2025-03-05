@@ -14,4 +14,6 @@ class ProjectController{
         const project = this.projects.find((obj) => pbj.title === title);
         return project;
     }
-}
+};
+
+export default ProjectController;

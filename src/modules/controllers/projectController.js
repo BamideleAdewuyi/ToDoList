@@ -10,10 +10,17 @@ class ProjectController{
         return project;
     }
 
+    addProject(project) {
+        this.projects.push(project);
+        return;
+    }
+
     getProject(title) {
         const project = this.projects.find((obj) => pbj.title === title);
         return project;
     }
+
+
 };
 
 export default ProjectController;

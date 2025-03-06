@@ -6,6 +6,12 @@ class AppController{
         this.taskController = new TaskController();
         this.projectController = new ProjectController();
     };
+
+    refreshProjects() {
+        
+    }
+
+    
 }
 
 export default AppController;

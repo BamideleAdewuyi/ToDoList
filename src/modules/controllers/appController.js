@@ -7,3 +7,5 @@ class AppController{
         this.projectController = new ProjectController();
     };
 }
+
+export default AppController;

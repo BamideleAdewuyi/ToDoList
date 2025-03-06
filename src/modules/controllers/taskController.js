@@ -11,7 +11,6 @@ class TaskController{
     }
 
     addTask(task, arr) {
-        this.tasks.push(task);
         arr.push(task);
         return;
     }

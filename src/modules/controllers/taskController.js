@@ -29,7 +29,8 @@ class TaskController{
     }
 
     deleteTask(taskTitle) {
-        this.tasks = this.removeItem(this.tasks, taskTitle);
+        const task = this.getTask(taskTitle, this.tasks);
+        this.tasks = this.removeItem(this.tasks, task);
         return;
     }
 

@@ -5,12 +5,17 @@ class AppController{
     constructor() {
         this.taskController = new TaskController();
         this.projectController = new ProjectController();
-        this.tasks = this.taskController.tasks
-        this.projects = this.projectController.projects;
     };
 
     refreshProjects() {
-
+        this.projectController.clearProjects();
+        for (const task of this.taskController.tasks) {
+            for (const project of this.projectController.projects) {
+                if (task.project === project.title) {
+                    this.taskController.addTask(task, project.tasks)
+                }
+            }
+        }
     };
 
     

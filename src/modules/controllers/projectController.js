@@ -21,7 +21,9 @@ class ProjectController{
     }
 
     clearProjects() {
-        
+        for (const project of this.projects) {
+            project.tasks = [];
+        }
     }
 
 };

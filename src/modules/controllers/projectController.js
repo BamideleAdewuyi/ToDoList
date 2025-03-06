@@ -20,6 +20,9 @@ class ProjectController{
         return project;
     }
 
+    clearProjects() {
+        
+    }
 
 };
 

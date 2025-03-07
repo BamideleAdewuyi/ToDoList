@@ -6,9 +6,12 @@ class ProjectView {
     }
 
     createSidebarProject(project) {
-
+        const sidebarProject = document.createElement("li");
+        sidebarProject.classList.add("sideBarProject");
+        sidebarProject.textContent = project.title;
+        return sidebarProject;
     };
-    
+
     renderProjects() {
 
     }

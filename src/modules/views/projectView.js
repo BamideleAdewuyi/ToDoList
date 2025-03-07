@@ -20,3 +20,5 @@ class ProjectView {
         return;
     };
 }
+
+export default ProjectView;

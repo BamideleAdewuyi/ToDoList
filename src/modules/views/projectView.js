@@ -1,11 +1,11 @@
 import ProjectController from "../controllers/projectController";
 
 class ProjectView {
-    constructor(containerDiv) {
+    constructor() {
         this.projectController = new ProjectController();
     }
 
     renderProjects() {
-        
+
     }
 }

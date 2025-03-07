@@ -5,6 +5,10 @@ class ProjectView {
         this.projectController = new ProjectController();
     }
 
+    createSidebarProject(project) {
+
+    };
+    
     renderProjects() {
 
     }

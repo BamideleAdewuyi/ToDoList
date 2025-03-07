@@ -12,7 +12,11 @@ class ProjectView {
         return sidebarProject;
     };
 
-    renderProjects() {
-
-    }
+    renderProjects(projectList) {
+        for (const project of this.projectController.projects()) {
+            const sidebarProject = this.createSidebarProject(project)
+            projectList.append(sidebarProject);
+        }
+        return;
+    };
 }

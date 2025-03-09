@@ -5,3 +5,5 @@ class TaskView {
         this.taskController = new TaskController();
     }
 }
+
+export default TaskView;

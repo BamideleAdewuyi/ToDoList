@@ -6,4 +6,6 @@ class AppView {
         this.projectView = new ProjectView();
         this.taskView = new TaskView();
     }
-}
+};
+
+export default AppView;

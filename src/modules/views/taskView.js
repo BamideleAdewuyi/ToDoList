@@ -1,5 +1,7 @@
 import TaskController from "../controllers/taskController";
 
-class TaskView{
-    
+class TaskView {
+    constructor() {
+        this.taskController = new TaskController();
+    }
 }

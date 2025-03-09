@@ -1,4 +1,4 @@
-import ProjectController from "../controllers/projectController";
+import AppController from "../controllers/appController";
 
 class ProjectView {
     constructor() {
@@ -13,10 +13,12 @@ class ProjectView {
     };
 
     renderProjects(projectList) {
-        for (const project of this.projectController.projects()) {
-            const sidebarProject = this.createSidebarProject(project)
-            projectList.append(sidebarProject);
-        }
+        // for (const project of this.projectController.projects()) {
+            // const sidebarProject = this.createSidebarProject(project)
+            // projectList.append(sidebarProject);
+        //     console.log(project)
+        // }
+        console.log(this.projectController.projects)
         return;
     };
 }

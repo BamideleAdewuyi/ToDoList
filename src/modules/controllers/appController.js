@@ -9,6 +9,10 @@ class AppController{
 
     createTaskController() {
         
+    };
+
+    createProjectController() {
+        
     }
 
     refreshProjects() {

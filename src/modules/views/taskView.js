@@ -3,6 +3,7 @@ import AppController from "../controllers/appController";
 
 class TaskView {
     constructor() {
+        this.appController = new AppController();
         this.taskController = new TaskController();
     }
 }

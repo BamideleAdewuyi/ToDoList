@@ -3,6 +3,7 @@ import AppController from "../controllers/appController";
 
 class ProjectView {
     constructor() {
+        this.appController = new AppController();
         this.projectController = new ProjectController();
     }
 

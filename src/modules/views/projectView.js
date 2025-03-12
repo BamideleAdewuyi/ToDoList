@@ -1,4 +1,4 @@
-import AppController from "../controllers/appController";
+import ProjectController from "../controllers/projectController";
 
 class ProjectView {
     constructor() {

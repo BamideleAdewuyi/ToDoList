@@ -1,4 +1,3 @@
-import ProjectController from "../controllers/projectController";
 import AppController from "../controllers/appController";
 
 class ProjectView {

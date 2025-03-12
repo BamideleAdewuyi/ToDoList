@@ -7,6 +7,10 @@ class AppController{
         this.projectController = new ProjectController();
     };
 
+    createTaskController() {
+        
+    }
+
     refreshProjects() {
         this.projectController.clearProjects();
         for (const task of this.taskController.tasks) {

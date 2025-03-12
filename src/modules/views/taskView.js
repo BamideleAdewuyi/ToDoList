@@ -1,4 +1,4 @@
-import AppController from "../controllers/appController";
+import TaskController from "../controllers/taskController";
 
 class TaskView {
     constructor() {

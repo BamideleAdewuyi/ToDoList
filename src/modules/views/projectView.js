@@ -2,8 +2,7 @@ import ProjectController from "../controllers/projectController";
 
 class ProjectView {
     constructor() {
-        this.appController = new AppController();
-        this.projectController = this.appController.projectController;
+        this.projectController = new ProjectController();
     }
 
     createSidebarProject(project) {

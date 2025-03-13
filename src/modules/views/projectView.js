@@ -22,6 +22,10 @@ class ProjectView {
         }
         return;
     };
+
+    previewProjects() {
+        
+    }
 }
 
 export default ProjectView;

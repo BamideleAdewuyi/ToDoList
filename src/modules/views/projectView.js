@@ -14,6 +14,7 @@ class ProjectView {
     };
 
     renderProjects() {
+        this.projectList.innerHTML = "";
         for (const project of this.projectController.projects) {
             const sidebarProject = this.createSidebarProject(project)
             this.projectList.append(sidebarProject);

@@ -13,13 +13,11 @@ class ProjectView {
         return sidebarProject;
     };
 
-    renderProjects(projectList) {
-        // for (const project of this.projectController.projects()) {
-            // const sidebarProject = this.createSidebarProject(project)
-            // projectList.append(sidebarProject);
-        //     console.log(project)
-        // }
-        console.log(this.projectController.projects)
+    renderProjects() {
+        for (const project of this.projectController.projects) {
+            const sidebarProject = this.createSidebarProject(project)
+            this.projectList.append(sidebarProject);
+        }
         return;
     };
 }

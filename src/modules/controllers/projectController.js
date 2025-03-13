@@ -26,12 +26,12 @@ class ProjectController{
         }
     };
 
-    refreshProjects(projectController, taskController) {
-        this.projectController.clearProjects();
-        for (const task of this.taskController.tasks) {
-            for (const project of this.projectController.projects) {
+    refreshProjects(taskController) {
+        this.clearProjects();
+        for (const task of taskController.tasks) {
+            for (const project of this.projects) {
                 if (task.project === project.title) {
-                    this.taskController.addTask(task, project.tasks)
+                    taskController.addTask(task, project.tasks)
                 }
             }
         }

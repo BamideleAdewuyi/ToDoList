@@ -4,6 +4,7 @@ class ProjectView {
     constructor() {
         this.projectController = new ProjectController();
         this.projectList = document.querySelector(".projectList");
+        this.taskArea = document.querySelector(".taskArea");
     }
 
     createSidebarProject(project) {

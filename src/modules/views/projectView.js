@@ -24,8 +24,14 @@ class ProjectView {
         return;
     };
 
-    previewProjects() {
-        
+    previewProject(project) {
+        const projectPreview = document.createElement("div");
+        const projectPreviewHeading = document.createElement("h4");
+        projectPreviewHeading.textContent = project.title;
+        projectPreview.classList.add("projectPreview");
+        projectPreview.append(projectPreviewHeading);
+        this.taskArea.append(projectPreview)
+
     }
 }
 

@@ -9,7 +9,7 @@ class AppView {
     };
 
     update() {
-
+        this.addListeners()
     };
 
     addListeners() {

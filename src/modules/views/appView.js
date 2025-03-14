@@ -14,6 +14,10 @@ class AppView {
 
     addListeners() {
         const addTask = document.querySelector(".addToDo");
+        addTask.addEventListener("click", () => {
+            this.openForm(this.createTaskForm);
+            this.update();
+        })
         const createProject = document.querySelector(".createProject");
     };
 

@@ -13,7 +13,8 @@ class AppView {
     };
 
     addListeners() {
-
+        const addTask = document.querySelector(".addToDo");
+        const createProject = document.querySelector(".createProject");
     };
 };
 

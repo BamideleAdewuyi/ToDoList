@@ -17,6 +17,10 @@ class AppView {
         const createProject = document.querySelector(".createProject");
     };
 
+    createTaskForm() {
+
+    };
+
     openTaskForm() {
 
     };

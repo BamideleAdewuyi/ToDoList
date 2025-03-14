@@ -26,6 +26,7 @@ class ProjectView {
     };
 
     previewProject(project) {
+        this.taskArea.innerHTML = "";
         const projectPreview = document.createElement("div");
         const projectPreviewHeading = document.createElement("h4");
         projectPreviewHeading.textContent = project.title;

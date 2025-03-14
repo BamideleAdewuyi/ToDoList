@@ -36,8 +36,15 @@ class ProjectView {
 
     };
 
-    previewToDos(project) {
-
+    previewTask(task) {
+        const taskPreview = document.createElement("div");
+        taskPreview.classList.add("taskPreview");
+        const taskHeading = document.createElement("h5");
+        taskHeading.textContent = task.title;
+        const taskDueDate = document.createElement("p");
+        taskDueDate.textContent = task.dueDate;
+        taskPreview.append(taskHeading, taskDueDate);
+        return taskPreview;
     };
 }
 

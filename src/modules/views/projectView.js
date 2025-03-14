@@ -34,7 +34,11 @@ class ProjectView {
         projectPreview.append(projectPreviewHeading);
         this.taskArea.append(projectPreview)
 
-    }
+    };
+
+    previewToDos(project) {
+
+    };
 }
 
 export default ProjectView;

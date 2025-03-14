@@ -53,8 +53,8 @@ class AppView {
         return dialog;
     };
 
-    openForm() {
-
+    openForm(form) {
+        form.show();
     };
 };
 

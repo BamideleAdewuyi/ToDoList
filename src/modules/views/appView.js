@@ -8,8 +8,12 @@ class AppView {
     };
 
     update() {
-        
-    }
+
+    };
+
+    addListeners() {
+
+    };
 };
 
 export default AppView;

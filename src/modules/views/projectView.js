@@ -20,6 +20,7 @@ class ProjectView {
         for (const project of this.projectController.projects) {
             const sidebarProject = this.createSidebarProject(project)
             this.projectList.append(sidebarProject);
+            sidebarProject.addEventListener("click", () => this.previewProject(project));
         }
         return;
     };

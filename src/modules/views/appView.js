@@ -56,6 +56,10 @@ class AppView {
     openForm(form) {
         form.show();
     };
+
+    closeForm(form) {
+        form.close();
+    }
 };
 
 export default AppView;

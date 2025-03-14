@@ -32,6 +32,9 @@ class ProjectView {
         projectPreviewHeading.textContent = project.title;
         projectPreview.classList.add("projectPreview");
         projectPreview.append(projectPreviewHeading);
+        for (const task of project.tasks) {
+            projectPreview.append(this.previewTask(task));
+        }
         this.taskArea.append(projectPreview)
 
     };

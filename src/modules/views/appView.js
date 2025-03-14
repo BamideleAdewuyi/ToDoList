@@ -16,6 +16,10 @@ class AppView {
         const addTask = document.querySelector(".addToDo");
         const createProject = document.querySelector(".createProject");
     };
+
+    openTaskForm() {
+
+    };
 };
 
 export default AppView;

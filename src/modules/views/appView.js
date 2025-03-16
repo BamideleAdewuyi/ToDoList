@@ -63,6 +63,10 @@ class AppView {
         return dialog;
     };
 
+    createProjectForm() {
+        
+    }
+
     openForm(form) {
         form.show();
     };

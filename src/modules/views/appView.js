@@ -22,6 +22,9 @@ class AppView {
             this.update();
         })
         const createProject = document.querySelector(".createProject");
+        createProject.addEventListener("click", () => {
+            
+        })
     };
 
     createTaskForm() {

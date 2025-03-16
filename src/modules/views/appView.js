@@ -23,7 +23,10 @@ class AppView {
         })
         const createProject = document.querySelector(".createProject");
         createProject.addEventListener("click", () => {
-            
+            const form = this.createProjectForm();
+            this.taskArea.append(form);
+            this.openForm(form);
+            this.update();
         })
     };
 

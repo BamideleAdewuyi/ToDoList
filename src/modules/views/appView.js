@@ -17,8 +17,8 @@ class AppView {
         const forms = this.createForms();
         const taskForm = forms.taskForm;
         const projectForm = forms.projectForm;
+
         const addTaskButton = document.querySelector(".addToDo");
-        const createTaskForm = document.querySelector(".createTaskForm");
         const createProjectButton = document.querySelector(".createProject");
         
         addTaskButton.addEventListener("click", () => {

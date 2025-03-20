@@ -15,21 +15,31 @@ class AppView {
 
     addListeners() {
         const addTask = document.querySelector(".addToDo");
+        const createTaskForm = document.querySelector(".createTaskForm");
+        const createProject = document.querySelector(".createProject");
+        
         addTask.addEventListener("click", () => {
             const form = this.createTaskForm();
             this.taskArea.append(form);
             this.openForm(form)
             this.update();
-        })
-        const createProject = document.querySelector(".createProject");
+        });
+
         createProject.addEventListener("click", () => {
             const form = this.createProjectForm();
             this.taskArea.append(form);
             this.openForm(form);
             this.update();
+        });
+
+        createTaskForm.addEventListener("click", () => {
+
         })
-        const createTaskForm = document.querySelector(".createTaskForm");
     };
+
+    createForms() {
+        
+    }
 
     createTaskForm() {
         const dialog = document.createElement("dialog");

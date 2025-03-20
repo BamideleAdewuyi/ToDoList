@@ -28,9 +28,8 @@ class AppView {
         });
 
         createProjectButton.addEventListener("click", () => {
-            const form = this.createProjectForm();
-            this.taskArea.append(form);
-            this.openForm(form);
+            this.taskArea.append(projectForm);
+            this.openForm(projectForm);
             this.update();
         });
 

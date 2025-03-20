@@ -29,6 +29,11 @@ class AppView {
             this.update();
         });
 
+        closeTaskFormButton.addEventListener("click", () => {
+            this.closeForm(taskForm);
+            this.update();
+        });
+
         createProjectButton.addEventListener("click", () => {
             this.taskArea.append(projectForm);
             this.openForm(projectForm);

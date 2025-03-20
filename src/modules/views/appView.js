@@ -14,6 +14,7 @@ class AppView {
     };
 
     addListeners() {
+        const forms = this.createForms();
         const addTask = document.querySelector(".addToDo");
         const createTaskForm = document.querySelector(".createTaskForm");
         const createProject = document.querySelector(".createProject");

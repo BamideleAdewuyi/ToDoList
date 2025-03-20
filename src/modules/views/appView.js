@@ -17,7 +17,7 @@ class AppView {
         const forms = this.createForms();
         const addTaskButton = document.querySelector(".addToDo");
         const createTaskForm = document.querySelector(".createTaskForm");
-        const createProject = document.querySelector(".createProject");
+        const createProjectButton = document.querySelector(".createProject");
         
         addTaskButton.addEventListener("click", () => {
             const form = this.createTaskForm();
@@ -26,16 +26,16 @@ class AppView {
             this.update();
         });
 
-        createProject.addEventListener("click", () => {
+        createProjectButton.addEventListener("click", () => {
             const form = this.createProjectForm();
             this.taskArea.append(form);
             this.openForm(form);
             this.update();
         });
 
-        createTaskForm.addEventListener("click", () => {
+        // createTaskForm.addEventListener("click", () => {
 
-        })
+        // })
     };
 
     createForms() {

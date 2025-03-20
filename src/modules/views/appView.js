@@ -38,7 +38,12 @@ class AppView {
     };
 
     createForms() {
-        
+        const newTaskForm = this.createTaskForm();
+        const newProjectForm = this.createProjectForm();
+        return {
+            taskForm: newTaskForm,
+            projectForm: newProjectForm
+        }
     }
 
     createTaskForm() {

@@ -22,9 +22,8 @@ class AppView {
         const createProjectButton = document.querySelector(".createProject");
         
         addTaskButton.addEventListener("click", () => {
-            const form = this.createTaskForm();
-            this.taskArea.append(form);
-            this.openForm(form)
+            this.taskArea.append(taskForm);
+            this.openForm(taskForm)
             this.update();
         });
 

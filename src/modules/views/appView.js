@@ -15,11 +15,11 @@ class AppView {
 
     addListeners() {
         const forms = this.createForms();
-        const addTask = document.querySelector(".addToDo");
+        const addTaskButton = document.querySelector(".addToDo");
         const createTaskForm = document.querySelector(".createTaskForm");
         const createProject = document.querySelector(".createProject");
         
-        addTask.addEventListener("click", () => {
+        addTaskButton.addEventListener("click", () => {
             const form = this.createTaskForm();
             this.taskArea.append(form);
             this.openForm(form)

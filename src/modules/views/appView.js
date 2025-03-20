@@ -21,6 +21,8 @@ class AppView {
         const addTaskButton = document.querySelector(".addToDo");
         const createProjectButton = document.querySelector(".createProject");
         
+        const closeTaskFormButton = document.querySelector(".closeToDoFormButton");
+        
         addTaskButton.addEventListener("click", () => {
             this.taskArea.append(taskForm);
             this.openForm(taskForm)

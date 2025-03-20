@@ -57,10 +57,6 @@ class AppView {
     createTaskForm() {
         const dialog = document.createElement("dialog");
         dialog.classList.add("createTaskForm")
-        // const form = document.createElement("form");
-        // const titleLabel = document.createElement("label");
-        // titleLabel.textContent = "Title";
-        // const title = document.createElement("input");
         const form = document.createElement("form");
         form.innerHTML = `<form action="#" class="newToDoForm">
                          <h3>New ToDo</h3>

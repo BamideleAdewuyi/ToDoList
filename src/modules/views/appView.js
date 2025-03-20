@@ -32,6 +32,7 @@ class AppView {
 
     createTaskForm() {
         const dialog = document.createElement("dialog");
+        dialog.classList.add(".createTaskForm")
         // const form = document.createElement("form");
         // const titleLabel = document.createElement("label");
         // titleLabel.textContent = "Title";

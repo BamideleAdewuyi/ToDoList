@@ -39,10 +39,6 @@ class AppView {
             this.openForm(projectForm);
             this.update();
         });
-
-        // createTaskForm.addEventListener("click", () => {
-
-        // })
     };
 
     createForms() {

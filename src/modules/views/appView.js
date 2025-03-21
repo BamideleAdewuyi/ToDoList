@@ -6,7 +6,7 @@ class AppView {
         this.projectView = new ProjectView();
         this.taskView = new TaskView();
         this.taskArea = document.querySelector(".taskArea");
-        this.createForms();
+        this.forms = this.createForms();
         this.addListeners();
         this.update();
     };
@@ -16,31 +16,29 @@ class AppView {
     };
 
     addListeners() {
-        // const forms = this.createForms();
-        // const taskForm = forms.taskForm;
-        // this.taskArea.append(taskForm);
-        // const projectForm = forms.projectForm;
+        const taskForm = this.forms.taskForm;
+        const projectForm = this.forms.projectForm;
+        const addTaskButton = document.querySelector(".addToDo");
+        const createProjectButton = document.querySelector(".createProject");
+        const closeTaskFormButton = taskForm.querySelector(".closeToDoFormButton");
+        const closeProjectFormButton = projectForm.querySelector(".closeProjectFormButton");
 
-        // const addTaskButton = document.querySelector(".addToDo");
-        // const createProjectButton = document.querySelector(".createProject");
-        
-        // const closeTaskFormButton = document.querySelector(".closeToDoFormButton");
-        
-        // addTaskButton.addEventListener("click", () => {
-        //     this.openForm(taskForm)
-        //     this.update();
-        // });
+        addTaskButton.addEventListener("click", () => {
+            this.openForm(taskForm);
+        });
 
-        // closeTaskFormButton.addEventListener("click", () => {
-        //     this.closeForm(taskForm);
-        //     this.update();
-        // });
+        closeTaskFormButton.addEventListener("click", () => {
+            this.closeForm(taskForm);
+        });
 
-        // createProjectButton.addEventListener("click", () => {
-        //     this.taskArea.append(projectForm);
-        //     this.openForm(projectForm);
-        //     this.update();
-        // });
+        createProjectButton.addEventListener("click", () => {
+            this.taskArea.append(projectForm);
+            this.openForm(projectForm);
+        });
+
+        closeProjectFormButton.addEventListener("click", () => {
+            this.closeForm(projectForm);
+        });
     };
 
     createForms() {
@@ -50,7 +48,7 @@ class AppView {
             taskForm: newTaskForm,
             projectForm: newProjectForm
         }
-    }
+    };
 
     createTaskForm() {
         const dialog = document.createElement("dialog");

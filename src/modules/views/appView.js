@@ -7,6 +7,7 @@ class AppView {
         this.taskView = new TaskView();
         this.taskArea = document.querySelector(".taskArea");
         this.createForms();
+        this.addListeners();
         this.update();
     };
 

@@ -15,7 +15,9 @@ class AppView {
     };
 
     addListeners() {
-        
+        this.projectView.createProjectButton.addEventListener("click", () => {
+            this.openForm(this.projectView.projectForm);
+        })
     };
 
     appendForms() {

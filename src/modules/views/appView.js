@@ -39,21 +39,6 @@ class AppView {
         });
     };
 
-    createProjectForm() {
-        const dialog = document.createElement("dialog");
-        const form = document.createElement("form");
-        form.innerHTML = `<form action="#" class="newProjectForm">
-                        <h3>New Project</h3>
-                        <label for="title">Title</label>
-                        <input type="text" placeholder="Title" name="title" id="title" required>
-                        <button class="submit" id="createProject">Add Project</button>
-                        <button type="button" class="closeProjectFormButton" autofocus>Close</button>
-                        </form>
-                        `
-        dialog.append(form);
-        return dialog;
-    };
-
     openForm(form) {
         form.show();
     };

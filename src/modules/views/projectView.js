@@ -7,6 +7,7 @@ class ProjectView {
         this.projectList = document.querySelector(".projectList");
         this.taskArea = document.querySelector(".taskArea");
         this.createProjectButton = document.querySelector(".createProject");
+        this.closeProjectFormButton = document.querySelector(".closeProjectFormButton");
     }
 
     createSidebarProject(project) {

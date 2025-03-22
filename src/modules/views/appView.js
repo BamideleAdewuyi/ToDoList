@@ -39,6 +39,10 @@ class AppView {
         });
     };
 
+    appendForms() {
+        
+    }
+
     openForm(form) {
         form.show();
     };

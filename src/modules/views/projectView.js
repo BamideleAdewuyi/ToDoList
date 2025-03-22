@@ -3,6 +3,7 @@ import ProjectController from "../controllers/projectController";
 class ProjectView {
     constructor() {
         this.projectController = new ProjectController();
+        this.projectForm = this.createProjectForm();
         this.projectList = document.querySelector(".projectList");
         this.taskArea = document.querySelector(".taskArea");
     }

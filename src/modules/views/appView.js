@@ -15,29 +15,7 @@ class AppView {
     };
 
     addListeners() {
-        const taskForm = this.forms.taskForm;
-        const projectForm = this.forms.projectForm;
-        const addTaskButton = document.querySelector(".addToDo");
-        const createProjectButton = document.querySelector(".createProject");
-        const closeTaskFormButton = taskForm.querySelector(".closeToDoFormButton");
-        const closeProjectFormButton = projectForm.querySelector(".closeProjectFormButton");
-        this.taskArea.append(taskForm, projectForm);
-
-        addTaskButton.addEventListener("click", () => {
-            this.openForm(taskForm);
-        });
-
-        closeTaskFormButton.addEventListener("click", () => {
-            this.closeForm(taskForm);
-        });
-
-        createProjectButton.addEventListener("click", () => {
-            this.openForm(projectForm);
-        });
-
-        closeProjectFormButton.addEventListener("click", () => {
-            this.closeForm(projectForm);
-        });
+        
     };
 
     appendForms() {

@@ -73,8 +73,12 @@ class ProjectView {
     };
 
     openProjectForm() {
-        
-    }
+
+    };
+
+    closeProjectForm() {
+
+    };
 }
 
 export default ProjectView;

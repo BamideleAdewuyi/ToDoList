@@ -57,6 +57,10 @@ class TaskView {
         dialog.append(form);
         return dialog;
     };
+
+    initialize() {
+
+    };
 }
 
 export default TaskView;

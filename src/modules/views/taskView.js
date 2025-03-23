@@ -63,6 +63,16 @@ class TaskView {
         this.closeTaskFormButton = document.querySelector(".closeToDoFormButton");
     };
 
+    addListeners() {
+        this.createTaskButton.addEventListener("click", () => {
+            this.openTaskForm();
+        })
+
+        this.closeTaskFormButton.addEventListener("click", () => {
+            this.closeTaskForm();
+        })
+    };
+
     openTaskForm() {
         this.taskForm.show();
     };

@@ -7,7 +7,6 @@ class ProjectView {
         this.projectList = document.querySelector(".projectList");
         this.taskArea = document.querySelector(".taskArea");
         this.createProjectButton = document.querySelector(".createProject");
-        this.closeProjectFormButton = null;
         this.initialize();
         this.addListeners();
     }

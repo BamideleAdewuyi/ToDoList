@@ -5,6 +5,7 @@ class TaskView {
         this.taskController = new TaskController();
         this.taskForm = this.createTaskForm();
         this.createTaskButton = document.querySelector(".addToDo");
+        this.initialize();
     };
 
     createTaskDiv(task) {

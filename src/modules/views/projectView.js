@@ -7,7 +7,7 @@ class ProjectView {
         this.projectList = document.querySelector(".projectList");
         this.taskArea = document.querySelector(".taskArea");
         this.createProjectButton = document.querySelector(".createProject");
-        this.initialize();
+        this.closeProjectFormButton = this.projectForm.querySelector(".closeProjectFormButton");
         this.addListeners();
     }
 
@@ -67,10 +67,6 @@ class ProjectView {
                         `
         dialog.append(form);
         return dialog;
-    };
-
-    initialize() {
-        this.closeProjectFormButton = this.projectForm.querySelector(".closeProjectFormButton");
     };
 
     addListeners() {

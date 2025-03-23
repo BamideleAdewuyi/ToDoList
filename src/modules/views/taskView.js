@@ -5,7 +5,7 @@ class TaskView {
         this.taskController = new TaskController();
         this.taskForm = this.createTaskForm();
         this.createTaskButton = document.querySelector(".addToDo");
-        this.initialize();
+        this.closeTaskFormButton = this.taskForm.querySelector(".closeToDoFormButton");
         this.addListeners();
     };
 
@@ -58,10 +58,6 @@ class TaskView {
         `
         dialog.append(form);
         return dialog;
-    };
-
-    initialize() {
-        this.closeTaskFormButton = this.taskForm.querySelector(".closeToDoFormButton");
     };
 
     addListeners() {

@@ -59,7 +59,7 @@ class TaskView {
     };
 
     initialize() {
-
+        this.closeTaskFormButton = document.querySelector(".closeToDoFormButton");
     };
 }
 

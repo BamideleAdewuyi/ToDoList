@@ -79,13 +79,13 @@ class ProjectView {
             this.openProjectForm();
         })
 
-        // this.closeProjectForm.addEventListener("click", () => {
-        //     this.closeProjectForm();
-        // })
-    }
+        this.closeProjectFormButton.addEventListener("click", () => {
+            this.closeProjectForm();
+        })
+    };
 
     openProjectForm() {
-        this.projectForm.open();
+        this.projectForm.show();
     };
 
     closeProjectForm() {

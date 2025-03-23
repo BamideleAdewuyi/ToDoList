@@ -7,7 +7,7 @@ class ProjectView {
         this.projectList = document.querySelector(".projectList");
         this.taskArea = document.querySelector(".taskArea");
         this.createProjectButton = document.querySelector(".createProject");
-        this.closeProjectFormButton = document.querySelector(".closeProjectFormButton");
+        this.closeProjectFormButton = null;
     }
 
     createSidebarProject(project) {
@@ -67,6 +67,14 @@ class ProjectView {
         dialog.append(form);
         return dialog;
     };
+
+    initialize() {
+        this.closeProjectFormButton = this.projectForm.querySelector(".closeProjectFormButton");
+    };
+
+    openProjectForm() {
+        
+    }
 }
 
 export default ProjectView;

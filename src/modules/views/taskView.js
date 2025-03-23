@@ -62,6 +62,14 @@ class TaskView {
     initialize() {
         this.closeTaskFormButton = document.querySelector(".closeToDoFormButton");
     };
+
+    openTaskForm() {
+        this.taskForm.show();
+    };
+
+    closeTaskForm() {
+        this.taskForm.close();
+    };
 }
 
 export default TaskView;

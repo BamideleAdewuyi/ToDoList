@@ -72,6 +72,10 @@ class ProjectView {
         this.closeProjectFormButton = this.projectForm.querySelector(".closeProjectFormButton");
     };
 
+    addListeners() {
+        
+    }
+
     openProjectForm() {
         this.projectForm.open();
     };

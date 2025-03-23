@@ -7,7 +7,9 @@ class ProjectView {
         this.projectList = document.querySelector(".projectList");
         this.taskArea = document.querySelector(".taskArea");
         this.createProjectButton = document.querySelector(".createProject");
-        // this.closeProjectFormButton = null;
+        this.closeProjectFormButton = null;
+        this.initialize();
+        this.addListeners();
     }
 
     createSidebarProject(project) {
@@ -73,7 +75,13 @@ class ProjectView {
     };
 
     addListeners() {
-        
+        this.createProjectButton.addEventListener("click", () => {
+            this.openProjectForm();
+        })
+
+        // this.closeProjectForm.addEventListener("click", () => {
+        //     this.closeProjectForm();
+        // })
     }
 
     openProjectForm() {

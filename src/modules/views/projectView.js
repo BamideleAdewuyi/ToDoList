@@ -81,9 +81,10 @@ class ProjectView {
         this.projectForm.addEventListener("submit", (e) => {
             e.preventDefault();
             const title = document.getElementById("projectTitle");
-            const project = this.projectController.createProject(title);
+            const project = this.projectController.createProject(title.value);
             this.projectController.addProject(project);
             this.renderProjects();
+            this.closeProjectForm();
         })
     };
 

@@ -68,6 +68,10 @@ class TaskView {
         this.closeTaskFormButton.addEventListener("click", () => {
             this.closeTaskForm();
         })
+
+        this.taskForm.addEventListener("submit", (e) => {
+            
+        })
     };
 
     openTaskForm() {

@@ -39,7 +39,7 @@ class TaskView {
                          <input type="text" placeholder="Description" name="taskDescription" id="taskDescription" required>
                          <label for="taskDueDate">Due Date</label>
                          <input type="date" name="taskDueDate" id="taskDueDate" required>
-                         <div class="selectPriority">
+                         <div id="taskPriority">
                              <p>Select priority</p>
                              <label for="low">Low</label>
                              <input type="radio" id="low" name="priority" value="low" required/>
@@ -71,6 +71,14 @@ class TaskView {
 
         this.taskForm.addEventListener("submit", (e) => {
             e.preventDefault();
+            const title = document.getElementById("taskTitle").value;
+            const description = document.getElementById("taskDescription").value;;
+            const dueDate = document.getElementById("taskDueDate").value;;
+            const priority = document.getElementById("taskPriority").value;;
+            const project = document.getElementById("taskProject").value;
+            const newTask = this.taskController.createTask(title, description, dueDate, priority, project);
+            this.taskController.addTask(newTask, this.taskController.tasks);
+            console.log(this.taskController);
         })
     };
 

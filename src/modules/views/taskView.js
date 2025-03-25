@@ -33,12 +33,12 @@ class TaskView {
         const form = document.createElement("form");
         form.innerHTML = `<form action="#" class="newToDoForm">
                          <h3>New ToDo</h3>
-                         <label for="title">Title</label>
-                         <input type="text" placeholder="Title" name="title" id="title" required>
-                         <label for="description">Description</label>
-                         <input type="text" placeholder="Description" name="description" id="description" required>
-                         <label for="dueDate">Due Date</label>
-                         <input type="date" name="dueDate" id="dueDate" required>
+                         <label for="taskTitle">Title</label>
+                         <input type="text" placeholder="Title" name="taskTitle" id="taskTitle" required>
+                         <label for="taskDescription">Description</label>
+                         <input type="text" placeholder="Description" name="taskDescription" id="taskDescription" required>
+                         <label for="taskDueDate">Due Date</label>
+                         <input type="date" name="taskDueDate" id="taskDueDate" required>
                          <div class="selectPriority">
                              <p>Select priority</p>
                              <label for="low">Low</label>
@@ -48,8 +48,8 @@ class TaskView {
                              <label for="high">High</label>
                              <input type="radio" id="high" name="priority" value="high"/>
                          </div>
-                         <label for="project">Select project</label>
-                         <select name="project" id="project">
+                         <label for="taskProject">Select project</label>
+                         <select name="taskProject" id="taskProject">
  
                          </select>
                          <button class="submit" id="createToDo">Add ToDo</button>
@@ -70,7 +70,7 @@ class TaskView {
         })
 
         this.taskForm.addEventListener("submit", (e) => {
-            
+            e.preventDefault();
         })
     };
 

@@ -85,6 +85,7 @@ class ProjectView {
             this.projectController.addProject(project);
             this.renderProjects();
             this.closeProjectForm();
+            this.resetForm();
         })
     };
 
@@ -95,6 +96,11 @@ class ProjectView {
     closeProjectForm() {
         this.projectForm.close();
     };
+
+    resetForm() {
+        const form = this.projectForm.querySelector("form");
+        form.reset();
+    }
 }
 
 export default ProjectView;

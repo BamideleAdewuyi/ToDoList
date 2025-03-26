@@ -27,7 +27,11 @@ class ProjectView {
     };
 
     previewProject(project) {
-        this.taskArea.innerHTML = "";
+        const currentPreview = this.taskArea.querySelector(".projectPreview");
+        if (currentPreview) {
+            currentPreview.remove();
+        };
+        
         const projectPreview = document.createElement("div");
         const projectPreviewHeading = document.createElement("h4");
         projectPreviewHeading.textContent = project.title;

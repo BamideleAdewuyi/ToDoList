@@ -63,6 +63,10 @@ class AppView {
         })
     };
 
+    refreshProjectForm() {
+
+    };
+
     appendForms() {
         this.taskArea.append(this.projectForm, this.taskForm)
     };

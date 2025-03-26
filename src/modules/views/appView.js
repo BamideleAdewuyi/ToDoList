@@ -28,7 +28,7 @@ class AppView {
 
         this.closeProjectFormButton.addEventListener("click", () => {
             this.closeForm(this.projectForm)
-        })
+        });
 
         this.projectForm.addEventListener("submit", (e) => {
             e.preventDefault();
@@ -38,11 +38,19 @@ class AppView {
             this.projectView.renderProjects();
             this.closeForm(this.projectForm);
             this.resetForm(this.projectForm);
-        })
+        });
+
+        this.createTaskButton.addEventListener("click", () => {
+            this.openForm(this.taskForm);
+        });
+
+        this.closeTaskFormButton.addEventListener("click", () => {
+            this.closeForm(this.taskForm);
+        });
     };
 
     appendForms() {
-        this.taskArea.append(this.projectForm, this.taskView.taskForm)
+        this.taskArea.append(this.projectForm, this.taskForm)
     };
 
     openForm(form) {

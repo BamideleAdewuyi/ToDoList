@@ -39,7 +39,7 @@ class AppView {
 
     appendForms() {
         this.taskArea.append(this.projectForm, this.taskView.taskForm)
-    }
+    };
 
     openForm(form) {
         form.show();
@@ -47,7 +47,12 @@ class AppView {
 
     closeForm(form) {
         form.close();
-    }
+    };
+
+    resetForm(dialog) {
+        const form = dialog.querySelector("form");
+        form.reset();
+    };
 };
 
 export default AppView;

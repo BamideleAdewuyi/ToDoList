@@ -63,7 +63,7 @@ class AppView {
         })
     };
 
-    refreshProjectForm() {
+    refreshTaskForm() {
 
     };
 

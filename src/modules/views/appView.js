@@ -36,6 +36,7 @@ class AppView {
             const project = this.projectView.projectController.createProject(title);
             this.projectView.projectController.addProject(project);
             this.projectView.renderProjects();
+            this.refreshTaskForm();
             this.closeForm(this.projectForm);
             this.resetForm(this.projectForm);
         });
@@ -64,7 +65,13 @@ class AppView {
     };
 
     refreshTaskForm() {
-
+        const projectList = this.taskForm.querySelector("#taskProject");
+        projectList.innerHTML = ``;
+        for (const project of this.projectView.projectController.projects) {
+            const newProject = document.createElement("option");
+            newProject.textContent = project.title;
+            projectList.append(newProject);
+        }
     };
 
     appendForms() {

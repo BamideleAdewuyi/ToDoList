@@ -58,7 +58,7 @@ class AppView {
             const project = document.getElementById("taskProject").value;
             const newTask = this.taskView.taskController.createTask(title, description, dueDate, priority, project);
             this.taskView.taskController.addTask(newTask, this.taskView.taskController.tasks);
-            console.log(this.taskView.taskController);
+            this.projectView.projectController.refreshProjects(this.taskView.taskController);
             this.closeForm(this.taskForm);
             this.resetForm(this.taskForm);
         })

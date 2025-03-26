@@ -6,7 +6,7 @@ class TaskView {
         this.taskForm = this.createTaskForm();
         this.createTaskButton = document.querySelector(".addToDo");
         this.closeTaskFormButton = this.taskForm.querySelector(".closeToDoFormButton");
-        this.addListeners();
+        // this.addListeners();
     };
 
     createTaskDiv(task) {
@@ -58,36 +58,6 @@ class TaskView {
         `
         dialog.append(form);
         return dialog;
-    };
-
-    addListeners() {
-        this.createTaskButton.addEventListener("click", () => {
-            this.openTaskForm();
-        })
-
-        this.closeTaskFormButton.addEventListener("click", () => {
-            this.closeTaskForm();
-        })
-
-        this.taskForm.addEventListener("submit", (e) => {
-            e.preventDefault();
-            const title = document.getElementById("taskTitle").value;
-            const description = document.getElementById("taskDescription").value;;
-            const dueDate = document.getElementById("taskDueDate").value;;
-            const priority = document.getElementById("taskPriority").value;;
-            const project = document.getElementById("taskProject").value;
-            const newTask = this.taskController.createTask(title, description, dueDate, priority, project);
-            this.taskController.addTask(newTask, this.taskController.tasks);
-            console.log(this.taskController);
-        })
-    };
-
-    openTaskForm() {
-        this.taskForm.show();
-    };
-
-    closeTaskForm() {
-        this.taskForm.close();
     };
 }
 

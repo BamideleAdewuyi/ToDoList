@@ -23,7 +23,7 @@ class AppView {
     };
 
     appendForms() {
-        this.taskArea.append(this.projectView.projectForm, this.taskView.taskForm)
+        this.taskArea.append(this.projectForm, this.taskView.taskForm)
     }
 
     openForm(form) {

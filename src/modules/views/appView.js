@@ -34,6 +34,7 @@ class AppView {
             this.projectView.projectController.addProject(project);
             this.projectView.renderProjects();
             this.closeForm(this.projectForm);
+            this.resetForm(this.projectForm);
         })
     };
 

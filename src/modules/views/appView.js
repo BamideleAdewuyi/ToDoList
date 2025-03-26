@@ -19,7 +19,13 @@ class AppView {
     };
 
     addListeners() {
+        this.createProjectButton.addEventListener("click", () => {
+            this.openForm(this.projectForm);
+        });
 
+        this.closeProjectFormButton.addEventListener("click", () => {
+            this.closeForm(this.projectForm)
+        })
     };
 
     appendForms() {

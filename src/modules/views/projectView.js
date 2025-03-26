@@ -6,9 +6,6 @@ class ProjectView {
         this.projectForm = this.createProjectForm();
         this.projectList = document.querySelector(".projectList");
         this.taskArea = document.querySelector(".taskArea");
-        this.createProjectButton = document.querySelector(".createProject");
-        this.closeProjectFormButton = this.projectForm.querySelector(".closeProjectFormButton");
-        this.addListeners();
     }
 
     createSidebarProject(project) {
@@ -68,39 +65,6 @@ class ProjectView {
         dialog.append(form);
         return dialog;
     };
-
-    addListeners() {
-        this.createProjectButton.addEventListener("click", () => {
-            this.openProjectForm();
-        })
-
-        this.closeProjectFormButton.addEventListener("click", () => {
-            this.closeProjectForm();
-        })
-
-        this.projectForm.addEventListener("submit", (e) => {
-            e.preventDefault();
-            const title = document.getElementById("projectTitle").value;
-            const project = this.projectController.createProject(title);
-            this.projectController.addProject(project);
-            this.renderProjects();
-            this.closeProjectForm();
-            this.resetForm();
-        })
-    };
-
-    openProjectForm() {
-        this.projectForm.show();
-    };
-
-    closeProjectForm() {
-        this.projectForm.close();
-    };
-
-    resetForm() {
-        const form = this.projectForm.querySelector("form");
-        form.reset();
-    }
 }
 
 export default ProjectView;

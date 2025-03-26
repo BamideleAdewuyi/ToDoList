@@ -26,6 +26,15 @@ class AppView {
         this.closeProjectFormButton.addEventListener("click", () => {
             this.closeForm(this.projectForm)
         })
+
+        this.projectForm.addEventListener("submit", (e) => {
+            e.preventDefault();
+            const title = document.getElementById("projectTitle").value;
+            const project = this.projectView.projectController.createProject(title);
+            this.projectView.projectController.addProject(project);
+            this.projectView.renderProjects();
+            this.closeForm(this.projectForm);
+        })
     };
 
     appendForms() {

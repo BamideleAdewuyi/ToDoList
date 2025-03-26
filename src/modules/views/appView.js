@@ -6,8 +6,9 @@ class AppView {
         this.projectView = new ProjectView();
         this.taskView = new TaskView();
         this.projectForm = this.projectView.projectForm;
-        this.createProjectButton = document.querySelector(".createProject");
         this.taskArea = document.querySelector(".taskArea");
+        this.createProjectButton = document.querySelector(".createProject");
+        this.closeProjectFormButton = this.projectForm.querySelector(".closeProjectFormButton");
         this.appendForms();
         this.addListeners();
         this.update();

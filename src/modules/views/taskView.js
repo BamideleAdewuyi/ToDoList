@@ -41,11 +41,11 @@ class TaskView {
                          <div id="taskPriority">
                              <p>Select priority</p>
                              <label for="low">Low</label>
-                             <input type="radio" id="low" name="priority" value="low" required/>
+                             <input type="radio" id="low" name="taskPriority" value="low" required/>
                              <label for="medium">Medium</label>
-                             <input type="radio" id="medium" name="priority" value="medium"/>
+                             <input type="radio" id="medium" name="taskPriority" value="medium"/>
                              <label for="high">High</label>
-                             <input type="radio" id="high" name="priority" value="high"/>
+                             <input type="radio" id="high" name="taskPriority" value="high"/>
                          </div>
                          <label for="taskProject">Select project</label>
                          <select name="taskProject" id="taskProject">

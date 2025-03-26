@@ -8,6 +8,7 @@ class AppView {
         this.projectForm = this.projectView.projectForm;
         this.taskArea = document.querySelector(".taskArea");
         this.createProjectButton = document.querySelector(".createProject");
+        this.createTaskButton = document.querySelector(".addToDo");
         this.closeProjectFormButton = this.projectForm.querySelector(".closeProjectFormButton");
         this.appendForms();
         this.addListeners();

@@ -47,7 +47,7 @@ class ProjectView {
     previewTask(task) {
         const taskPreview = document.createElement("div");
         taskPreview.classList.add("taskPreview");
-        taskPreview.setAttribute("id", task.title);
+        taskPreview.setAttribute("id", task.title+task.id);
         const taskHeading = document.createElement("h5");
         taskHeading.textContent = task.title;
         const taskDueDate = document.createElement("p");

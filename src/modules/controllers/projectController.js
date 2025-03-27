@@ -6,8 +6,9 @@ class ProjectController{
         this.id = 1;
     };
 
-    createProject(title) {
-        const project = new Project(title);
+    createProject(title, id) {
+        const project = new Project(title, id);
+        this.id += 1;
         return project;
     };
 

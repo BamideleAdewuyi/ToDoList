@@ -53,7 +53,8 @@ class ProjectView {
         const taskDueDate = document.createElement("p");
         taskDueDate.textContent = task.dueDate;
         const expandButton = document.createElement("button");
-        expandButton.textContent = "See details"
+        expandButton.textContent = "See details";
+        expandButton.classList.add("expandButton");
         taskPreview.append(taskHeading, taskDueDate, expandButton);
         return taskPreview;
     };

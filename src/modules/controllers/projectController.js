@@ -32,7 +32,7 @@ class ProjectController{
         this.clearProjects();
         for (const task of taskController.tasks) {
             for (const project of this.projects) {
-                if (task.project === project.title) {
+                if (task.projectId === project.id) {
                     taskController.addTask(task, project.tasks)
                 }
             }

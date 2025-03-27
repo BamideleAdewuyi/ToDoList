@@ -33,7 +33,7 @@ class AppView {
         this.projectForm.addEventListener("submit", (e) => {
             e.preventDefault();
             const title = document.getElementById("projectTitle").value;
-            const project = this.projectView.projectController.createProject(title);
+            const project = this.projectView.projectController.createProject(title, this.projectView.projectController.id);
             this.projectView.projectController.addProject(project);
             this.projectView.renderProjects();
             this.refreshTaskForm();

@@ -66,6 +66,10 @@ class AppView {
         })
     };
 
+    getSelectedOption(selectElement) {
+
+    };
+
     refreshTaskForm() {
         const projectList = this.taskForm.querySelector("#taskProject");
         projectList.innerHTML = ``;

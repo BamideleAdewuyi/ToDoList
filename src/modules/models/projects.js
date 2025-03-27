@@ -1,6 +1,7 @@
 class Project {
-    constructor(title) {
+    constructor(title, id) {
         this.title = title;
+        this.id = id;
         this.tasks = [];
     }
 };

@@ -17,8 +17,8 @@ class TaskController{
         return;
     }
 
-    getTask(title, arr) {
-        const task = arr.find((obj) => obj.title === title);
+    getTask(id, arr) {
+        const task = arr.find((obj) => obj.id === id);
         return task;
     }
 

@@ -17,8 +17,8 @@ class ProjectController{
         return;
     };
 
-    getProject(title) {
-        const project = this.projects.find((obj) => obj.title === title);
+    getProject(id) {
+        const project = this.projects.find((obj) => obj.id === id);
         return project;
     };
 

@@ -67,7 +67,8 @@ class AppView {
     };
 
     getSelectedOption(selectElement) {
-
+        const selectedOption = selectElement.options[selectElement.selectedIndex];
+        return selectedOption;
     };
 
     refreshTaskForm() {

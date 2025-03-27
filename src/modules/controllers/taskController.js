@@ -3,6 +3,7 @@ import Task from "../models/tasks";
 class TaskController{
     constructor() {
         this.tasks = [];
+        this.id = 1;
     }
 
     createTask(title, description, dueDate, priority, project) {

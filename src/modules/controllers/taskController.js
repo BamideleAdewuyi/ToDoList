@@ -30,8 +30,8 @@ class TaskController{
         return arr;
     }
 
-    deleteTask(taskTitle) {
-        const task = this.getTask(taskTitle, this.tasks);
+    deleteTask(taskID) {
+        const task = this.getTask(taskID, this.tasks);
         this.tasks = this.removeItem(this.tasks, task);
         return;
     }

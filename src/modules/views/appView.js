@@ -59,6 +59,8 @@ class AppView {
             const newTask = this.taskView.taskController.createTask(title, description, dueDate, priority, project, this.taskView.taskController.id);
             this.taskView.taskController.addTask(newTask, this.taskView.taskController.tasks);
             this.projectView.projectController.refreshProjects(this.taskView.taskController);
+            console.log(newTask)
+            console.log(this.projectView.projectController)
             this.closeForm(this.taskForm);
             this.resetForm(this.taskForm);
         })
@@ -69,6 +71,7 @@ class AppView {
         projectList.innerHTML = ``;
         for (const project of this.projectView.projectController.projects) {
             const newProject = document.createElement("option");
+            newProject.setAttribute("id", project.id);
             newProject.textContent = project.title;
             projectList.append(newProject);
         }

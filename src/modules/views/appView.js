@@ -59,9 +59,20 @@ class AppView {
             const newTask = this.taskView.taskController.createTask(title, description, dueDate, priority, projectId, this.taskView.taskController.id);
             this.taskView.taskController.addTask(newTask, this.taskView.taskController.tasks);
             this.projectView.projectController.refreshProjects(this.taskView.taskController);
+            this.addListeners()
             this.closeForm(this.taskForm);
             this.resetForm(this.taskForm);
-        })
+        });
+
+        for (const task of this.taskView.taskController.tasks) {
+            console.log("COOK")
+            const preview = document.getElementById(task.title+task.id);
+            // const expandButton = preview.querySelector(".expandButton");
+            // expandButton.addEventListener("click", () => {
+            //     console.log("Cooking with gas")
+            // })
+
+        }
     };
 
     getSelectedOption(selectElement) {

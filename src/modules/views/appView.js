@@ -65,16 +65,6 @@ class AppView {
             this.closeForm(this.taskForm);
             this.resetForm(this.taskForm);
         });
-
-        // for (const task of this.taskView.taskController.tasks) {
-        //     console.log("COOK")
-        //     const preview = document.getElementById(task.title+task.id);
-        //     // const expandButton = preview.querySelector(".expandButton");
-        //     // expandButton.addEventListener("click", () => {
-        //     //     console.log("Cooking with gas")
-        //     // })
-
-        // }
     };
 
     createSidebarProject(project) {

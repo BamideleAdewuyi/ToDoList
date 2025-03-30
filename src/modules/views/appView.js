@@ -11,7 +11,10 @@ class AppView {
         this.createProjectButton = document.querySelector(".createProject");
         this.createTaskButton = document.querySelector(".addToDo");
         this.closeTaskFormButton = this.taskForm.querySelector(".closeToDoFormButton");
+        this.projectForm = this.projectView.createProjectForm();
         this.closeProjectFormButton = this.projectForm.querySelector(".closeProjectFormButton");
+        this.projectList = document.querySelector(".projectList");
+        this.taskArea = document.querySelector(".taskArea");
         this.appendForms();
         this.addListeners();
         this.update();
@@ -35,7 +38,7 @@ class AppView {
             const title = document.getElementById("projectTitle").value;
             const project = this.projectView.projectController.createProject(title, this.projectView.projectController.id);
             this.projectView.projectController.addProject(project);
-            this.projectView.renderProjects();
+            this.renderProjects();
             this.refreshTaskForm();
             this.closeForm(this.projectForm);
             this.resetForm(this.projectForm);
@@ -72,6 +75,57 @@ class AppView {
         //     // })
 
         // }
+    };
+
+    createSidebarProject(project) {
+        const sidebarProject = document.createElement("li");
+        sidebarProject.classList.add("sideBarProject");
+        sidebarProject.id = project.title;
+        sidebarProject.textContent = project.title;
+        return sidebarProject;
+    };
+
+    renderProjects() {
+        this.projectList.innerHTML = "";
+        for (const project of this.projectView.projectController.projects) {
+            const sidebarProject = this.createSidebarProject(project)
+            this.projectList.append(sidebarProject);
+            sidebarProject.addEventListener("click", () => this.previewProject(project));
+        }
+        return;
+    };
+
+    previewProject(project) {
+        const currentPreview = this.taskArea.querySelector(".projectPreview");
+        if (currentPreview) {
+            currentPreview.remove();
+        };
+        
+        const projectPreview = document.createElement("div");
+        const projectPreviewHeading = document.createElement("h4");
+        projectPreviewHeading.textContent = project.title;
+        projectPreview.classList.add("projectPreview");
+        projectPreview.append(projectPreviewHeading);
+        for (const task of project.tasks) {
+            projectPreview.append(this.previewTask(task));
+        }
+        this.taskArea.append(projectPreview)
+
+    };
+
+    previewTask(task) {
+        const taskPreview = document.createElement("div");
+        taskPreview.classList.add("taskPreview");
+        taskPreview.setAttribute("id", task.title+task.id);
+        const taskHeading = document.createElement("h5");
+        taskHeading.textContent = task.title;
+        const taskDueDate = document.createElement("p");
+        taskDueDate.textContent = task.dueDate;
+        const expandButton = document.createElement("button");
+        expandButton.textContent = "See details";
+        expandButton.classList.add("expandButton");
+        taskPreview.append(taskHeading, taskDueDate, expandButton);
+        return taskPreview;
     };
 
     getSelectedOption(selectElement) {

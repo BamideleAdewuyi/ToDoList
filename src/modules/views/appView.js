@@ -97,7 +97,8 @@ class AppView {
         projectPreview.classList.add("projectPreview");
         projectPreview.append(projectPreviewHeading);
         for (const task of project.tasks) {
-            projectPreview.append(this.previewTask(task));
+            const taskPreview = this.previewTask(task);
+            projectPreview.append(taskPreview);
         }
         this.taskArea.append(projectPreview)
 

@@ -48,7 +48,7 @@ class TaskView {
                              <input type="radio" id="high" name="taskPriority" value="high"/>
                          </div>
                          <label for="taskProject">Select project</label>
-                         <select name="taskProject" id="taskProject">
+                         <select name="taskProject" id="taskProject" required>
  
                          </select>
                          <button class="submit" id="createToDo">Add ToDo</button>

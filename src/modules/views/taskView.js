@@ -60,7 +60,11 @@ class TaskView {
     };
 
     fillTaskForm(task) {
+        const dialog = this.createTaskForm();
+        const title = dialog.getElementById("taskTitle");
+        title.textContent = task.title;
 
+        return dialog;
     };
 }
 

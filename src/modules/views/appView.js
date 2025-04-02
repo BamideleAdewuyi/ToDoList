@@ -100,7 +100,9 @@ class AppView {
             const taskPreview = this.previewTask(task);
             const detailsButton = taskPreview.querySelector(".expandButton")
             detailsButton.addEventListener("click", () => {
-                
+                const editTaskForm = this.fillTaskForm(task);
+                this.taskArea.append(editTaskForm);
+                this.openForm(editTaskForm);
             });
             projectPreview.append(taskPreview);
         }
@@ -137,6 +139,22 @@ class AppView {
             newProject.textContent = project.title;
             projectList.append(newProject);
         }
+    };
+
+    fillTaskForm(task) {
+        const dialog = this.taskView.createTaskForm();
+        const title = dialog.querySelector("#taskTitle");
+        title.value = task.title;
+        const description = dialog.querySelector("#taskDescription");
+        description.value = task.description;
+        const dueDate = dialog.querySelector("#taskDueDate");
+        dueDate.value = task.dueDate;
+        // const priority = dialog.querySelector('input[name="taskPriority"]:checked');
+        // priority.value = task.priority;
+        const project = dialog.querySelector("#taskProject")
+        project.value = task.project;
+
+        return dialog;
     };
 
     appendForms() {

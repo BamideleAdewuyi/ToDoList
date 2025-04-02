@@ -39,7 +39,7 @@ class AppView {
             const project = this.projectView.projectController.createProject(title, this.projectView.projectController.id);
             this.projectView.projectController.addProject(project);
             this.renderProjects();
-            this.refreshTaskForm();
+            this.refreshTaskForm(this.taskForm);
             this.closeForm(this.projectForm);
             this.resetForm(this.projectForm);
         });
@@ -130,8 +130,8 @@ class AppView {
         return selectedOption;
     };
 
-    refreshTaskForm() {
-        const projectList = this.taskForm.querySelector("#taskProject");
+    refreshTaskForm(taskForm) {
+        const projectList = taskForm.querySelector("#taskProject");
         projectList.innerHTML = ``;
         for (const project of this.projectView.projectController.projects) {
             const newProject = document.createElement("option");

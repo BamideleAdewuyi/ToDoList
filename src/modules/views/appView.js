@@ -98,6 +98,10 @@ class AppView {
         projectPreview.append(projectPreviewHeading);
         for (const task of project.tasks) {
             const taskPreview = this.previewTask(task);
+            const detailsButton = taskPreview.querySelector(".expandButton")
+            detailsButton.addEventListener("click", () => {
+                
+            });
             projectPreview.append(taskPreview);
         }
         this.taskArea.append(projectPreview)

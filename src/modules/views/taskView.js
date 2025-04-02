@@ -58,14 +58,6 @@ class TaskView {
         dialog.append(form);
         return dialog;
     };
-
-    fillTaskForm(task) {
-        const dialog = this.createTaskForm();
-        const title = dialog.querySelector("#taskTitle");
-        title.value = task.title;
-
-        return dialog;
-    };
 }
 
 export default TaskView;

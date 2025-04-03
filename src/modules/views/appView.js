@@ -100,8 +100,8 @@ class AppView {
             const taskPreview = this.previewTask(task);
             const detailsButton = taskPreview.querySelector(".expandButton")
             const taskForm = this.taskView.createTaskForm();
+            this.refreshTaskForm(taskForm);
             const editTaskForm = this.fillTaskForm(taskForm, task);
-            this.refreshTaskForm(editTaskForm);
             detailsButton.addEventListener("click", () => {
                 this.taskArea.append(editTaskForm);
                 this.openForm(editTaskForm);
@@ -159,8 +159,11 @@ class AppView {
         // const optionToSelect = project.querySelector(`option[id="${task.projectId}"]`);
         // project.value = project.querySelector(`option[id="${task.projectId}"]`);
         console.log(task.projectId)
-        console.log(project.querySelector(`option[value="${Number(task.projectId)}"]`))
+        // console.log(taskForm.getElementById("1"))
+        // console.log(project.querySelector(`option[value="${Number(task.projectId)}"]`))
+        console.log(taskForm.querySelectorAll("option"))
         console.log(project)
+        console.log(project.innerHTML)
         return taskForm;
     };
 

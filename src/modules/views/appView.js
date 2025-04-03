@@ -100,6 +100,7 @@ class AppView {
             const taskPreview = this.previewTask(task);
             const detailsButton = taskPreview.querySelector(".expandButton")
             const editTaskForm = this.fillTaskForm(task);
+            // NEED TO USE CREATE TASKFORM THEN FILL TASK FORM
             this.refreshTaskForm(editTaskForm);
             detailsButton.addEventListener("click", () => {
                 this.taskArea.append(editTaskForm);
@@ -143,7 +144,7 @@ class AppView {
         }
     };
 
-    fillTaskForm(task) {
+    fillTaskForm(taskForm, task) {
         const dialog = this.taskView.createTaskForm();
         const title = dialog.querySelector("#taskTitle");
         title.value = task.title;
@@ -159,7 +160,7 @@ class AppView {
         // const optionToSelect = project.querySelector(`option[id="${task.projectId}"]`);
         // project.value = project.querySelector(`option[id="${task.projectId}"]`);
         console.log(task.projectId)
-        console.log(project.querySelector(`option[value="${String(task.projectId)}"]`))
+        console.log(project.querySelector(`option[value="${Number(task.projectId)}"]`))
         console.log(project)
         return dialog;
     };

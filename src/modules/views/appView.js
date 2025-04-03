@@ -136,7 +136,8 @@ class AppView {
         projectList.innerHTML = ``;
         for (const project of this.projectView.projectController.projects) {
             const newProject = document.createElement("option");
-            newProject.setAttribute("id", project.id);
+            newProject.setAttribute("id", project.id)
+            newProject.setAttribute("value", project.id);
             newProject.textContent = project.title;
             projectList.append(newProject);
         }
@@ -153,9 +154,13 @@ class AppView {
         // const priority = dialog.querySelector('input[name="taskPriority"]:checked');
         // priority.value = task.priority;
         const project = dialog.querySelector("#taskProject")
-        project.value = this.projectView.projectController.getProject(task.projectId).title;
+        const selectedProject = this.projectView.projectController.getProject(task.projectId);
+        const optionToSelect = project.querySelector(`option[id="${task.projectId}"]`);
         console.log(this.projectView.projectController.getProject(task.projectId).title)
-
+        console.log(optionToSelect)
+        if (optionToSelect) {
+            optionToSelect.selected = true;
+        }
         return dialog;
     };
 

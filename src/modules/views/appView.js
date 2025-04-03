@@ -99,9 +99,8 @@ class AppView {
         for (const task of project.tasks) {
             const taskPreview = this.previewTask(task);
             const detailsButton = taskPreview.querySelector(".expandButton")
-            const taskForm = this.createTaskForm();
+            const taskForm = this.taskView.createTaskForm();
             const editTaskForm = this.fillTaskForm(taskForm, task);
-            // NEED TO USE CREATE TASKFORM THEN FILL TASK FORM
             this.refreshTaskForm(editTaskForm);
             detailsButton.addEventListener("click", () => {
                 this.taskArea.append(editTaskForm);
@@ -146,24 +145,23 @@ class AppView {
     };
 
     fillTaskForm(taskForm, task) {
-        const dialog = this.taskView.createTaskForm();
-        const title = dialog.querySelector("#taskTitle");
+        const title = taskForm.querySelector("#taskTitle");
         title.value = task.title;
-        const description = dialog.querySelector("#taskDescription");
+        const description = taskForm.querySelector("#taskDescription");
         description.value = task.description;
-        const dueDate = dialog.querySelector("#taskDueDate");
+        const dueDate = taskForm.querySelector("#taskDueDate");
         dueDate.value = task.dueDate;
         // const priority = dialog.querySelector('input[name="taskPriority"]:checked');
         // priority.value = task.priority;
-        const project = dialog.querySelector("#taskProject")
-        console.log(dialog)
+        const project = taskForm.querySelector("#taskProject")
+        console.log(taskForm)
         // const selectedProject = this.projectView.projectController.getProject(task.projectId);
         // const optionToSelect = project.querySelector(`option[id="${task.projectId}"]`);
         // project.value = project.querySelector(`option[id="${task.projectId}"]`);
         console.log(task.projectId)
         console.log(project.querySelector(`option[value="${Number(task.projectId)}"]`))
         console.log(project)
-        return dialog;
+        return taskForm;
     };
 
     appendForms() {

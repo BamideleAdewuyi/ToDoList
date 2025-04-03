@@ -153,7 +153,8 @@ class AppView {
         // const priority = dialog.querySelector('input[name="taskPriority"]:checked');
         // priority.value = task.priority;
         const project = dialog.querySelector("#taskProject")
-        project.value = task.project;
+        project.value = this.projectView.projectController.getProject(task.projectId).title;
+        console.log(this.projectView.projectController.getProject(task.projectId).title)
 
         return dialog;
     };

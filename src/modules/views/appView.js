@@ -100,8 +100,8 @@ class AppView {
             const taskPreview = this.previewTask(task);
             const detailsButton = taskPreview.querySelector(".expandButton")
             const editTaskForm = this.fillTaskForm(task);
+            this.refreshTaskForm(editTaskForm);
             detailsButton.addEventListener("click", () => {
-                this.refreshTaskForm(editTaskForm);
                 this.taskArea.append(editTaskForm);
                 this.openForm(editTaskForm);
             });
@@ -154,13 +154,13 @@ class AppView {
         // const priority = dialog.querySelector('input[name="taskPriority"]:checked');
         // priority.value = task.priority;
         const project = dialog.querySelector("#taskProject")
-        const selectedProject = this.projectView.projectController.getProject(task.projectId);
-        const optionToSelect = project.querySelector(`option[id="${task.projectId}"]`);
-        console.log(this.projectView.projectController.getProject(task.projectId).title)
-        console.log(optionToSelect)
-        if (optionToSelect) {
-            optionToSelect.selected = true;
-        }
+        console.log(dialog)
+        // const selectedProject = this.projectView.projectController.getProject(task.projectId);
+        // const optionToSelect = project.querySelector(`option[id="${task.projectId}"]`);
+        // project.value = project.querySelector(`option[id="${task.projectId}"]`);
+        console.log(task.projectId)
+        console.log(project.querySelector(`option[value="${String(task.projectId)}"]`))
+        console.log(project)
         return dialog;
     };
 

@@ -99,7 +99,8 @@ class AppView {
         for (const task of project.tasks) {
             const taskPreview = this.previewTask(task);
             const detailsButton = taskPreview.querySelector(".expandButton")
-            const editTaskForm = this.fillTaskForm(task);
+            const taskForm = this.createTaskForm();
+            const editTaskForm = this.fillTaskForm(taskForm, task);
             // NEED TO USE CREATE TASKFORM THEN FILL TASK FORM
             this.refreshTaskForm(editTaskForm);
             detailsButton.addEventListener("click", () => {

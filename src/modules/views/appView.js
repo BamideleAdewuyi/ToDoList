@@ -171,7 +171,7 @@ class AppView {
     };
 
     submitEditedTask(taskForm, editButton, closeButton) {
-        
+        closeButton.addEventListener("click", () => this.closeForm(taskForm))
     };
 
     appendForms() {

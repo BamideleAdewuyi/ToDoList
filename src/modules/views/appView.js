@@ -105,7 +105,7 @@ class AppView {
             detailsButton.addEventListener("click", () => {
                 this.taskArea.append(editTaskForm.form);
                 this.openForm(editTaskForm.form);
-                this.submitEditedTask(editTaskForm.form, editTaskForm.editButton, editTaskForm.closeButton, editTaskForm.taskId);
+                this.submitEditedTask(editTaskForm.form, editTaskForm.editButton, editTaskForm.closeButton, editTaskForm.task);
             });
             projectPreview.append(taskPreview);
         }
@@ -167,13 +167,17 @@ class AppView {
             form: taskForm,
             editButton: editTaskButton,
             closeButton: closeFormButton,
-            taskId: task.id
+            task: task
         };
     };
 
     submitEditedTask(taskForm, editButton, closeButton, taskId) {
         closeButton.addEventListener("click", () => this.closeForm(taskForm))
         
+        editButton.addEventListener("click", (e) => {
+            e.preventDefault();
+            this.taskView.taskController.editTask()
+        })
     };
 
     appendForms() {

@@ -164,6 +164,10 @@ class AppView {
         return taskForm;
     };
 
+    submitEditedTask(taskForm) {
+
+    };
+
     appendForms() {
         this.taskArea.append(this.projectForm, this.taskForm)
     };

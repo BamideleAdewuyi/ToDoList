@@ -103,8 +103,9 @@ class AppView {
             this.refreshTaskForm(taskForm);
             const editTaskForm = this.fillTaskForm(taskForm, task);
             detailsButton.addEventListener("click", () => {
-                this.taskArea.append(editTaskForm);
-                this.openForm(editTaskForm);
+                this.taskArea.append(editTaskForm.form);
+                this.openForm(editTaskForm.form);
+                this.submitEditedTask(editTaskForm.form, editTaskForm.editButton, editTaskForm.closeButton);
             });
             projectPreview.append(taskPreview);
         }
@@ -147,6 +148,7 @@ class AppView {
     fillTaskForm(taskForm, task) {
         const editTaskButton = taskForm.querySelector("#createToDo");
         editTaskButton.textContent = "Edit Task"
+        const closeFormButton = taskForm.querySelector(".closeToDoFormButton");
         const title = taskForm.querySelector("#taskTitle");
         title.value = task.title;
         const description = taskForm.querySelector("#taskDescription");
@@ -161,11 +163,15 @@ class AppView {
         if (selectedProject) {
             selectedProject.selected = true;
         }
-        return taskForm;
+        return {
+            form: taskForm,
+            editButton: editTaskButton,
+            closeButton: closeFormButton
+        };
     };
 
-    submitEditedTask(taskForm) {
-
+    submitEditedTask(taskForm, editButton, closeButton) {
+        
     };
 
     appendForms() {

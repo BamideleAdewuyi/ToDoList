@@ -145,6 +145,8 @@ class AppView {
     };
 
     fillTaskForm(taskForm, task) {
+        const editTaskButton = taskForm.querySelector("#createToDo");
+        editTaskButton.textContent = "Edit Task"
         const title = taskForm.querySelector("#taskTitle");
         title.value = task.title;
         const description = taskForm.querySelector("#taskDescription");

@@ -154,16 +154,10 @@ class AppView {
         // const priority = dialog.querySelector('input[name="taskPriority"]:checked');
         // priority.value = task.priority;
         const project = taskForm.querySelector("#taskProject")
-        console.log(taskForm)
-        // const selectedProject = this.projectView.projectController.getProject(task.projectId);
-        // const optionToSelect = project.querySelector(`option[id="${task.projectId}"]`);
-        // project.value = project.querySelector(`option[id="${task.projectId}"]`);
-        console.log(task.projectId)
-        // console.log(taskForm.getElementById("1"))
-        // console.log(project.querySelector(`option[value="${Number(task.projectId)}"]`))
-        console.log(taskForm.querySelectorAll("option"))
-        console.log(project)
-        console.log(project.innerHTML)
+        const selectedProject = project.querySelector(`#\\3${task.projectId}`)
+        if (selectedProject) {
+            selectedProject.selected = true;
+        }
         return taskForm;
     };
 

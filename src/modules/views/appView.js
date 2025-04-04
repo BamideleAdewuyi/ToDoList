@@ -151,8 +151,9 @@ class AppView {
         description.value = task.description;
         const dueDate = taskForm.querySelector("#taskDueDate");
         dueDate.value = task.dueDate;
-        // const priority = dialog.querySelector('input[name="taskPriority"]:checked');
-        // priority.value = task.priority;
+        const priority = taskForm.querySelector("#taskPriority");
+        const selectedPriority = priority.querySelector(`#${task.priority}`)
+        selectedPriority.checked = true;
         const project = taskForm.querySelector("#taskProject")
         const selectedProject = project.querySelector(`#\\3${task.projectId}`)
         if (selectedProject) {

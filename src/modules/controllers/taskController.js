@@ -36,12 +36,12 @@ class TaskController{
         return;
     }
 
-    editTask(task, title, description, dueDate, priority, project) {
+    editTask(task, title, description, dueDate, priority, projectId) {
         task.title = title;
         task.description = description;
         task.dueDate = dueDate;
         task.priority = priority;
-        task.project = project;
+        task.projectId = projectId;
         return;
     }
 };

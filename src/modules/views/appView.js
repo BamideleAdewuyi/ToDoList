@@ -60,8 +60,10 @@ class AppView {
             const priority = document.querySelector('input[name="taskPriority"]:checked')?.value;
             const projectId = Number(this.getSelectedOption(document.getElementById("taskProject")).id);
             const newTask = this.taskView.taskController.createTask(title, description, dueDate, priority, projectId, this.taskView.taskController.id);
+            const project = this.projectView.projectController.getProject(projectId);
             this.taskView.taskController.addTask(newTask, this.taskView.taskController.tasks);
             this.projectView.projectController.refreshProjects(this.taskView.taskController);
+            this.previewProject(project);
             this.closeForm(this.taskForm);
             this.resetForm(this.taskForm);
         });

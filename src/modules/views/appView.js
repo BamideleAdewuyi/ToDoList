@@ -181,8 +181,10 @@ class AppView {
             const dueDate = taskForm.querySelector("#taskDueDate").value;;
             const priority = taskForm.querySelector('input[name="taskPriority"]:checked')?.value;
             const projectId = Number(this.getSelectedOption(taskForm.querySelector("#taskProject")).id);
+            const project = this.projectView.projectController.getProject(task.projectId)
             this.taskView.taskController.editTask(task, title, description, dueDate, priority, projectId);
             this.projectView.projectController.refreshProjects(this.taskView.taskController);
+            this.previewProject(project)
             this.closeForm(taskForm);
         })
     };

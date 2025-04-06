@@ -171,12 +171,19 @@ class AppView {
         };
     };
 
-    submitEditedTask(taskForm, editButton, closeButton, taskId) {
+    submitEditedTask(taskForm, editButton, closeButton, task) {
         closeButton.addEventListener("click", () => this.closeForm(taskForm))
         
         editButton.addEventListener("click", (e) => {
             e.preventDefault();
-            this.taskView.taskController.editTask()
+            const title = taskForm.querySelector("#taskTitle").value;
+            const description = taskForm.querySelector("#taskDescription").value;;
+            const dueDate = taskForm.querySelector("#taskDueDate").value;;
+            const priority = taskForm.querySelector('input[name="taskPriority"]:checked')?.value;
+            const projectId = Number(this.getSelectedOption(taskForm.querySelector("#taskProject")).id);
+            this.taskView.taskController.editTask(task, title, description, dueDate, priority, projectId);
+            this.projectView.projectController.refreshProjects(this.taskView.taskController);
+            console.log(task);
         })
     };
 

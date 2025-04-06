@@ -183,7 +183,7 @@ class AppView {
             const projectId = Number(this.getSelectedOption(taskForm.querySelector("#taskProject")).id);
             this.taskView.taskController.editTask(task, title, description, dueDate, priority, projectId);
             this.projectView.projectController.refreshProjects(this.taskView.taskController);
-            console.log(task);
+            this.closeForm(taskForm);
         })
     };
 

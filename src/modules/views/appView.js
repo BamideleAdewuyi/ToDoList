@@ -194,6 +194,10 @@ class AppView {
             this.previewProject(project)
             this.closeForm(taskForm);
         })
+
+        deleteTaskButton.addEventListener("click", () => {
+
+        });
     };
 
     appendForms() {

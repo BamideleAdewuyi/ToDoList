@@ -196,7 +196,11 @@ class AppView {
         })
 
         deleteTaskButton.addEventListener("click", () => {
-
+            const project = this.projectView.projectController.getProject(task.projectId)
+            this.taskView.taskController.deleteTask(task.id);
+            this.projectView.projectController.refreshProjects(this.taskView.taskController);
+            this.previewProject(project)
+            this.closeForm(taskForm);
         });
     };
 

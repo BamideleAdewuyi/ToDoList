@@ -162,6 +162,10 @@ class AppView {
         selectedPriority.checked = true;
         const project = taskForm.querySelector("#taskProject")
         const selectedProject = project.querySelector(`#\\3${task.projectId}`)
+        const deleteTaskButton = document.createElement("button");
+        deleteTaskButton.textContent = "Delete Task";
+        deleteTaskButton.setAttribute("type", "button");
+        taskForm.append(deleteTaskButton);
         if (selectedProject) {
             selectedProject.selected = true;
         }

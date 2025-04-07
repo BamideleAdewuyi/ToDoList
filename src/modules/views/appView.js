@@ -173,7 +173,8 @@ class AppView {
             form: taskForm,
             editButton: editTaskButton,
             closeButton: closeFormButton,
-            task: task
+            task: task,
+            deleteTaskButton: deleteTaskButton
         };
     };
 

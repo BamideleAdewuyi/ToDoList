@@ -28,6 +28,10 @@ class ProjectController{
         }
     };
 
+    sortTasks() {
+
+    }
+    
     refreshProjects(taskController) {
         this.clearProjects();
         for (const task of taskController.tasks) {

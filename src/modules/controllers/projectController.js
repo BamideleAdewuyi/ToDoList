@@ -29,7 +29,7 @@ class ProjectController{
         }
     };
 
-    sortTasks() {
+    sortTasks(project) {
 
     }
     

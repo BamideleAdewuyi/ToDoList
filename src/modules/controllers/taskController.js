@@ -15,7 +15,7 @@ class TaskController{
 
     addTask(task, arr) {
         arr.push(task);
-        console.log(task.dueDate)
+        this.tasks = this.sortTasks(this.tasks);
         return;
     }
 
@@ -51,6 +51,7 @@ class TaskController{
         task.dueDate = dueDate;
         task.priority = priority;
         task.projectId = projectId;
+        this.tasks = this.sortTasks(this.tasks);
         return;
     }
 };

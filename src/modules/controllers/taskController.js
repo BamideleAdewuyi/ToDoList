@@ -1,4 +1,5 @@
 import Task from "../models/tasks";
+import { compareAsc, format} from "date-fns";
 
 class TaskController{
     constructor() {
@@ -14,6 +15,7 @@ class TaskController{
 
     addTask(task, arr) {
         arr.push(task);
+        console.log(task.dueDate)
         return;
     }
 

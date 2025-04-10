@@ -1,5 +1,5 @@
 import Task from "../models/tasks";
-import {format} from "date-fns";
+import {format, compareAsc} from "date-fns";
 
 class TaskController{
     constructor() {

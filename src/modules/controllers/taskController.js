@@ -48,7 +48,7 @@ class TaskController{
     editTask(task, title, description, dueDate, priority, projectId) {
         task.title = title;
         task.description = description;
-        task.dueDate = dueDate;
+        task.dueDate = format(dueDate, "dd/MM/yyyy");
         task.priority = priority;
         task.projectId = projectId;
         this.tasks = this.sortTasks(this.tasks);

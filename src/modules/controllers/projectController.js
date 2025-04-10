@@ -28,10 +28,6 @@ class ProjectController{
             project.tasks = [];
         }
     };
-
-    sortTasks(project) {
-
-    }
     
     refreshProjects(taskController) {
         this.clearProjects();

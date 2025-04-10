@@ -8,7 +8,7 @@ class TaskController{
     }
 
     createTask(title, description, dueDate, priority, projectId, id) {
-        const newTask = new Task(title, description, dueDate, priority, projectId, id)
+        const newTask = new Task(title, description, format(dueDate, "yyyy/MM/dd"), priority, projectId, id)
         this.id += 1;
         return newTask;
     }

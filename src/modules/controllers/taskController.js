@@ -32,6 +32,10 @@ class TaskController{
         return arr;
     }
 
+    sortTasks() {
+        
+    }
+
     deleteTask(taskID) {
         const task = this.getTask(taskID, this.tasks);
         this.tasks = this.removeItem(this.tasks, task);

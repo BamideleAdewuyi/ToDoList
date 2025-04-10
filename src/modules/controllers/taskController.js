@@ -32,8 +32,11 @@ class TaskController{
         return arr;
     }
 
-    sortTasks() {
-        
+    sortTasks(tasks) {
+        tasks.sort((a, b) => {
+            return compareAsc(new Date(a.dueDate), new Date(b.dueDate))
+        });
+        return tasks;
     }
 
     deleteTask(taskID) {

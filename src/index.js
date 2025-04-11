@@ -1,2 +1,4 @@
 import "./style.css";
-import AppController from "./modules/controllers/appController";
+import AppView from "./modules/views/appView";
+
+const appView = new AppView;

@@ -25,6 +25,10 @@ class ProjectController{
         }
     }
 
+    saveProjects() {
+
+    };
+
     createProject(title, id) {
         const project = new Project(title, id);
         this.id += 1;

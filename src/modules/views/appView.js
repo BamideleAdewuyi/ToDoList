@@ -57,7 +57,7 @@ class AppView {
             e.preventDefault();
             const title = document.getElementById("taskTitle").value;
             const description = document.getElementById("taskDescription").value;;
-            const dueDate = document.getElementById("taskDueDate").value;;
+            const dueDate = format(document.getElementById("taskDueDate").value, "dd/MM/yyyy");
             const priority = document.querySelector('input[name="taskPriority"]:checked')?.value;
             const projectId = Number(this.getSelectedOption(document.getElementById("taskProject")).id);
             const newTask = this.taskView.taskController.createTask(title, description, dueDate, priority, projectId, this.taskView.taskController.id);
@@ -123,7 +123,7 @@ class AppView {
         const taskHeading = document.createElement("h5");
         taskHeading.textContent = task.title;
         const taskDueDate = document.createElement("p");
-        taskDueDate.textContent = task.dueDate;
+        taskDueDate.textContent = format(task.dueDate, "dd/MM/yyyy");
         const expandButton = document.createElement("button");
         expandButton.textContent = "See details";
         expandButton.classList.add("expandButton");
@@ -157,7 +157,7 @@ class AppView {
         const description = taskForm.querySelector("#taskDescription");
         description.value = task.description;
         const dueDate = taskForm.querySelector("#taskDueDate");
-        dueDate.value = task.dueDate;
+        dueDate.value = format(task.dueDate, "dd/MM/yyyy");
         const priority = taskForm.querySelector("#taskPriority");
         const selectedPriority = priority.querySelector(`#${task.priority}`)
         selectedPriority.checked = true;
@@ -186,7 +186,7 @@ class AppView {
             e.preventDefault();
             const title = taskForm.querySelector("#taskTitle").value;
             const description = taskForm.querySelector("#taskDescription").value;;
-            const dueDate = taskForm.querySelector("#taskDueDate").value;;
+            const dueDate = format(taskForm.querySelector("#taskDueDate").value, "dd/MM/yyyy");
             const priority = taskForm.querySelector('input[name="taskPriority"]:checked')?.value;
             const projectId = Number(this.getSelectedOption(taskForm.querySelector("#taskProject")).id);
             const project = this.projectView.projectController.getProject(task.projectId)

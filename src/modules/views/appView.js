@@ -18,8 +18,9 @@ class AppView {
         this.taskArea = document.querySelector(".taskArea");
         this.appendForms();
         this.addListeners();
-        this.update();
     };
+
+    
 
     addListeners() {
         this.createProjectButton.addEventListener("click", () => {

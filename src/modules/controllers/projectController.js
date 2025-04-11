@@ -4,6 +4,19 @@ class ProjectController{
     constructor() {
         this.projects = [];
         this.id = 1;
+        if (this.storageAvailable("localStorage")) {
+            const stored = localStorage.getItem("projects");
+            if (stored) {
+                const parsed = JSON.parse(stored);
+                this.projects = parsed.map(p => {
+                    const project = new Project(p.title, p.id);
+                    project.tasks = p.tasks || [];
+                    return project;
+                })
+                const maxId = Math.max(...this.projects.map(p => p.id), 0);
+                this.id = maxId + 1;
+            }
+        }
     };
 
     storageAvailable(type) {

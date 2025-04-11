@@ -17,6 +17,7 @@ class ProjectController{
                 this.id = maxId + 1;
             }
         }
+        console.log(this.projects)
     };
 
     storageAvailable(type) {
@@ -45,6 +46,7 @@ class ProjectController{
                 id: project.id,
                 tasks: project.tasks
             }));
+            localStorage.setItem("projects", JSON.stringify(projectData));
         }
         else {
             console.warn("Local storage not available.")

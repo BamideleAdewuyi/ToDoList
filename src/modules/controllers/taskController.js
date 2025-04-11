@@ -9,8 +9,7 @@ class TaskController{
 
     createTask(title, description, dueDate, priority, projectId, id) {
         const parsedDate = parse(dueDate, "dd/MM/yyyy", new Date());
-        const formattedDate = format(parsedDate, "dd/MM/yyyy");
-        const newTask = new Task(title, description, formattedDate, priority, projectId, id)
+        const newTask = new Task(title, description, parsedDate, priority, projectId, id)
         this.id += 1;
         return newTask;
     }

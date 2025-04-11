@@ -26,7 +26,16 @@ class ProjectController{
     }
 
     saveProjects() {
-
+        if (this.storageAvailable("localStorage")) {
+            const projectData = this.projects.map((project) => ({
+                title: project.title,
+                id: project.id,
+                tasks: project.tasks
+            }));
+        }
+        else {
+            console.warn("Local storage not available.")
+        }
     };
 
     createProject(title, id) {
@@ -60,6 +69,7 @@ class ProjectController{
                 }
             }
         }
+        this.saveProjects();
     };
 
 };

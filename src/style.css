@@ -6,7 +6,7 @@
 }
 
 * {
-    outline: 2px solid red;
+    background-color: rgb(2, 196, 245);
     padding: 0;
     margin: 0;
     font-family: futura;

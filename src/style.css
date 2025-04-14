@@ -41,7 +41,7 @@
     grid-area: 2 / 1 / 20 / 6;
 }
 
-.newProjectForm {
+.newProjectDialog {
     position: relative;
     left: 20rem;
 }

@@ -7,8 +7,9 @@ class ProjectView {
 
     createProjectForm() {
         const dialog = document.createElement("dialog");
+        dialog.classList.add("newProjectForm")
         const form = document.createElement("form");
-        form.innerHTML = `<form action="#" class="newProjectForm">
+        form.innerHTML = `<form action="#">
                         <h3>New Project</h3>
                         <label for="projectTitle">Title</label>
                         <input type="text" placeholder="Title" name="projectTitle" id="projectTitle" required>

@@ -7,7 +7,7 @@ class ProjectView {
 
     createProjectForm() {
         const dialog = document.createElement("dialog");
-        dialog.classList.add("newProjectForm")
+        dialog.classList.add("newProjectDialog")
         const form = document.createElement("form");
         form.innerHTML = `<form action="#">
                         <h3>New Project</h3>

@@ -40,3 +40,8 @@
 .taskArea {
     grid-area: 2 / 1 / 20 / 6;
 }
+
+.newProjectForm {
+    position: relative;
+    left: 20rem;
+}

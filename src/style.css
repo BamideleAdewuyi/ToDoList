@@ -24,8 +24,12 @@
     grid-area: 1 / 2 / 5 / 6;
 }
 
-.sidebar {
+.heading {
+    position: relative;
+    left: 10rem;
+}
 
+.sidebar {
     grid-area: 1 / 1 / 5 / 2;
 }
 

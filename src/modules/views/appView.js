@@ -43,6 +43,7 @@ class AppView {
 
         this.createTaskButton.addEventListener("click", () => {
             this.openForm(this.taskForm);
+            this.refreshTaskForm(this.taskForm);
         });
 
         this.closeTaskFormButton.addEventListener("click", () => {

@@ -23,6 +23,7 @@ class AppView {
 
     addListeners() {
         this.createProjectButton.addEventListener("click", () => {
+            this.closeForm(this.taskForm);
             this.openForm(this.projectForm);
         });
 
@@ -42,6 +43,7 @@ class AppView {
         });
 
         this.createTaskButton.addEventListener("click", () => {
+            this.closeForm(this.projectForm)
             this.openForm(this.taskForm);
             this.refreshTaskForm(this.taskForm);
         });

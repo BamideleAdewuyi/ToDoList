@@ -44,4 +44,5 @@
 .newProjectDialog {
     position: relative;
     left: 20rem;
+    width: 10rem;
 }

@@ -28,8 +28,9 @@ class TaskView {
 
     createTaskForm() {
         const dialog = document.createElement("dialog");
-        dialog.classList.add("createTaskForm")
+        dialog.classList.add("createTaskDialog")
         const form = document.createElement("form");
+        form.classList.add("createTaskForm")
         form.innerHTML = `<form action="#" class="newToDoForm">
                          <h3>New ToDo</h3>
                          <label for="taskTitle">Title</label>

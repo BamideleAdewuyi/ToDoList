@@ -101,7 +101,8 @@ class AppView {
         projectPreview.classList.add("projectPreview");
         deleteProjectButton.classList.add("deleteProjectButton");
         deleteProjectButton.addEventListener("click", () => {
-            
+            this.projectView.projectController.deleteProject(project.id);
+            this.renderProjects();
         })
         projectPreview.append(projectPreviewHeading, deleteProjectButton);
         for (const task of project.tasks) {

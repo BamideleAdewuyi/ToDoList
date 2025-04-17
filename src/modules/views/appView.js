@@ -99,6 +99,7 @@ class AppView {
         projectPreviewHeading.textContent = project.title;
         deleteProjectButton.textContent = "Delete Project";
         projectPreview.classList.add("projectPreview");
+        deleteProjectButton.classList.add("deleteProjectButton");
         projectPreview.append(projectPreviewHeading);
         for (const task of project.tasks) {
             const taskPreview = this.previewTask(task);

@@ -21,10 +21,6 @@ class AppView {
         this.renderProjects();
     };
 
-    clearTaskArea() {
-        this.taskArea.innerHTML = "";
-    }
-
     addListeners() {
         this.createProjectButton.addEventListener("click", () => {
             this.closeForm(this.taskForm);
@@ -91,6 +87,10 @@ class AppView {
         return;
     };
 
+    clearPreview(currentPreview) {
+        currentPreview.remove();
+    };
+
     previewProject(project) {
         const currentPreview = this.taskArea.querySelector(".projectPreview");
         if (currentPreview) {
@@ -108,7 +108,7 @@ class AppView {
             this.projectView.projectController.deleteProject(project.id);
             this.projectView.projectController.refreshProjects(this.taskView.taskController);
             this.renderProjects();
-            this.clearTaskArea();
+
         })
         projectPreview.append(projectPreviewHeading, deleteProjectButton);
         for (const task of project.tasks) {

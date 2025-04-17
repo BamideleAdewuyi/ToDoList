@@ -108,7 +108,7 @@ class AppView {
             this.projectView.projectController.deleteProject(project.id);
             this.projectView.projectController.refreshProjects(this.taskView.taskController);
             this.renderProjects();
-
+            this.clearPreview(projectPreview);
         })
         projectPreview.append(projectPreviewHeading, deleteProjectButton);
         for (const task of project.tasks) {

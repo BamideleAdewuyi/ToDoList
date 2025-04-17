@@ -106,6 +106,7 @@ class AppView {
         deleteProjectButton.classList.add("deleteProjectButton");
         deleteProjectButton.addEventListener("click", () => {
             this.projectView.projectController.deleteProject(project.id);
+            this.projectView.projectController.refreshProjects(this.taskView.taskController);
             this.renderProjects();
             this.clearTaskArea();
         })

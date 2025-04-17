@@ -94,7 +94,7 @@ class AppView {
     previewProject(project) {
         const currentPreview = this.taskArea.querySelector(".projectPreview");
         if (currentPreview) {
-            currentPreview.remove();
+            this.clearPreview(currentPreview);
         };
         
         const projectPreview = document.createElement("div");

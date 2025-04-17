@@ -84,7 +84,9 @@ class ProjectController{
     }
 
     deleteProject(projectId) {
-
+        const project = this.getProject(projectId, this.projects);
+        this.projects = this.removeItem(this.projects, project);
+        return;
     };
     
     refreshProjects(taskController) {

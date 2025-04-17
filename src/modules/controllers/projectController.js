@@ -74,6 +74,10 @@ class ProjectController{
             project.tasks = [];
         }
     };
+
+    deleteProject(projectId) {
+
+    };
     
     refreshProjects(taskController) {
         this.clearProjects();

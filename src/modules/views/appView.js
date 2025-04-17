@@ -21,6 +21,10 @@ class AppView {
         this.renderProjects();
     };
 
+    clearTaskArea() {
+        this.taskArea.innerHTML = "";
+    }
+
     addListeners() {
         this.createProjectButton.addEventListener("click", () => {
             this.closeForm(this.taskForm);
@@ -103,6 +107,7 @@ class AppView {
         deleteProjectButton.addEventListener("click", () => {
             this.projectView.projectController.deleteProject(project.id);
             this.renderProjects();
+            this.clearTaskArea();
         })
         projectPreview.append(projectPreviewHeading, deleteProjectButton);
         for (const task of project.tasks) {

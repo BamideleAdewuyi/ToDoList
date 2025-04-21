@@ -49,4 +49,7 @@
 
 .createTaskDialog {
     position: relative;
+    left: 10rem;
+    width: 30rem;
+    height: 30rem;
 }

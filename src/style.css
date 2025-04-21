@@ -57,3 +57,7 @@
 .createTaskForm {
     display: grid;
 }
+
+#taskDescription {
+    height: 10rem;
+}

@@ -36,7 +36,7 @@ class TaskView {
                          <label for="taskTitle">Title</label>
                          <input type="text" placeholder="Title" name="taskTitle" id="taskTitle" required>
                          <label for="taskDescription">Description</label>
-                         <input type="text" placeholder="Description" name="taskDescription" id="taskDescription" required>
+                         <textarea type="text" placeholder="Description" name="taskDescription" id="taskDescription" required></textarea>
                          <label for="taskDueDate">Due Date</label>
                          <input type="date" name="taskDueDate" id="taskDueDate" required>
                          <div id="taskPriority">

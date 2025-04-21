@@ -46,3 +46,7 @@
     left: 20rem;
     width: 10rem;
 }
+
+.createTaskDialog {
+    position: relative;
+}

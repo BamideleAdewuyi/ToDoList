@@ -32,7 +32,7 @@ class TaskView {
         const form = document.createElement("form");
         form.classList.add("createTaskForm")
         form.innerHTML = `<form action="#"">
-                         <h3>New ToDo</h3>
+                         <h3>New Task</h3>
                          <label for="taskTitle">Title</label>
                          <input type="text" placeholder="Title" name="taskTitle" id="taskTitle" required>
                          <label for="taskDescription">Description</label>

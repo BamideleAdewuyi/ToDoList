@@ -62,7 +62,7 @@
     height: 10rem;
 }
 
-#taskDescription, #taskTitle, #taskDueDate, #taskProject {
+#taskDescription, #taskTitle, #taskDueDate, #taskProject, #projectTitle {
     background-color: white;
     color: black;
 }

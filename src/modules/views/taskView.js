@@ -52,7 +52,7 @@ class TaskView {
                          <select name="taskProject" id="taskProject" required>
  
                          </select>
-                         <button class="submit" id="createToDo">Add ToDo</button>
+                         <button class="submit" id="createToDo">Add Task</button>
                          <button type="button" class="closeToDoFormButton" autofocus>Close</button>
                      </form>
         `

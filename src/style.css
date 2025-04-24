@@ -73,6 +73,10 @@
 }
 
 .lowPriority, .mediumPriority, .highPriority {
-    width: 1rem;
+    width: 100%;
     height: 1rem;
+}
+
+.lowPriority {
+    background-color: green;
 }

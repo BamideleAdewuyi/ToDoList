@@ -144,7 +144,10 @@ class AppView {
         const expandButton = document.createElement("button");
         expandButton.textContent = "See details";
         expandButton.classList.add("expandButton");
-        taskPreview.append(taskHeading, taskDueDate, expandButton);
+        const priorityStrip = document.createElement("div");
+        priorityStrip.classList = "";
+        priorityStrip.classList.add(`${task.priority}Priority`)
+        taskPreview.append(taskHeading, taskDueDate, expandButton, priorityStrip);
         return taskPreview;
     };
 

@@ -80,3 +80,11 @@
 .lowPriority {
     background-color: green;
 }
+
+.mediumPriority {
+    background-color: orange;
+}
+
+.highPriority {
+    background-color: red;
+}

@@ -100,6 +100,7 @@ class AppView {
         const projectPreview = document.createElement("div");
         const projectPreviewHeading = document.createElement("h4");
         const deleteProjectButton = document.createElement("button");
+        projectPreviewHeading.classList.add("projectPreviewHeading")
         projectPreviewHeading.textContent = project.title;
         deleteProjectButton.textContent = "Delete Project";
         projectPreview.classList.add("projectPreview");

@@ -71,3 +71,8 @@
     outline: solid black 2px;
     width: 10rem;
 }
+
+.lowPriority, .mediumPriority, .highPriority {
+    width: 1rem;
+    height: 1rem;
+}

@@ -66,3 +66,8 @@
     background-color: white;
     color: black;
 }
+
+.taskPreview {
+    outline: solid black 2px;
+    width: 10rem;
+}

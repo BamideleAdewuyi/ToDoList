@@ -1,6 +1,6 @@
 import ProjectView from "./projectView";
 import TaskView from "./taskView";
-import {format} from "date-fns";
+import {format, parse} from "date-fns";
 
 class AppView {
     constructor() {
@@ -140,7 +140,8 @@ class AppView {
         taskHeading.classList.add("taskPreviewHeading")
         taskHeading.textContent = task.title;
         const taskDueDate = document.createElement("p");
-        taskDueDate.textContent = task.dueDate;
+        const formattedDate = format(task.dueDate, "dd/MM/yyyy");
+        taskDueDate.textContent = formattedDate;
         const expandButton = document.createElement("button");
         expandButton.textContent = "See details";
         expandButton.classList.add("expandButton");

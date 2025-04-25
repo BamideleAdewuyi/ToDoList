@@ -140,7 +140,7 @@ class AppView {
         taskHeading.classList.add("taskPreviewHeading")
         taskHeading.textContent = task.title;
         const taskDueDate = document.createElement("p");
-        taskDueDate.textContent = format(task.dueDate, "dd/MM/yyyy");
+        taskDueDate.textContent = task.dueDate;
         const expandButton = document.createElement("button");
         expandButton.textContent = "See details";
         expandButton.classList.add("expandButton");

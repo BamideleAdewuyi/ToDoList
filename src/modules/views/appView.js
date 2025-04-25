@@ -140,7 +140,17 @@ class AppView {
         taskHeading.classList.add("taskPreviewHeading")
         taskHeading.textContent = task.title;
         const taskDueDate = document.createElement("p");
-        const formattedDate = format(task.dueDate, "dd/MM/yyyy");
+        let formattedDate;
+        if (typeof task.dueDate === "string") {
+            const parsedDate = parse(task.dueDate, "dd/MM/yyyy", new Date());
+            formattedDate = isValid(parsedDate)
+                ? format(parsedDate, "dd/MM/yyyy")
+                : "Invalid date";
+        } else if (task.dueDate instanceof Date) {
+            formattedDate = format(task.dueDate, "dd/MM/yyyy");
+        } else {
+            formattedDate = "No date";
+        }
         taskDueDate.textContent = formattedDate;
         const expandButton = document.createElement("button");
         expandButton.textContent = "See details";

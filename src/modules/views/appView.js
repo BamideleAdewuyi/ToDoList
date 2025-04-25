@@ -1,6 +1,6 @@
 import ProjectView from "./projectView";
 import TaskView from "./taskView";
-import {format, parse} from "date-fns";
+import {format, parse, isValid} from "date-fns";
 
 class AppView {
     constructor() {

@@ -47,9 +47,10 @@ class TaskController{
     }
 
     editTask(task, title, description, dueDate, priority, projectId) {
+        const parsedDate = parse(dueDate, "dd/MM/yyyy", new Date());
         task.title = title;
         task.description = description;
-        task.dueDate = format(dueDate, "dd/MM/yyyy");
+        task.dueDate = format(parsedDate, "dd/MM/yyyy");
         task.priority = priority;
         task.projectId = projectId;
         this.tasks = this.sortTasks(this.tasks);

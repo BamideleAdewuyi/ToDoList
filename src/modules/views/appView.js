@@ -188,11 +188,10 @@ class AppView {
         const description = taskForm.querySelector("#taskDescription");
         description.value = task.description;
         const dueDate = taskForm.querySelector("#taskDueDate");
-        // inside fillTaskForm...
+
         let parsedDate;
 
         if (typeof task.dueDate === "string") {
-            // Parse from "dd/MM/yyyy" if it looks like that format
             parsedDate = parse(task.dueDate, "dd/MM/yyyy", new Date());
         } else if (task.dueDate instanceof Date) {
             parsedDate = task.dueDate;
@@ -200,7 +199,7 @@ class AppView {
 
         if (!isValid(parsedDate)) {
             console.warn("Invalid dueDate in fillTaskForm:", task.dueDate);
-            parsedDate = new Date(); // or handle it however makes sense
+            parsedDate = new Date();
         }
 
         const formattedDate = format(parsedDate, "yyyy-MM-dd");

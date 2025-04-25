@@ -177,7 +177,7 @@ class AppView {
         const description = taskForm.querySelector("#taskDescription");
         description.value = task.description;
         const dueDate = taskForm.querySelector("#taskDueDate");
-        dueDate.value = format(task.dueDate, "yyyy-MM-dd");
+        dueDate.value = task.dueDate;
         const priority = taskForm.querySelector("#taskPriority");
         const selectedPriority = priority.querySelector(`#${task.priority}`)
         selectedPriority.checked = true;

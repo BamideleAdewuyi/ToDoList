@@ -1,4 +1,4 @@
 import "./style.css";
 import AppView from "./modules/views/appView";
 
-const appView = new AppView;
+const appView = new AppView();
